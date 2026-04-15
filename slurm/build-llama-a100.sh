@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #SBATCH --job-name=build-llama-a100
 #SBATCH --account=f202500010hpcvlabuminhog
-#SBATCH --partition=normal-a100-40
+#SBATCH --partition=normal-a100-80
 #SBATCH --nodes=1
 #SBATCH --gpus=1
 #SBATCH --ntasks=1
@@ -66,11 +66,23 @@ fi
 
 BUILD_DIR="${BUILD_DIR:-$REPO_DIR/build-a100}"
 BUILD_TYPE="${BUILD_TYPE:-Release}"
+CUDA_ARCHITECTURES="${CUDA_ARCHITECTURES:-80-real}"
+
+if [[ -f "$BUILD_DIR/CMakeCache.txt" ]]; then
+  CACHED_CUDA_ARCHS="$(grep '^CMAKE_CUDA_ARCHITECTURES:STRING=' "$BUILD_DIR/CMakeCache.txt" | cut -d= -f2- || true)"
+  if [[ -n "$CACHED_CUDA_ARCHS" && "$CACHED_CUDA_ARCHS" != "$CUDA_ARCHITECTURES" ]]; then
+    echo "[INFO] Cleaning stale CUDA build dir due to arch change: ${CACHED_CUDA_ARCHS} -> ${CUDA_ARCHITECTURES}"
+    rm -rf "$BUILD_DIR"
+  fi
+fi
 
 cd "$REPO_DIR"
 
+echo "[INFO] CUDA architectures: $CUDA_ARCHITECTURES"
+
 cmake -S . -B "$BUILD_DIR" \
   -DCMAKE_BUILD_TYPE="$BUILD_TYPE" \
+  -DCMAKE_CUDA_ARCHITECTURES="$CUDA_ARCHITECTURES" \
   -DGGML_CUDA=ON
 
 cmake --build "$BUILD_DIR" -j "${SLURM_CPUS_PER_TASK:-8}" --target llama-server

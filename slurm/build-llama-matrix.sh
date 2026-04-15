@@ -96,6 +96,7 @@ case "$TARGET" in
   a100-cuda)
     BUILD_SUBDIR="build-matrix/x86_64-cuda"
     ENABLE_CUDA=1
+    CUDA_ARCHITECTURES="${CUDA_ARCHITECTURES:-80-real}"
     ;;
   *)
     echo "Unsupported TARGET: $TARGET" >&2
@@ -105,13 +106,24 @@ esac
 
 BUILD_DIR="${BUILD_DIR:-$REPO_DIR/$BUILD_SUBDIR}"
 
+if [[ "$ENABLE_CUDA" == "1" && -f "$BUILD_DIR/CMakeCache.txt" ]]; then
+  CACHED_CUDA_ARCHS="$(grep '^CMAKE_CUDA_ARCHITECTURES:STRING=' "$BUILD_DIR/CMakeCache.txt" | cut -d= -f2- || true)"
+  if [[ -n "$CACHED_CUDA_ARCHS" && "$CACHED_CUDA_ARCHS" != "$CUDA_ARCHITECTURES" ]]; then
+    echo "[INFO] Cleaning stale CUDA build dir due to arch change: ${CACHED_CUDA_ARCHS} -> ${CUDA_ARCHITECTURES}"
+    rm -rf "$BUILD_DIR"
+  fi
+fi
+
 CMAKE_ARGS=(
   -S .
   -B "$BUILD_DIR"
   -DCMAKE_BUILD_TYPE="$BUILD_TYPE"
 )
 if [[ "$ENABLE_CUDA" == "1" ]]; then
-  CMAKE_ARGS+=( -DGGML_CUDA=ON )
+  CMAKE_ARGS+=(
+    -DGGML_CUDA=ON
+    -DCMAKE_CUDA_ARCHITECTURES="$CUDA_ARCHITECTURES"
+  )
 fi
 if command -v ccache >/dev/null 2>&1; then
   CMAKE_ARGS+=(
@@ -125,6 +137,9 @@ cd "$REPO_DIR"
 echo "[INFO] Repo: $REPO_DIR"
 echo "[INFO] Build dir: $BUILD_DIR"
 echo "[INFO] Build type: $BUILD_TYPE"
+if [[ "$ENABLE_CUDA" == "1" ]]; then
+  echo "[INFO] CUDA architectures: $CUDA_ARCHITECTURES"
+fi
 echo "[INFO] Incremental build enabled (reuses existing build dir)"
 
 cmake "${CMAKE_ARGS[@]}"

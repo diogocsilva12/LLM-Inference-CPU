@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 #SBATCH --job-name=run-llama-a100
 #SBATCH --account=f202500010hpcvlabuminhog
-#SBATCH --partition=normal-a100-40
+#SBATCH --partition=normal-a100-80
 #SBATCH --nodes=1
 #SBATCH --gpus=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=32
-#SBATCH --time=48:00:00
+#SBATCH --time=00:10:00
 #SBATCH --output=%x_%j.out
 #SBATCH --error=%x_%j.err
 
