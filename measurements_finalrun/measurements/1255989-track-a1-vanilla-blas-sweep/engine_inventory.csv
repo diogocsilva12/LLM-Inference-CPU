@@ -1,0 +1,3 @@
+label,repo,server_bin,cache_sweep,ld_preload
+vanilla-openblas-fujitsu,/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/llamacpp-vanilla/llama.cpp,/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/llamacpp-vanilla/llama.cpp/build-blas/openblas-fujitsu/bin/llama-server,f16:f16 q4_0:q4_0,/eb/aarch64/software/OpenBLAS/0.3.26-GCC-13.3.0-Fujitsu/lib/libopenblas.so
+vanilla-blis,/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/llamacpp-vanilla/llama.cpp,/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/llamacpp-vanilla/llama.cpp/build-blas/blis/bin/llama-server,f16:f16 q4_0:q4_0,/eb/aarch64/software/BLIS/1.0-GCC-13.3.0/lib/libblis.so

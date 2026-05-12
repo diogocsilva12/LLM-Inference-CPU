@@ -1,0 +1,2 @@
+label,repo,server_bin,cache_sweep,ld_preload
+vanilla-x86,/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/llamacpp-vanilla/llama.cpp,/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/llamacpp-vanilla/llama.cpp/build-slurm-x86/bin/llama-server,f16:f16,
