@@ -1,0 +1,44 @@
+{
+  "track": "A1 - Single-Engine Deep Dive",
+  "engine": "llama.cpp TurboQuant fork",
+  "platform": "Deucalion ARM CPU nodes",
+  "wall_time_limit": "00:30:00",
+  "methodology": {
+    "single_node": "Run one llama-server instance on one ARM node with the three mandatory prompts.",
+    "scalability": "Vary thread count on one node and, when requested with sbatch --nodes, run one independent server replica per node. This is service-level replica scaling, not tensor/pipeline parallelism.",
+    "statistics": "Use 3 trials for the initial benchmark because the prompt set is intentionally small.",
+    "warmup": "Start the server, wait for /health, then use repeated trials to reduce first-run noise."
+  },
+  "models_required": {
+    "minimum_models": 3,
+    "mandatory": "Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+    "required_additional": [
+      "SmolLM2-360M-Instruct.Q4_K_M.gguf",
+      "gemma-4-E4B-it-OBLITERATED-Q4_K_M.gguf"
+    ],
+    "optional_extra": [
+      "gpt-oss-20b-Q4_K_M.gguf"
+    ]
+  },
+  "initial_simple_profile": {
+    "prompts": "Only the 3 mandatory prompts from the PDF",
+    "node_counts": [1, 2, 4],
+    "threads_per_server": [12, 24, 36, 48],
+    "trials": 3,
+    "mandatory_only": true,
+    "max_tokens": 128,
+    "ctx_size": 2048,
+    "cache_pairs": [
+      {"k": "f16", "v": "f16"}
+    ]
+  },
+  "metrics": [
+    "TTFT seconds",
+    "TPOT seconds",
+    "output throughput tokens/s",
+    "server peak RSS/VmHWM",
+    "goodput under declared TTFT/TPOT SLA",
+    "mean and standard deviation",
+    "generated output for mandatory prompts"
+  ]
+}

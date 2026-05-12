@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#SBATCH -A f202500010hpcvlabuminhoa
+#SBATCH -A f202500001hpcvlabepicurea
 #SBATCH -p normal-arm
 #SBATCH -t 48:00:00
 #SBATCH --nodes=1
@@ -19,11 +19,19 @@ modules=(
   "cmake/3.21.3"
 )
 
-ml purge
+if command -v module >/dev/null 2>&1; then
+  module --ignore_cache purge
+else
+  ml purge
+fi
 
 for module in "${modules[@]}"; do
     echo "[LOAD_MODULE] $module"
-    ml "$module"
+    if command -v module >/dev/null 2>&1; then
+      module --ignore_cache load "$module"
+    else
+      ml "$module"
+    fi
 done
 
 SUBMIT_DIR="${SLURM_SUBMIT_DIR:-$PWD}"

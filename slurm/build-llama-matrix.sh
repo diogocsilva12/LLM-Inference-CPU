@@ -28,19 +28,95 @@ echo "[INFO] Build target: $TARGET"
 echo "[INFO] Node arch: $ARCH"
 echo "[INFO] NVIDIA detected: $HAS_NVIDIA"
 
-echo "[STARTING] Loading modules"
-modules=(
-  "GCC/13.3.0"
-  "cmake/3.21.3"
-)
-if [[ "$TARGET" == "a100-cuda" ]]; then
-  modules+=("CUDA")
+ensure_module_commands() {
+  if command -v module >/dev/null 2>&1 || command -v ml >/dev/null 2>&1; then
+    return
+  fi
+  if [[ -f /etc/profile ]]; then
+    # Load site shell setup in non-login batch shells.
+    source /etc/profile
+  fi
+  if command -v module >/dev/null 2>&1 || command -v ml >/dev/null 2>&1; then
+    return
+  fi
+  for init_script in /usr/share/lmod/lmod/init/bash /etc/profile.d/lmod.sh /etc/profile.d/modules.sh; do
+    if [[ -f "$init_script" ]]; then
+      source "$init_script"
+      break
+    fi
+  done
+}
+
+ensure_module_commands
+if ! command -v module >/dev/null 2>&1 && ! command -v ml >/dev/null 2>&1; then
+  echo "Neither 'module' nor 'ml' is available in this batch shell on $(hostname)." >&2
+  exit 1
 fi
 
-ml purge
-for module in "${modules[@]}"; do
-  echo "[LOAD_MODULE] $module"
-  ml "$module"
+echo "[STARTING] Loading modules"
+if [[ "$TARGET" == "arm-cpu" ]]; then
+  DEFAULT_GCC_MODULE_CANDIDATES="GCC/13.3.0 GCCcore/13.3.0"
+else
+  DEFAULT_GCC_MODULE_CANDIDATES="GCC/15.2.0 GCC/14.3.0 GCC/14.2.0 GCC/13.3.0 GCC/13.2.0 GCC/12.3.0 GCC/12.2.0 GCC/11.3.0 GCC/10.3.0 GCC/8.3.0 GCCcore/15.2.0 GCCcore/14.3.0 GCCcore/14.2.0 GCCcore/13.3.0 GCCcore/13.2.0 GCCcore/12.3.0 GCCcore/12.2.0 GCCcore/11.3.0 GCCcore/10.3.0 GCCcore/8.3.0"
+fi
+GCC_MODULE_CANDIDATES="${GCC_MODULE_CANDIDATES:-$DEFAULT_GCC_MODULE_CANDIDATES}"
+CMAKE_MODULE_CANDIDATES="${CMAKE_MODULE_CANDIDATES:-CMake/4.2.1 CMake/4.0.3 CMake/3.31.8 CMake/3.31.3 CMake/3.29.3 CMake/3.27.6 CMake/3.26.3 CMake/3.24.3 CMake/3.23.1 cmake/3.21.3}"
+EXTRA_MODULES=()
+if [[ "$TARGET" == "a100-cuda" ]]; then
+  EXTRA_MODULES+=("CUDA")
+fi
+
+if command -v module >/dev/null 2>&1; then
+  module --ignore_cache purge
+else
+  ml purge
+fi
+
+LOADED_GCC_MODULE=""
+for gcc_module in $GCC_MODULE_CANDIDATES; do
+  if command -v module >/dev/null 2>&1; then
+    if module --ignore_cache load "$gcc_module" >/dev/null 2>&1; then
+      LOADED_GCC_MODULE="$gcc_module"
+      break
+    fi
+  elif ml "$gcc_module" >/dev/null 2>&1; then
+    LOADED_GCC_MODULE="$gcc_module"
+    break
+  fi
+done
+
+if [[ -z "$LOADED_GCC_MODULE" ]]; then
+  echo "No usable GCC module found. Tried: $GCC_MODULE_CANDIDATES" >&2
+  exit 1
+fi
+echo "[LOAD_MODULE] $LOADED_GCC_MODULE"
+
+LOADED_CMAKE_MODULE=""
+for cmake_module in $CMAKE_MODULE_CANDIDATES; do
+  if command -v module >/dev/null 2>&1; then
+    if module --ignore_cache load "$cmake_module" >/dev/null 2>&1; then
+      LOADED_CMAKE_MODULE="$cmake_module"
+      break
+    fi
+  elif ml "$cmake_module" >/dev/null 2>&1; then
+    LOADED_CMAKE_MODULE="$cmake_module"
+    break
+  fi
+done
+
+if [[ -z "$LOADED_CMAKE_MODULE" ]]; then
+  echo "No usable CMake module found. Tried: $CMAKE_MODULE_CANDIDATES" >&2
+  exit 1
+fi
+echo "[LOAD_MODULE] $LOADED_CMAKE_MODULE"
+
+for module_name in "${EXTRA_MODULES[@]}"; do
+  echo "[LOAD_MODULE] $module_name"
+  if command -v module >/dev/null 2>&1; then
+    module --ignore_cache load "$module_name"
+  else
+    ml "$module_name"
+  fi
 done
 
 SUBMIT_DIR="${SLURM_SUBMIT_DIR:-$PWD}"
@@ -84,6 +160,7 @@ if ! command -v cmake >/dev/null 2>&1; then
 fi
 
 BUILD_TYPE="${BUILD_TYPE:-Release}"
+read -r -a BUILD_TARGETS <<< "${BUILD_TARGETS:-llama-cli llama-server llama-bench llama-perplexity}"
 case "$TARGET" in
   arm-cpu)
     BUILD_SUBDIR="build-matrix/arm64-cpu"
@@ -143,7 +220,7 @@ fi
 echo "[INFO] Incremental build enabled (reuses existing build dir)"
 
 cmake "${CMAKE_ARGS[@]}"
-cmake --build "$BUILD_DIR" -j "${SLURM_CPUS_PER_TASK:-$(nproc)}" --target llama-server
+cmake --build "$BUILD_DIR" -j "${SLURM_CPUS_PER_TASK:-$(nproc)}" --target "${BUILD_TARGETS[@]}"
 
 if [[ -x "$BUILD_DIR/bin/llama-server" ]]; then
   echo "[OK] Build successful: $BUILD_DIR/bin/llama-server"

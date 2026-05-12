@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #SBATCH --job-name=build-llama-x86
-#SBATCH --account=f202500010hpcvlabuminhoa
+#SBATCH --account=f202500001hpcvlabepicurex
 #SBATCH --partition=normal-x86
 #SBATCH --nodes=1
 #SBATCH --ntasks=1

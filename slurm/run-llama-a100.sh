@@ -19,10 +19,18 @@ modules=(
   "CUDA"
 )
 
-ml purge
+if command -v module >/dev/null 2>&1; then
+  module --ignore_cache purge
+else
+  ml purge
+fi
 for module in "${modules[@]}"; do
   echo "[LOAD_MODULE] $module"
-  ml "$module"
+  if command -v module >/dev/null 2>&1; then
+    module --ignore_cache load "$module"
+  else
+    ml "$module"
+  fi
 done
 
 SUBMIT_DIR="${SLURM_SUBMIT_DIR:-$PWD}"
@@ -148,9 +156,9 @@ echo "[INFO] Cache types: K=$CACHE_TYPE_K V=$CACHE_TYPE_V"
 echo "[INFO] One-hop tunnel: $TUNNEL_CMD"
 echo "[INFO] Open in browser: http://localhost:${LOCAL_TUNNEL_PORT}"
 
-SRUN_BASE="srun -n1 --gpus=1"
+SRUN_BASE=(srun -n1 --gpus=1)
 
-exec $SRUN_BASE "$SERVER_BIN" \
+exec "${SRUN_BASE[@]}" "$SERVER_BIN" \
   -m "$MODEL_PATH" \
   --host "$HOST" \
   --port "$PORT" \

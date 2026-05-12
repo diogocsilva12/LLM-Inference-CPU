@@ -19,10 +19,18 @@ modules=(
   "CUDA"
 )
 
-ml purge
+if command -v module >/dev/null 2>&1; then
+  module --ignore_cache purge
+else
+  ml purge
+fi
 for module in "${modules[@]}"; do
   echo "[LOAD_MODULE] $module"
-  ml "$module"
+  if command -v module >/dev/null 2>&1; then
+    module --ignore_cache load "$module"
+  else
+    ml "$module"
+  fi
 done
 
 SUBMIT_DIR="${SLURM_SUBMIT_DIR:-$PWD}"
@@ -67,6 +75,7 @@ fi
 BUILD_DIR="${BUILD_DIR:-$REPO_DIR/build-a100}"
 BUILD_TYPE="${BUILD_TYPE:-Release}"
 CUDA_ARCHITECTURES="${CUDA_ARCHITECTURES:-80-real}"
+read -r -a BUILD_TARGETS <<< "${BUILD_TARGETS:-llama-server llama-bench llama-perplexity}"
 
 if [[ -f "$BUILD_DIR/CMakeCache.txt" ]]; then
   CACHED_CUDA_ARCHS="$(grep '^CMAKE_CUDA_ARCHITECTURES:STRING=' "$BUILD_DIR/CMakeCache.txt" | cut -d= -f2- || true)"
@@ -85,7 +94,7 @@ cmake -S . -B "$BUILD_DIR" \
   -DCMAKE_CUDA_ARCHITECTURES="$CUDA_ARCHITECTURES" \
   -DGGML_CUDA=ON
 
-cmake --build "$BUILD_DIR" -j "${SLURM_CPUS_PER_TASK:-8}" --target llama-server
+cmake --build "$BUILD_DIR" -j "${SLURM_CPUS_PER_TASK:-$(nproc)}" --target "${BUILD_TARGETS[@]}"
 
 if [[ -x "$BUILD_DIR/bin/llama-server" ]]; then
   echo "Build successful: $BUILD_DIR/bin/llama-server"

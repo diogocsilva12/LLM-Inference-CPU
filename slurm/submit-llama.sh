@@ -4,8 +4,9 @@ set -euo pipefail
 usage() {
   cat <<'EOF'
 Usage:
-  slurm/submit-llama.sh build <profile> [repo_dir]
-  slurm/submit-llama.sh run   <profile> [model_path]
+  slurm/submit-llama.sh build     <profile> [repo_dir]
+  slurm/submit-llama.sh run       <profile> [model_path]
+  slurm/submit-llama.sh benchmark <profile> [model_path]
   slurm/submit-llama.sh prebuild [profiles...]
 
 Profiles:
@@ -17,14 +18,16 @@ Examples:
   slurm/submit-llama.sh build arm-cpu
   slurm/submit-llama.sh build a100-cuda
   slurm/submit-llama.sh run a100-cuda /path/model.gguf
+  slurm/submit-llama.sh benchmark a100-cuda /path/model.gguf
   slurm/submit-llama.sh prebuild arm-cpu a100-cuda
 
 Env overrides:
   ARM_ACCOUNT, ARM_PARTITION, ARM_CPUS
   X86_ACCOUNT, X86_PARTITION, X86_CPUS
   A100_ACCOUNT, A100_PARTITION, A100_CPUS, A100_GPUS
-  BUILD_TIME, RUN_TIME, REPO_DIR, BUILD_DIR, MODEL_PATH, PORT, HOST,
-  N_GPU_LAYERS, TARGET, LOCAL_TUNNEL_PORT
+  BUILD_TIME, RUN_TIME, BENCH_TIME, REPO_DIR, BUILD_DIR, MODEL_PATH, PORT,
+  HOST, N_GPU_LAYERS, TARGET, LOCAL_TUNNEL_PORT, CACHE_SWEEP,
+  PROMPT_TOKENS, GEN_TOKENS, REPETITIONS, OUTPUT_DIR
 EOF
 }
 
@@ -35,6 +38,7 @@ EXTRA="${3:-}"
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 BUILD_SCRIPT="$SCRIPT_DIR/build-llama-matrix.sh"
 RUN_SCRIPT="$SCRIPT_DIR/run-llama-matrix.sh"
+BENCH_SCRIPT="$SCRIPT_DIR/benchmark-llama-matrix.sh"
 
 if [[ "$ACTION" == "" || "$ACTION" == "-h" || "$ACTION" == "--help" ]]; then
   usage
@@ -52,7 +56,7 @@ if [[ "$ACTION" == "prebuild" ]]; then
   exit 0
 fi
 
-if [[ "$ACTION" != "build" && "$ACTION" != "run" ]]; then
+if [[ "$ACTION" != "build" && "$ACTION" != "run" && "$ACTION" != "benchmark" ]]; then
   echo "Unknown action: $ACTION" >&2
   usage
   exit 1
@@ -71,12 +75,12 @@ GPUS=0
 
 case "$PROFILE" in
   arm-cpu)
-    ACCOUNT="${ARM_ACCOUNT:-f202500010hpcvlabuminhoa}"
+    ACCOUNT="${ARM_ACCOUNT:-f202500001hpcvlabepicurea}"
     PARTITION="${ARM_PARTITION:-normal-arm}"
     CPUS="${ARM_CPUS:-48}"
     ;;
   x86-cpu)
-    ACCOUNT="${X86_ACCOUNT:-f202500010hpcvlabuminhoa}"
+    ACCOUNT="${X86_ACCOUNT:-f202500001hpcvlabepicurex}"
     PARTITION="${X86_PARTITION:-normal-x86}"
     CPUS="${X86_CPUS:-32}"
     ;;
@@ -96,9 +100,12 @@ esac
 if [[ "$ACTION" == "build" ]]; then
   TIME="${BUILD_TIME:-04:00:00}"
   SCRIPT="$BUILD_SCRIPT"
-else
+elif [[ "$ACTION" == "run" ]]; then
   TIME="${RUN_TIME:-48:00:00}"
   SCRIPT="$RUN_SCRIPT"
+else
+  TIME="${BENCH_TIME:-04:00:00}"
+  SCRIPT="$BENCH_SCRIPT"
 fi
 
 SBATCH_ARGS=(
@@ -137,7 +144,7 @@ fi
 if [[ "$ACTION" == "build" && -n "$EXTRA" ]]; then
   EXPORTS+=("REPO_DIR=$EXTRA")
 fi
-if [[ "$ACTION" == "run" ]]; then
+if [[ "$ACTION" == "run" || "$ACTION" == "benchmark" ]]; then
   if [[ -n "${MODEL_PATH:-}" ]]; then
     EXPORTS+=("MODEL_PATH=$MODEL_PATH")
   fi
@@ -145,6 +152,11 @@ if [[ "$ACTION" == "run" ]]; then
     EXPORTS+=("MODEL_PATH=$EXTRA")
   fi
 fi
+for name in CACHE_SWEEP PROMPT_TOKENS GEN_TOKENS REPETITIONS OUTPUT_DIR BENCH_BIN OUTPUT_FORMAT BATCH_SIZE UBATCH_SIZE FLASH_ATTN THREADS; do
+  if [[ -n "${!name:-}" ]]; then
+    EXPORTS+=("$name=${!name}")
+  fi
+done
 
 EXPORT_STRING="ALL"
 for e in "${EXPORTS[@]}"; do
