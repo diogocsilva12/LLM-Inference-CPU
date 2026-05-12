@@ -39,7 +39,7 @@ def test_benchmark_client_supports_warmup_and_seed():
 
 def test_server_track_a1_sweep_is_documented():
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
-    suite = (ROOT / "slurm/run-track-a1-server-sweep.sh").read_text(encoding="utf-8")
+    suite = (ROOT / "slurm/sweep_benchmark/run-track-a1-server-sweep.sh").read_text(encoding="utf-8")
     assert "Track A1 llama.cpp Server Sweep" in readme
     assert "scripts/benchmark_openai_stream.py" in readme
     assert "scripts/evaluate_mandatory_outputs.py" in readme
@@ -60,7 +60,7 @@ def test_server_track_a1_sweep_is_documented():
 
 
 def test_server_sweep_runs_nine_prompt_protocol_with_warmup():
-    text = (ROOT / "slurm/run-track-a1-server-sweep.sh").read_text(encoding="utf-8")
+    text = (ROOT / "slurm/sweep_benchmark/run-track-a1-server-sweep.sh").read_text(encoding="utf-8")
     assert 'MANDATORY_ONLY="${MANDATORY_ONLY:-0}"' in text
     assert 'LIMIT_PER_CATEGORY="${LIMIT_PER_CATEGORY:-3}"' in text
     assert 'WARMUP_TRIALS="${WARMUP_TRIALS:-1}"' in text
@@ -68,11 +68,23 @@ def test_server_sweep_runs_nine_prompt_protocol_with_warmup():
     assert "evaluate_mandatory_outputs.py" in text
 
 
+def test_server_sweep_can_submit_derived_array_and_skip_known_bad_configs():
+    text = (ROOT / "slurm/sweep_benchmark/run-track-a1-server-sweep.sh").read_text(encoding="utf-8")
+    readme = (ROOT / "README.md").read_text(encoding="utf-8")
+    assert 'SUBMIT_ARRAY="${SUBMIT_ARRAY:-0}"' in text
+    assert 'ARRAY_CONCURRENCY="${ARRAY_CONCURRENCY:-8}"' in text
+    assert "sbatch --array=\"0-$last_index%$ARRAY_CONCURRENCY\"" in text
+    assert 'EXCLUDE_CONFIGS="${EXCLUDE_CONFIGS:-tq:model-2:*}"' in text
+    assert "config_is_excluded" in text
+    assert "SUBMIT_ARRAY=1 ARRAY_CONCURRENCY=8" in readme
+
+
 def main():
     test_prompt_file_has_ten_per_category_and_mandatory_prompts()
     test_benchmark_client_supports_warmup_and_seed()
     test_server_track_a1_sweep_is_documented()
     test_server_sweep_runs_nine_prompt_protocol_with_warmup()
+    test_server_sweep_can_submit_derived_array_and_skip_known_bad_configs()
     print("ok")
 
 

@@ -1,7 +1,0 @@
-[STARTING] Loading modules
-[LOAD_MODULE] GCC/13.3.0
-[LOAD_MODULE] cmake/3.21.3
-[INFO] Model: /projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/slurm/../llamacpp-tq/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf
-[INFO] GUI: http://localhost:8080
-[INFO] Chat API: http://localhost:8080/v1/chat/completions
-[INFO] Cache types: K=turbo3 V=turbo3

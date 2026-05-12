@@ -1,0 +1,93 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='760' height='460'>
+<text x='90' y='30' font-size='18'>Throughput vs concurrent requests</text>
+<line x1='90' y1='390' x2='730' y2='390' stroke='black'/>
+<line x1='90' y1='50' x2='90' y2='390' stroke='black'/>
+<text x='350.0' y='440' font-size='13'>parallel requests</text>
+<text x='15' y='220.0' font-size='13' transform='rotate(-90 15,220.0)'>output tokens/s</text>
+<text x='90' y='410' font-size='11'>1</text>
+<text x='690' y='410' font-size='11'>16</text>
+<text x='20' y='390' font-size='11'>0.152</text>
+<text x='20' y='55' font-size='11'>7.78</text>
+<circle cx='90.00' cy='71.58' r='4' fill='#2ca02c'/>
+<circle cx='90.00' cy='70.38' r='4' fill='#2ca02c'/>
+<circle cx='90.00' cy='62.58' r='4' fill='#2ca02c'/>
+<circle cx='90.00' cy='54.91' r='4' fill='#2ca02c'/>
+<circle cx='90.00' cy='57.30' r='4' fill='#2ca02c'/>
+<circle cx='90.00' cy='57.10' r='4' fill='#2ca02c'/>
+<circle cx='90.00' cy='253.80' r='4' fill='#2ca02c'/>
+<circle cx='90.00' cy='173.82' r='4' fill='#2ca02c'/>
+<circle cx='90.00' cy='54.90' r='4' fill='#2ca02c'/>
+<circle cx='730.00' cy='373.81' r='4' fill='#2ca02c'/>
+<circle cx='730.00' cy='376.15' r='4' fill='#2ca02c'/>
+<circle cx='730.00' cy='375.90' r='4' fill='#2ca02c'/>
+<circle cx='730.00' cy='367.36' r='4' fill='#2ca02c'/>
+<circle cx='730.00' cy='390.00' r='4' fill='#2ca02c'/>
+<circle cx='730.00' cy='376.88' r='4' fill='#2ca02c'/>
+<circle cx='730.00' cy='376.18' r='4' fill='#2ca02c'/>
+<circle cx='132.67' cy='224.12' r='4' fill='#2ca02c'/>
+<circle cx='132.67' cy='224.08' r='4' fill='#2ca02c'/>
+<circle cx='132.67' cy='218.80' r='4' fill='#2ca02c'/>
+<circle cx='132.67' cy='215.63' r='4' fill='#2ca02c'/>
+<circle cx='132.67' cy='215.71' r='4' fill='#2ca02c'/>
+<circle cx='132.67' cy='218.41' r='4' fill='#2ca02c'/>
+<circle cx='132.67' cy='299.94' r='4' fill='#2ca02c'/>
+<circle cx='132.67' cy='241.28' r='4' fill='#2ca02c'/>
+<circle cx='132.67' cy='237.94' r='4' fill='#2ca02c'/>
+<circle cx='218.00' cy='307.18' r='4' fill='#2ca02c'/>
+<circle cx='218.00' cy='307.70' r='4' fill='#2ca02c'/>
+<circle cx='218.00' cy='306.59' r='4' fill='#2ca02c'/>
+<circle cx='218.00' cy='315.95' r='4' fill='#2ca02c'/>
+<circle cx='218.00' cy='315.64' r='4' fill='#2ca02c'/>
+<circle cx='218.00' cy='307.00' r='4' fill='#2ca02c'/>
+<circle cx='218.00' cy='337.46' r='4' fill='#2ca02c'/>
+<circle cx='218.00' cy='316.85' r='4' fill='#2ca02c'/>
+<circle cx='218.00' cy='316.39' r='4' fill='#2ca02c'/>
+<circle cx='388.67' cy='349.05' r='4' fill='#2ca02c'/>
+<circle cx='388.67' cy='353.03' r='4' fill='#2ca02c'/>
+<circle cx='388.67' cy='352.98' r='4' fill='#2ca02c'/>
+<circle cx='388.67' cy='338.02' r='4' fill='#2ca02c'/>
+<circle cx='388.67' cy='374.89' r='4' fill='#2ca02c'/>
+<circle cx='388.67' cy='353.73' r='4' fill='#2ca02c'/>
+<circle cx='388.67' cy='352.25' r='4' fill='#2ca02c'/>
+<circle cx='90.00' cy='67.17' r='4' fill='#2ca02c'/>
+<circle cx='90.00' cy='66.15' r='4' fill='#2ca02c'/>
+<circle cx='90.00' cy='57.95' r='4' fill='#2ca02c'/>
+<circle cx='90.00' cy='50.50' r='4' fill='#2ca02c'/>
+<circle cx='90.00' cy='52.61' r='4' fill='#2ca02c'/>
+<circle cx='90.00' cy='52.33' r='4' fill='#2ca02c'/>
+<circle cx='90.00' cy='252.61' r='4' fill='#2ca02c'/>
+<circle cx='90.00' cy='117.82' r='4' fill='#2ca02c'/>
+<circle cx='90.00' cy='50.00' r='4' fill='#2ca02c'/>
+<circle cx='730.00' cy='371.48' r='4' fill='#2ca02c'/>
+<circle cx='730.00' cy='374.32' r='4' fill='#2ca02c'/>
+<circle cx='730.00' cy='374.05' r='4' fill='#2ca02c'/>
+<circle cx='730.00' cy='365.15' r='4' fill='#2ca02c'/>
+<circle cx='730.00' cy='385.73' r='4' fill='#2ca02c'/>
+<circle cx='730.00' cy='374.75' r='4' fill='#2ca02c'/>
+<circle cx='730.00' cy='374.36' r='4' fill='#2ca02c'/>
+<circle cx='132.67' cy='224.06' r='4' fill='#2ca02c'/>
+<circle cx='132.67' cy='224.02' r='4' fill='#2ca02c'/>
+<circle cx='132.67' cy='218.79' r='4' fill='#2ca02c'/>
+<circle cx='132.67' cy='215.63' r='4' fill='#2ca02c'/>
+<circle cx='132.67' cy='215.72' r='4' fill='#2ca02c'/>
+<circle cx='132.67' cy='218.41' r='4' fill='#2ca02c'/>
+<circle cx='132.67' cy='299.93' r='4' fill='#2ca02c'/>
+<circle cx='132.67' cy='232.84' r='4' fill='#2ca02c'/>
+<circle cx='132.67' cy='229.50' r='4' fill='#2ca02c'/>
+<circle cx='218.00' cy='307.00' r='4' fill='#2ca02c'/>
+<circle cx='218.00' cy='307.52' r='4' fill='#2ca02c'/>
+<circle cx='218.00' cy='306.41' r='4' fill='#2ca02c'/>
+<circle cx='218.00' cy='309.04' r='4' fill='#2ca02c'/>
+<circle cx='218.00' cy='308.69' r='4' fill='#2ca02c'/>
+<circle cx='218.00' cy='306.81' r='4' fill='#2ca02c'/>
+<circle cx='218.00' cy='337.35' r='4' fill='#2ca02c'/>
+<circle cx='218.00' cy='310.12' r='4' fill='#2ca02c'/>
+<circle cx='218.00' cy='309.56' r='4' fill='#2ca02c'/>
+<circle cx='388.67' cy='348.24' r='4' fill='#2ca02c'/>
+<circle cx='388.67' cy='351.46' r='4' fill='#2ca02c'/>
+<circle cx='388.67' cy='351.96' r='4' fill='#2ca02c'/>
+<circle cx='388.67' cy='338.86' r='4' fill='#2ca02c'/>
+<circle cx='388.67' cy='369.95' r='4' fill='#2ca02c'/>
+<circle cx='388.67' cy='352.19' r='4' fill='#2ca02c'/>
+<circle cx='388.67' cy='351.25' r='4' fill='#2ca02c'/>
+</svg>

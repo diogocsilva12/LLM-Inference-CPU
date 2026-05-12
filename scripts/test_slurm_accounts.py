@@ -14,18 +14,18 @@ def read(path):
 
 
 def test_server_sweep_defaults_to_arm_account():
-    text = read("slurm/run-track-a1-server-sweep.sh")
+    text = read("slurm/sweep_benchmark/run-track-a1-server-sweep.sh")
     assert f"#SBATCH --account={ARM_ACCOUNT}" in text
     assert "#SBATCH --partition=normal-arm" in text
 
 
 def test_x86_wrappers_use_x86_account():
-    assert f"#SBATCH --account={X86_ACCOUNT}" in read("slurm/build-llama-x86.sh")
-    assert f"#SBATCH --account={X86_ACCOUNT}" in read("slurm/run-llama-x86.sh")
+    assert f"#SBATCH --account={X86_ACCOUNT}" in read("slurm/config/build-llama-x86.sh")
+    assert f"#SBATCH --account={X86_ACCOUNT}" in read("slurm/config/run-llama-x86.sh")
 
 
 def test_submit_helper_defaults():
-    text = read("slurm/submit-llama.sh")
+    text = read("slurm/config/submit-llama.sh")
     assert f'ARM_ACCOUNT:-{ARM_ACCOUNT}' in text
     assert f'X86_ACCOUNT:-{X86_ACCOUNT}' in text
 

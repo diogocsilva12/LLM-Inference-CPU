@@ -25,7 +25,7 @@ def load_script(path):
 
 
 def test_server_sweep_covers_assignment_dimensions():
-    text = read("slurm/run-track-a1-server-sweep.sh")
+    text = read("slurm/sweep_benchmark/run-track-a1-server-sweep.sh")
     assert_contains(text, "#SBATCH --job-name=a1-server-sweep", "SLURM header")
     assert_contains(text, "normal-arm", "ARM partition")
     assert_contains(text, "model-1-mandatory", "mandatory model run")
@@ -47,7 +47,16 @@ def test_server_sweep_covers_assignment_dimensions():
 
 def test_report_artifact_script_exists():
     text = read("scripts/make_report_artifacts.py")
+    assert_contains(text, "a1_all_results_summary.csv", "combined timing summary")
+    assert_contains(text, "a1_all_results_scaling_summary.csv", "combined scaling summary")
     assert_contains(text, "throughput_vs_threads.svg", "thread plot")
+    assert_contains(text, "tpot_vs_threads.svg", "thread TPOT plot")
+    assert_contains(text, "ttft_vs_threads.svg", "thread TTFT plot")
+    assert_contains(text, "throughput_vs_concurrency.svg", "concurrency plot")
+    assert_contains(text, "tpot_vs_context.svg", "context TPOT plot")
+    assert_contains(text, "throughput_vs_decode_length.svg", "decode length plot")
+    assert_contains(text, "goodput_by_engine.svg", "engine goodput plot")
+    assert_contains(text, "throughput_by_cache.svg", "cache throughput plot")
     assert_contains(text, "ttft_vs_context.svg", "context plot")
     assert_contains(text, "memory_vs_model.svg", "memory plot")
     assert_contains(text, "predicted_vs_observed_tpot.svg", "model validation plot")
@@ -62,7 +71,7 @@ def test_report_artifact_model_suite_parser():
 
 
 def test_compare_script_supports_custom_build_dir():
-    text = read("slurm/compare-mandatory-tq-vanilla.sh")
+    text = read("slurm/config/compare-mandatory-tq-vanilla.sh")
     assert_contains(text, "ENGINE_BUILD_DIR_NAME", "custom engine build dir variable")
     assert_contains(text, 'local build_dir="$repo_dir/$ENGINE_BUILD_DIR_NAME"', "custom build dir use")
 
@@ -71,7 +80,12 @@ def test_readme_documents_server_sweep():
     text = read("README.md")
     assert_contains(text, "Run The A1 Sweep", "run section")
     assert_contains(text, "sbatch --export=ALL", "sbatch export example")
-    assert_contains(text, "slurm/run-track-a1-server-sweep.sh", "server sweep command")
+    assert_contains(text, "slurm/sweep_benchmark/run-track-a1-server-sweep.sh", "server sweep command")
+    assert_contains(text, "slurm/sweep_benchmark/run-track-a1-server-sweep-x86.sh", "x86 server sweep command")
+    assert_contains(text, "slurm/sweep_benchmark/run-track-a1-vanilla-blas-sweep.sh", "BLAS sweep command")
+    assert_contains(text, "build-vanilla-openblas-fujitsu.sh", "OpenBLAS build command")
+    assert_contains(text, "build-vanilla-blis.sh", "BLIS build command")
+    assert_contains(text, "measurements/report_artifacts", "report artifact directory")
     assert_contains(text, "Required Model Set", "required model documentation")
     assert_contains(text, "mandatory_answer_quality.csv", "quality output")
 

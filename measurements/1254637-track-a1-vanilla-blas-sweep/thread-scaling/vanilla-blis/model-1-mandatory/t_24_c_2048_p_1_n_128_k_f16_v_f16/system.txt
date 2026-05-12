@@ -1,0 +1,44 @@
+timestamp=2026-05-12T11:24:25+01:00
+track=A1
+suite=thread-scaling
+engine=vanilla-blis
+node=cna0078
+partition=normal-arm
+model_label=model-1-mandatory
+model=/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/llamacpp-tq/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf
+repo_dir=/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/llamacpp-vanilla/llama.cpp
+server_bin=/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/llamacpp-vanilla/llama.cpp/build-blas/blis/bin/llama-server
+ld_preload=/eb/aarch64/software/BLIS/1.0-GCC-13.3.0/lib/libblis.so
+threads=24
+threads_batch=24
+ctx_size=2048
+parallel_requests=1
+bench_concurrency=1
+cache_type_k=f16
+cache_type_v=f16
+max_tokens=128
+fit_params=off
+trials=3
+warmup_trials=1
+mandatory_only=0
+limit_per_category=3
+server_extra_args=
+Architecture:        aarch64
+Byte Order:          Little Endian
+CPU(s):              48
+On-line CPU(s) list: 0-47
+Thread(s) per core:  1
+Core(s) per cluster: 12
+Socket(s):           -
+Cluster(s):          4
+NUMA node(s):        4
+Vendor ID:           FUJITSU
+Model:               0
+Model name:          A64FX
+Stepping:            0x1
+BogoMIPS:            200.00
+NUMA node0 CPU(s):   0-11
+NUMA node1 CPU(s):   12-23
+NUMA node2 CPU(s):   24-35
+NUMA node3 CPU(s):   36-47
+Flags:               fp asimd evtstrm sha1 sha2 crc32 atomics fphp asimdhp cpuid asimdrdm fcma dcpop sve

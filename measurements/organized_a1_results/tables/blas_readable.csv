@@ -1,0 +1,3 @@
+Sweep,Architecture,Engine,Model,Threads,Context tokens,Concurrent requests,KV cache K/V,Max generated tokens,TTFT mean (seconds),TPOT mean (milliseconds/token),Throughput mean (output tokens/second),Goodput fraction (TTFT<=2s and TPOT<=200ms),Peak memory VmHWM (GiB),Successful measured requests
+blas_server,arm,vanilla-blis,model-1-mandatory,24,2048,1,f16/f16,128,0.543,130.4,6.142,1.000,5.51,9
+blas_server,arm,vanilla-openblas-fujitsu,model-1-mandatory,24,2048,1,f16/f16,128,0.555,130.6,6.125,1.000,5.47,9

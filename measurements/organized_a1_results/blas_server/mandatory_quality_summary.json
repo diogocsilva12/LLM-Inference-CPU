@@ -1,0 +1,1136 @@
+[
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/concurrency/vanilla-blis/model-1-mandatory/t_24_c_2048_p_16_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_long_transformer_cpu",
+    "runs": 3,
+    "good_or_acceptable_runs": 0,
+    "quality_fraction_mean": 0.5,
+    "labels": "weak",
+    "representative_notes": "missing: mentions quantisation; explains quantisation benefit"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/concurrency/vanilla-blis/model-1-mandatory/t_24_c_2048_p_16_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_medium_ml_vs_dl",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: gives or signals examples"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/concurrency/vanilla-blis/model-1-mandatory/t_24_c_2048_p_16_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_short_capital_france",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/concurrency/vanilla-blis/model-1-mandatory/t_24_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_long_transformer_cpu",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: explains quantisation benefit"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/concurrency/vanilla-blis/model-1-mandatory/t_24_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_medium_ml_vs_dl",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: gives or signals examples"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/concurrency/vanilla-blis/model-1-mandatory/t_24_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_short_capital_france",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/concurrency/vanilla-blis/model-1-mandatory/t_24_c_2048_p_2_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_long_transformer_cpu",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: explains quantisation benefit"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/concurrency/vanilla-blis/model-1-mandatory/t_24_c_2048_p_2_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_medium_ml_vs_dl",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: gives or signals examples"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/concurrency/vanilla-blis/model-1-mandatory/t_24_c_2048_p_2_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_short_capital_france",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/concurrency/vanilla-blis/model-1-mandatory/t_24_c_2048_p_4_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_long_transformer_cpu",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: explains quantisation benefit"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/concurrency/vanilla-blis/model-1-mandatory/t_24_c_2048_p_4_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_medium_ml_vs_dl",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: gives or signals examples"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/concurrency/vanilla-blis/model-1-mandatory/t_24_c_2048_p_4_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_short_capital_france",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/concurrency/vanilla-blis/model-1-mandatory/t_24_c_2048_p_8_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_long_transformer_cpu",
+    "runs": 3,
+    "good_or_acceptable_runs": 0,
+    "quality_fraction_mean": 0.5,
+    "labels": "weak",
+    "representative_notes": "missing: mentions quantisation; explains quantisation benefit"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/concurrency/vanilla-blis/model-1-mandatory/t_24_c_2048_p_8_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_medium_ml_vs_dl",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: gives or signals examples"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/concurrency/vanilla-blis/model-1-mandatory/t_24_c_2048_p_8_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_short_capital_france",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/concurrency/vanilla-openblas-fujitsu/model-1-mandatory/t_24_c_2048_p_16_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_long_transformer_cpu",
+    "runs": 3,
+    "good_or_acceptable_runs": 0,
+    "quality_fraction_mean": 0.5,
+    "labels": "weak",
+    "representative_notes": "missing: mentions quantisation; explains quantisation benefit"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/concurrency/vanilla-openblas-fujitsu/model-1-mandatory/t_24_c_2048_p_16_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_medium_ml_vs_dl",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: gives or signals examples"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/concurrency/vanilla-openblas-fujitsu/model-1-mandatory/t_24_c_2048_p_16_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_short_capital_france",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/concurrency/vanilla-openblas-fujitsu/model-1-mandatory/t_24_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_long_transformer_cpu",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: explains quantisation benefit"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/concurrency/vanilla-openblas-fujitsu/model-1-mandatory/t_24_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_medium_ml_vs_dl",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: gives or signals examples"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/concurrency/vanilla-openblas-fujitsu/model-1-mandatory/t_24_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_short_capital_france",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/concurrency/vanilla-openblas-fujitsu/model-1-mandatory/t_24_c_2048_p_2_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_long_transformer_cpu",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: explains quantisation benefit"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/concurrency/vanilla-openblas-fujitsu/model-1-mandatory/t_24_c_2048_p_2_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_medium_ml_vs_dl",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: gives or signals examples"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/concurrency/vanilla-openblas-fujitsu/model-1-mandatory/t_24_c_2048_p_2_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_short_capital_france",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/concurrency/vanilla-openblas-fujitsu/model-1-mandatory/t_24_c_2048_p_4_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_long_transformer_cpu",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: explains quantisation benefit"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/concurrency/vanilla-openblas-fujitsu/model-1-mandatory/t_24_c_2048_p_4_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_medium_ml_vs_dl",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: gives or signals examples"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/concurrency/vanilla-openblas-fujitsu/model-1-mandatory/t_24_c_2048_p_4_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_short_capital_france",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/concurrency/vanilla-openblas-fujitsu/model-1-mandatory/t_24_c_2048_p_8_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_long_transformer_cpu",
+    "runs": 3,
+    "good_or_acceptable_runs": 0,
+    "quality_fraction_mean": 0.5,
+    "labels": "weak",
+    "representative_notes": "missing: mentions quantisation; explains quantisation benefit"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/concurrency/vanilla-openblas-fujitsu/model-1-mandatory/t_24_c_2048_p_8_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_medium_ml_vs_dl",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: gives or signals examples"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/concurrency/vanilla-openblas-fujitsu/model-1-mandatory/t_24_c_2048_p_8_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_short_capital_france",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/context-length/vanilla-blis/model-1-mandatory/t_24_c_1024_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_long_transformer_cpu",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: explains quantisation benefit"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/context-length/vanilla-blis/model-1-mandatory/t_24_c_1024_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_medium_ml_vs_dl",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: gives or signals examples"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/context-length/vanilla-blis/model-1-mandatory/t_24_c_1024_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_short_capital_france",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/context-length/vanilla-blis/model-1-mandatory/t_24_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_long_transformer_cpu",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: explains quantisation benefit"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/context-length/vanilla-blis/model-1-mandatory/t_24_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_medium_ml_vs_dl",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: gives or signals examples"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/context-length/vanilla-blis/model-1-mandatory/t_24_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_short_capital_france",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/context-length/vanilla-blis/model-1-mandatory/t_24_c_4096_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_long_transformer_cpu",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: explains quantisation benefit"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/context-length/vanilla-blis/model-1-mandatory/t_24_c_4096_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_medium_ml_vs_dl",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: gives or signals examples"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/context-length/vanilla-blis/model-1-mandatory/t_24_c_4096_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_short_capital_france",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/context-length/vanilla-blis/model-1-mandatory/t_24_c_512_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_long_transformer_cpu",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: explains quantisation benefit"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/context-length/vanilla-blis/model-1-mandatory/t_24_c_512_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_medium_ml_vs_dl",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: gives or signals examples"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/context-length/vanilla-blis/model-1-mandatory/t_24_c_512_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_short_capital_france",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/context-length/vanilla-openblas-fujitsu/model-1-mandatory/t_24_c_1024_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_long_transformer_cpu",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: explains quantisation benefit"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/context-length/vanilla-openblas-fujitsu/model-1-mandatory/t_24_c_1024_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_medium_ml_vs_dl",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: gives or signals examples"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/context-length/vanilla-openblas-fujitsu/model-1-mandatory/t_24_c_1024_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_short_capital_france",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/context-length/vanilla-openblas-fujitsu/model-1-mandatory/t_24_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_long_transformer_cpu",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: explains quantisation benefit"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/context-length/vanilla-openblas-fujitsu/model-1-mandatory/t_24_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_medium_ml_vs_dl",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: gives or signals examples"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/context-length/vanilla-openblas-fujitsu/model-1-mandatory/t_24_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_short_capital_france",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/context-length/vanilla-openblas-fujitsu/model-1-mandatory/t_24_c_4096_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_long_transformer_cpu",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: explains quantisation benefit"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/context-length/vanilla-openblas-fujitsu/model-1-mandatory/t_24_c_4096_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_medium_ml_vs_dl",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: gives or signals examples"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/context-length/vanilla-openblas-fujitsu/model-1-mandatory/t_24_c_4096_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_short_capital_france",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/context-length/vanilla-openblas-fujitsu/model-1-mandatory/t_24_c_512_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_long_transformer_cpu",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: explains quantisation benefit"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/context-length/vanilla-openblas-fujitsu/model-1-mandatory/t_24_c_512_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_medium_ml_vs_dl",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: gives or signals examples"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/context-length/vanilla-openblas-fujitsu/model-1-mandatory/t_24_c_512_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_short_capital_france",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/decode-length/vanilla-blis/model-1-mandatory/t_24_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_long_transformer_cpu",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: explains quantisation benefit"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/decode-length/vanilla-blis/model-1-mandatory/t_24_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_medium_ml_vs_dl",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: gives or signals examples"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/decode-length/vanilla-blis/model-1-mandatory/t_24_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_short_capital_france",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/decode-length/vanilla-blis/model-1-mandatory/t_24_c_2048_p_1_n_256_k_f16_v_f16",
+    "prompt_id": "mandatory_long_transformer_cpu",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/decode-length/vanilla-blis/model-1-mandatory/t_24_c_2048_p_1_n_256_k_f16_v_f16",
+    "prompt_id": "mandatory_medium_ml_vs_dl",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/decode-length/vanilla-blis/model-1-mandatory/t_24_c_2048_p_1_n_256_k_f16_v_f16",
+    "prompt_id": "mandatory_short_capital_france",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/decode-length/vanilla-blis/model-1-mandatory/t_24_c_2048_p_1_n_512_k_f16_v_f16",
+    "prompt_id": "mandatory_long_transformer_cpu",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/decode-length/vanilla-blis/model-1-mandatory/t_24_c_2048_p_1_n_512_k_f16_v_f16",
+    "prompt_id": "mandatory_medium_ml_vs_dl",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/decode-length/vanilla-blis/model-1-mandatory/t_24_c_2048_p_1_n_512_k_f16_v_f16",
+    "prompt_id": "mandatory_short_capital_france",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/decode-length/vanilla-blis/model-1-mandatory/t_24_c_2048_p_1_n_64_k_f16_v_f16",
+    "prompt_id": "mandatory_long_transformer_cpu",
+    "runs": 3,
+    "good_or_acceptable_runs": 0,
+    "quality_fraction_mean": 0.5,
+    "labels": "weak",
+    "representative_notes": "missing: mentions quantisation; explains quantisation benefit"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/decode-length/vanilla-blis/model-1-mandatory/t_24_c_2048_p_1_n_64_k_f16_v_f16",
+    "prompt_id": "mandatory_medium_ml_vs_dl",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: gives or signals examples"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/decode-length/vanilla-blis/model-1-mandatory/t_24_c_2048_p_1_n_64_k_f16_v_f16",
+    "prompt_id": "mandatory_short_capital_france",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/decode-length/vanilla-openblas-fujitsu/model-1-mandatory/t_24_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_long_transformer_cpu",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: explains quantisation benefit"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/decode-length/vanilla-openblas-fujitsu/model-1-mandatory/t_24_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_medium_ml_vs_dl",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: gives or signals examples"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/decode-length/vanilla-openblas-fujitsu/model-1-mandatory/t_24_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_short_capital_france",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/decode-length/vanilla-openblas-fujitsu/model-1-mandatory/t_24_c_2048_p_1_n_256_k_f16_v_f16",
+    "prompt_id": "mandatory_long_transformer_cpu",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/decode-length/vanilla-openblas-fujitsu/model-1-mandatory/t_24_c_2048_p_1_n_256_k_f16_v_f16",
+    "prompt_id": "mandatory_medium_ml_vs_dl",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/decode-length/vanilla-openblas-fujitsu/model-1-mandatory/t_24_c_2048_p_1_n_256_k_f16_v_f16",
+    "prompt_id": "mandatory_short_capital_france",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/decode-length/vanilla-openblas-fujitsu/model-1-mandatory/t_24_c_2048_p_1_n_512_k_f16_v_f16",
+    "prompt_id": "mandatory_long_transformer_cpu",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/decode-length/vanilla-openblas-fujitsu/model-1-mandatory/t_24_c_2048_p_1_n_512_k_f16_v_f16",
+    "prompt_id": "mandatory_medium_ml_vs_dl",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/decode-length/vanilla-openblas-fujitsu/model-1-mandatory/t_24_c_2048_p_1_n_512_k_f16_v_f16",
+    "prompt_id": "mandatory_short_capital_france",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/decode-length/vanilla-openblas-fujitsu/model-1-mandatory/t_24_c_2048_p_1_n_64_k_f16_v_f16",
+    "prompt_id": "mandatory_long_transformer_cpu",
+    "runs": 3,
+    "good_or_acceptable_runs": 0,
+    "quality_fraction_mean": 0.5,
+    "labels": "weak",
+    "representative_notes": "missing: mentions quantisation; explains quantisation benefit"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/decode-length/vanilla-openblas-fujitsu/model-1-mandatory/t_24_c_2048_p_1_n_64_k_f16_v_f16",
+    "prompt_id": "mandatory_medium_ml_vs_dl",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: gives or signals examples"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/decode-length/vanilla-openblas-fujitsu/model-1-mandatory/t_24_c_2048_p_1_n_64_k_f16_v_f16",
+    "prompt_id": "mandatory_short_capital_france",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/model-set/vanilla-blis/model-1-mandatory/t_24_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_long_transformer_cpu",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: explains quantisation benefit"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/model-set/vanilla-blis/model-1-mandatory/t_24_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_medium_ml_vs_dl",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: gives or signals examples"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/model-set/vanilla-blis/model-1-mandatory/t_24_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_short_capital_france",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/model-set/vanilla-blis/model-2/t_24_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_long_transformer_cpu",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: explains quantisation benefit"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/model-set/vanilla-blis/model-2/t_24_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_medium_ml_vs_dl",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/model-set/vanilla-blis/model-2/t_24_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_short_capital_france",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/model-set/vanilla-blis/model-3/t_24_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_long_transformer_cpu",
+    "runs": 3,
+    "good_or_acceptable_runs": 0,
+    "quality_fraction_mean": 0.0,
+    "labels": "missing",
+    "representative_notes": "empty generated output"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/model-set/vanilla-blis/model-3/t_24_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_medium_ml_vs_dl",
+    "runs": 3,
+    "good_or_acceptable_runs": 0,
+    "quality_fraction_mean": 0.25,
+    "labels": "weak",
+    "representative_notes": "missing: mentions machine learning; mentions deep learning; gives or signals examples"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/model-set/vanilla-blis/model-3/t_24_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_short_capital_france",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/model-set/vanilla-openblas-fujitsu/model-1-mandatory/t_24_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_long_transformer_cpu",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: explains quantisation benefit"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/model-set/vanilla-openblas-fujitsu/model-1-mandatory/t_24_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_medium_ml_vs_dl",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: gives or signals examples"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/model-set/vanilla-openblas-fujitsu/model-1-mandatory/t_24_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_short_capital_france",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/model-set/vanilla-openblas-fujitsu/model-2/t_24_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_long_transformer_cpu",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: explains quantisation benefit"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/model-set/vanilla-openblas-fujitsu/model-2/t_24_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_medium_ml_vs_dl",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/model-set/vanilla-openblas-fujitsu/model-2/t_24_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_short_capital_france",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/model-set/vanilla-openblas-fujitsu/model-3/t_24_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_long_transformer_cpu",
+    "runs": 3,
+    "good_or_acceptable_runs": 0,
+    "quality_fraction_mean": 0.0,
+    "labels": "missing",
+    "representative_notes": "empty generated output"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/model-set/vanilla-openblas-fujitsu/model-3/t_24_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_medium_ml_vs_dl",
+    "runs": 3,
+    "good_or_acceptable_runs": 0,
+    "quality_fraction_mean": 0.25,
+    "labels": "weak",
+    "representative_notes": "missing: mentions machine learning; mentions deep learning; gives or signals examples"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/model-set/vanilla-openblas-fujitsu/model-3/t_24_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_short_capital_france",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/thread-scaling/vanilla-blis/model-1-mandatory/t_12_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_long_transformer_cpu",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: explains quantisation benefit"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/thread-scaling/vanilla-blis/model-1-mandatory/t_12_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_medium_ml_vs_dl",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: gives or signals examples"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/thread-scaling/vanilla-blis/model-1-mandatory/t_12_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_short_capital_france",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/thread-scaling/vanilla-blis/model-1-mandatory/t_24_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_long_transformer_cpu",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: explains quantisation benefit"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/thread-scaling/vanilla-blis/model-1-mandatory/t_24_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_medium_ml_vs_dl",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: gives or signals examples"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/thread-scaling/vanilla-blis/model-1-mandatory/t_24_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_short_capital_france",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/thread-scaling/vanilla-blis/model-1-mandatory/t_36_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_long_transformer_cpu",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: explains quantisation benefit"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/thread-scaling/vanilla-blis/model-1-mandatory/t_36_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_medium_ml_vs_dl",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: gives or signals examples"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/thread-scaling/vanilla-blis/model-1-mandatory/t_36_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_short_capital_france",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/thread-scaling/vanilla-blis/model-1-mandatory/t_46_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_long_transformer_cpu",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: explains quantisation benefit"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/thread-scaling/vanilla-blis/model-1-mandatory/t_46_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_medium_ml_vs_dl",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: gives or signals examples"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/thread-scaling/vanilla-blis/model-1-mandatory/t_46_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_short_capital_france",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/thread-scaling/vanilla-blis/model-1-mandatory/t_48_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_long_transformer_cpu",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: explains quantisation benefit"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/thread-scaling/vanilla-blis/model-1-mandatory/t_48_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_medium_ml_vs_dl",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: gives or signals examples"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/thread-scaling/vanilla-blis/model-1-mandatory/t_48_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_short_capital_france",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/thread-scaling/vanilla-openblas-fujitsu/model-1-mandatory/t_12_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_long_transformer_cpu",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: explains quantisation benefit"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/thread-scaling/vanilla-openblas-fujitsu/model-1-mandatory/t_12_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_medium_ml_vs_dl",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: gives or signals examples"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/thread-scaling/vanilla-openblas-fujitsu/model-1-mandatory/t_12_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_short_capital_france",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/thread-scaling/vanilla-openblas-fujitsu/model-1-mandatory/t_24_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_long_transformer_cpu",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: explains quantisation benefit"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/thread-scaling/vanilla-openblas-fujitsu/model-1-mandatory/t_24_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_medium_ml_vs_dl",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: gives or signals examples"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/thread-scaling/vanilla-openblas-fujitsu/model-1-mandatory/t_24_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_short_capital_france",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/thread-scaling/vanilla-openblas-fujitsu/model-1-mandatory/t_36_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_long_transformer_cpu",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: explains quantisation benefit"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/thread-scaling/vanilla-openblas-fujitsu/model-1-mandatory/t_36_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_medium_ml_vs_dl",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: gives or signals examples"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/thread-scaling/vanilla-openblas-fujitsu/model-1-mandatory/t_36_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_short_capital_france",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/thread-scaling/vanilla-openblas-fujitsu/model-1-mandatory/t_46_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_long_transformer_cpu",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: explains quantisation benefit"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/thread-scaling/vanilla-openblas-fujitsu/model-1-mandatory/t_46_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_medium_ml_vs_dl",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: gives or signals examples"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/thread-scaling/vanilla-openblas-fujitsu/model-1-mandatory/t_46_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_short_capital_france",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/thread-scaling/vanilla-openblas-fujitsu/model-1-mandatory/t_48_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_long_transformer_cpu",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: explains quantisation benefit"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/thread-scaling/vanilla-openblas-fujitsu/model-1-mandatory/t_48_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_medium_ml_vs_dl",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 0.75,
+    "labels": "acceptable",
+    "representative_notes": "missing: gives or signals examples"
+  },
+  {
+    "run_dir": "measurements/1254637-track-a1-vanilla-blas-sweep/thread-scaling/vanilla-openblas-fujitsu/model-1-mandatory/t_48_c_2048_p_1_n_128_k_f16_v_f16",
+    "prompt_id": "mandatory_short_capital_france",
+    "runs": 3,
+    "good_or_acceptable_runs": 3,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  }
+]
