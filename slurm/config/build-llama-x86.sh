@@ -6,10 +6,8 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=128
 #SBATCH --time=04:00:00
-#SBATCH --output=%x_%j.out
-#SBATCH --error=%x_%j.err
-#SBATCH --Exclusive
-#SBATCH --mail-type=END,FAIL
+#SBATCH --output=slurm_output/%x_%j.out
+#SBATCH --error=slurm_output/%x_%j.err
 
 set -euo pipefail
 
