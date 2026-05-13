@@ -1,0 +1,23 @@
+	Command being timed: "python3 /projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/scripts/benchmark_openai_stream.py --url http://127.0.0.1:18080/v1/chat/completions --model local-model --prompts /projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/prompts/track_a_prompts.json --out /projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/measurements/1256104-track-a1-server-sweep/context-length/vanilla/model-1-mandatory/t_24_c_2048_p_1_n_128_k_f16_v_f16/requests.jsonl --summary-out /projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/measurements/1256104-track-a1-server-sweep/context-length/vanilla/model-1-mandatory/t_24_c_2048_p_1_n_128_k_f16_v_f16/summary.json --trials 3 --warmup-trials 1 --max-tokens 128 --concurrency 1 --timeout 900 --limit-per-category 3"
+	User time (seconds): 1.62
+	System time (seconds): 0.10
+	Percent of CPU this job got: 0%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 10:50.17
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 25728
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 12
+	Minor (reclaiming a frame) page faults: 512
+	Voluntary context switches: 4602
+	Involuntary context switches: 43
+	Swaps: 0
+	File system inputs: 7352
+	File system outputs: 3456
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 65536
+	Exit status: 0

@@ -1,0 +1,110 @@
+[
+  {
+    "category": "long",
+    "prompt_id": "long_hpc_case_study",
+    "runs": 3,
+    "successful_runs": 3,
+    "ttft_s_mean": 0.1897087093287458,
+    "ttft_s_stdev": 0.0015106905722848773,
+    "tpot_s_mean": 0.17142548656174816,
+    "tpot_s_stdev": 0.0009744532008629993,
+    "throughput_output_tok_s_mean": 5.828590928571603,
+    "throughput_output_tok_s_stdev": 0.03305754990047014
+  },
+  {
+    "category": "long",
+    "prompt_id": "long_memory_bound_reasoning",
+    "runs": 3,
+    "successful_runs": 3,
+    "ttft_s_mean": 0.1843504366503718,
+    "ttft_s_stdev": 0.0023208081444897437,
+    "tpot_s_mean": 0.16526595429407942,
+    "tpot_s_stdev": 0.0009340737472766523,
+    "throughput_output_tok_s_mean": 6.0454038517768165,
+    "throughput_output_tok_s_stdev": 0.03451237122006161
+  },
+  {
+    "category": "long",
+    "prompt_id": "mandatory_long_transformer_cpu",
+    "runs": 3,
+    "successful_runs": 3,
+    "ttft_s_mean": 0.16803067767371735,
+    "ttft_s_stdev": 0.00044500011927128716,
+    "tpot_s_mean": 0.15328826170596185,
+    "tpot_s_stdev": 0.00038489611839211254,
+    "throughput_output_tok_s_mean": 6.518639436418305,
+    "throughput_output_tok_s_stdev": 0.016219250525519292
+  },
+  {
+    "category": "medium",
+    "prompt_id": "mandatory_medium_ml_vs_dl",
+    "runs": 3,
+    "successful_runs": 3,
+    "ttft_s_mean": 0.15226981167991957,
+    "ttft_s_stdev": 0.00026198147055352323,
+    "tpot_s_mean": 0.13771284477671564,
+    "tpot_s_stdev": 0.00029654807003560914,
+    "throughput_output_tok_s_mean": 7.255339497654411,
+    "throughput_output_tok_s_stdev": 0.015599766581005344
+  },
+  {
+    "category": "medium",
+    "prompt_id": "medium_cpu_inference_pipeline",
+    "runs": 3,
+    "successful_runs": 3,
+    "ttft_s_mean": 0.1591720889749316,
+    "ttft_s_stdev": 0.0004159189109480317,
+    "tpot_s_mean": 0.14498853385314012,
+    "tpot_s_stdev": 0.0002710372590152912,
+    "throughput_output_tok_s_mean": 6.891688177295074,
+    "throughput_output_tok_s_stdev": 0.012937643674344784
+  },
+  {
+    "category": "medium",
+    "prompt_id": "medium_quant_tradeoff",
+    "runs": 3,
+    "successful_runs": 3,
+    "ttft_s_mean": 0.1578752703110998,
+    "ttft_s_stdev": 0.0005326067923919368,
+    "tpot_s_mean": 0.14336300769828755,
+    "tpot_s_stdev": 0.00024257002650080364,
+    "throughput_output_tok_s_mean": 6.969625435838027,
+    "throughput_output_tok_s_stdev": 0.011909978215332908
+  },
+  {
+    "category": "short",
+    "prompt_id": "mandatory_short_capital_france",
+    "runs": 3,
+    "successful_runs": 3,
+    "ttft_s_mean": 1.2365374496827524,
+    "ttft_s_stdev": 0.00048637948746635726,
+    "tpot_s_mean": 0.1296566469439616,
+    "tpot_s_stdev": 0.00018010943442612059,
+    "throughput_output_tok_s_mean": 3.263902442692312,
+    "throughput_output_tok_s_stdev": 0.002579885561148533
+  },
+  {
+    "category": "short",
+    "prompt_id": "short_cpu_quantisation",
+    "runs": 3,
+    "successful_runs": 3,
+    "ttft_s_mean": 3.5909336673406265,
+    "ttft_s_stdev": 0.0017899889865713552,
+    "tpot_s_mean": 0.1392712679343589,
+    "tpot_s_stdev": 0.0001839564777458692,
+    "throughput_output_tok_s_mean": 6.0153693258556205,
+    "throughput_output_tok_s_stdev": 0.006418249357746044
+  },
+  {
+    "category": "short",
+    "prompt_id": "short_threading_definition",
+    "runs": 3,
+    "successful_runs": 3,
+    "ttft_s_mean": 0.1516121086315252,
+    "ttft_s_stdev": 0.0006774910957395759,
+    "tpot_s_mean": 0.13820851171402057,
+    "tpot_s_stdev": 0.0002915359088420056,
+    "throughput_output_tok_s_mean": 7.22980991514516,
+    "throughput_output_tok_s_stdev": 0.015399922239464119
+  }
+]
