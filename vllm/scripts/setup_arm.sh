@@ -13,8 +13,9 @@ set -euo pipefail
 
 source /share/env/module_select.sh
 module purge
-module load Python/3.12.3-GCCcore-13.3.0
-module load numactl/2.0.18-GCCcore-13.3.0 
+module load Python/3.13.1-GCCcore-14.2.0
+module load numactl/2.0.19-GCCcore-14.2.0 
+module load gperftools/2.16-GCCcore-14.2.0
 
 INSTALL=/projects/F202500010HPCVLABUMINHO/uminhocp030/heretic-deucalion
 VLLM_SRC="$INSTALL/vllm/vllm"
@@ -25,7 +26,7 @@ rm -rf "$VENV"
 python -m venv "$VENV"
 source "$VENV/bin/activate"
 
-export MAX_JOBS=8
+export MAX_JOBS=12
 export CPATH=$EBROOTNUMACTL/include:$CPATH
 export LIBRARY_PATH=$EBROOTNUMACTL/lib:$LIBRARY_PATH
 export PATH=/eb/aarch64/software/binutils/2.42-GCCcore-13.3.0/bin:$PATH

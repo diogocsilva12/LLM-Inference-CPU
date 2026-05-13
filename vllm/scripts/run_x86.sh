@@ -13,7 +13,8 @@ set -euo pipefail
 
 source /share/env/module_select.sh
 module purge
-module load Python/3.12.3-GCCcore-13.3.0
+module load Python/3.13.1-GCCcore-14.2.0 
+#module load Python/3.12.3-GCCcore-13.3.0
 
 
 INSTALL=/projects/F202500010HPCVLABUMINHO/uminhocp030/heretic-deucalion
