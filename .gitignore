@@ -5,3 +5,13 @@ slurm/*
 .venv*/
 TinyLlama-MLC/*
 
+.venv-vllm/
+.venv-x86/
+.venv-x86-mcl/
+*.egg-info/
+__pycache__/
+*.pyc
+.deps/
+build/
+_skbuild/
+dist/

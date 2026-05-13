@@ -19,7 +19,7 @@ module load Python/3.12.3-GCCcore-13.3.0
 module load gperftools/2.16-GCCcore-13.3.0 
 #module load gperftools/2.16-GCCcore-14.2.0
 
-INSTALL=/projects/F202500010HPCVLABUMINHO/uminhocp030/heretic-deucalion
+INSTALL=$(git rev-parse --show-toplevel)
 VLLM_SRC="$INSTALL/vllm/vllm"
 
 

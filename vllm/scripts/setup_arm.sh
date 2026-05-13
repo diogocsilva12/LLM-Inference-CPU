@@ -2,7 +2,7 @@
 #SBATCH --job-name=arm-venv
 #SBATCH --nodes=1
 #SBATCH --cpus-per-task=48
-#SBATCH --time=00:06:00
+#SBATCH --time=01:00:00
 #SBATCH --account=f202500010hpcvlabuminhoa
 #SBATCH --partition=dev-arm
 #SBATCH --output=slurm_logs/job_out_%j
@@ -17,7 +17,7 @@ module load Python/3.13.1-GCCcore-14.2.0
 module load numactl/2.0.19-GCCcore-14.2.0 
 module load gperftools/2.16-GCCcore-14.2.0
 
-INSTALL=/projects/F202500010HPCVLABUMINHO/uminhocp030/heretic-deucalion
+INSTALL=$(git rev-parse --show-toplevel)
 VLLM_SRC="$INSTALL/vllm/vllm"
 
 cd "$INSTALL"

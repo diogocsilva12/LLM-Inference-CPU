@@ -1,0 +1,6 @@
+[submodule "mclllm/mlc-llm"]
+	path = mclllm/mlc-llm
+	url = https://github.com/mlc-ai/mlc-llm.git
+[submodule "vllm/vllm"]
+	path = vllm/vllm
+	url = https://github.com/vllm-project/vllm.git
