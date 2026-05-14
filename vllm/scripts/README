@@ -1,0 +1,18 @@
+# vLLM CPU Inference Deployment
+
+This directory contains the necessary scripts to install, configure, and benchmark **vLLM** for CPU-based LLM inference on the Deucalion HPC cluster (x86 EPYC partition).
+
+##  Quick Start Guide
+
+Unlike MLC-LLM, vLLM does not require deep Just-In-Time (JIT) compilation for the CPU architecture, making the setup process much faster. 
+
+### 1. Environment Setup
+Create the Python virtual environment and install the vLLM engine along with its dependencies.
+```bash
+sbatch setup_x86.sh
+```
+
+### 2. Run the Inference Benchmark
+```bash
+sbatch run_x86.sh
+```

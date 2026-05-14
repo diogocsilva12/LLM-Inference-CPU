@@ -1,8 +1,24 @@
-Use the script cargo_install.sh first
+# MLC-LLM CPU Inference Deployment
 
-setup the envirement with setup_x86.sh 
+This directory contains the necessary scripts to compile, configure, and run **MLC-LLM** (powered by Apache TVM) for CPU-based LLM inference on the Deucalion HPC cluster.
 
+##  Quick Start Guide
 
-run the model with 
+Please follow these steps in order. Since MLC-LLM compiles a C++ engine tailored to the node's specific microarchitecture, the setup process is split into distinct stages.
 
+### 1. Install Rust Dependencies
+First, install Rust and Cargo in your user environment. These are required to build the Hugging Face transfer libraries and TVM dependencies.
+```bash
+sbatch cargo_install.sh
+```
+### 2. Install Rust Dependencies
+Next, create the Python virtual environment and compile the Apache TVM backend.
+```bash
+sbatch setup_x86.sh
+```
 
+### 3. Run the Inference Benchmark
+Once the setup is complete, run for test with the command
+```bash
+sbatch run.sh
+```
