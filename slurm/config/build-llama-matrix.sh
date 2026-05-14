@@ -119,6 +119,18 @@ for module_name in "${EXTRA_MODULES[@]}"; do
   fi
 done
 
+echo "[INFO] Compiler: $(command -v "${CXX:-g++}")"
+"${CXX:-g++}" --version | head -n 1 || true
+echo "[INFO] Assembler: $(command -v as)"
+as --version | head -n 1 || true
+if ! printf 'static const char s[] = "\\177ELF\\002\\001\\001\\003"; int main() { return s[0]; }\n' | "${CXX:-g++}" -x c++ -c -o /tmp/aded-as-check-$$.o - >/tmp/aded-as-check-$$.log 2>&1; then
+  echo "Compiler/assembler sanity check failed before configuring llama.cpp." >&2
+  cat /tmp/aded-as-check-$$.log >&2 || true
+  rm -f /tmp/aded-as-check-$$.o /tmp/aded-as-check-$$.log
+  exit 1
+fi
+rm -f /tmp/aded-as-check-$$.o /tmp/aded-as-check-$$.log
+
 SUBMIT_DIR="${SLURM_SUBMIT_DIR:-$PWD}"
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 
@@ -182,6 +194,7 @@ case "$TARGET" in
 esac
 
 BUILD_DIR="${BUILD_DIR:-$REPO_DIR/$BUILD_SUBDIR}"
+read -r -a EXTRA_CMAKE_ARGS <<< "${CMAKE_EXTRA_ARGS:-}"
 
 if [[ "$ENABLE_CUDA" == "1" && -f "$BUILD_DIR/CMakeCache.txt" ]]; then
   CACHED_CUDA_ARCHS="$(grep '^CMAKE_CUDA_ARCHITECTURES:STRING=' "$BUILD_DIR/CMakeCache.txt" | cut -d= -f2- || true)"
@@ -196,6 +209,12 @@ CMAKE_ARGS=(
   -B "$BUILD_DIR"
   -DCMAKE_BUILD_TYPE="$BUILD_TYPE"
 )
+if [[ -n "${CMAKE_C_FLAGS_RELEASE:-}" ]]; then
+  CMAKE_ARGS+=(-DCMAKE_C_FLAGS_RELEASE="$CMAKE_C_FLAGS_RELEASE")
+fi
+if [[ -n "${CMAKE_CXX_FLAGS_RELEASE:-}" ]]; then
+  CMAKE_ARGS+=(-DCMAKE_CXX_FLAGS_RELEASE="$CMAKE_CXX_FLAGS_RELEASE")
+fi
 if [[ "$ENABLE_CUDA" == "1" ]]; then
   CMAKE_ARGS+=(
     -DGGML_CUDA=ON
@@ -208,6 +227,7 @@ if command -v ccache >/dev/null 2>&1; then
     -DCMAKE_CXX_COMPILER_LAUNCHER=ccache
   )
 fi
+CMAKE_ARGS+=("${EXTRA_CMAKE_ARGS[@]}")
 
 cd "$REPO_DIR"
 

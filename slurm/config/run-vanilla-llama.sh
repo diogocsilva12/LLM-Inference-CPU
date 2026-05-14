@@ -5,8 +5,8 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=24
-#SBATCH --output=slurm_output/%x_%j.out
-#SBATCH --error=slurm_output/%x_%j.err
+#SBATCH --output=%x-%j.out
+#SBATCH --error=%x-%j.err
 #SBATCH --exclusive
 #SBATCH --acctg-freq=energy=10
 

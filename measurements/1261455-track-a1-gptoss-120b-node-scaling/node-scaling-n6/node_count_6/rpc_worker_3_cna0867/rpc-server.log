@@ -1,0 +1,146 @@
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+WARNING: Host ('0.0.0.0') is != '127.0.0.1'
+         Never expose the RPC server to an open network!
+         This is an experimental feature and is not secure!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Starting RPC server v4.0.0
+  endpoint       : 0.0.0.0:50055
+  local cache    : /home/uminhocp006/.cache/llama.cpp/rpc/
+Devices:
+  CPU: CPU (32140 MiB, 32140 MiB free)
+  transport      : TCP (RDMA auto-negotiate enabled)
+Accepted client connection
+Client connection closed
+Accepted client connection
+Client connection closed
+Accepted client connection
+Client connection closed
+Accepted client connection
+Client connection closed
+Accepted client connection
+Client connection closed
+Accepted client connection
+Client connection closed
+Accepted client connection
+Client connection closed
+Accepted client connection
+Client connection closed
+Accepted client connection
+Client connection closed
+Accepted client connection
+Client connection closed
+Accepted client connection
+Client connection closed
+Accepted client connection
+Client connection closed
+Accepted client connection
+Client connection closed
+Accepted client connection
+Client connection closed
+Accepted client connection
+Client connection closed
+Accepted client connection
+Client connection closed
+Accepted client connection
+Client connection closed
+Accepted client connection
+Client connection closed
+Accepted client connection
+Client connection closed
+Accepted client connection
+Client connection closed
+Accepted client connection
+Client connection closed
+Accepted client connection
+Client connection closed
+Accepted client connection
+Client connection closed
+Accepted client connection
+Client connection closed
+Accepted client connection
+Client connection closed
+Accepted client connection
+Client connection closed
+Accepted client connection
+Client connection closed
+Accepted client connection
+Client connection closed
+Accepted client connection
+Client connection closed
+Accepted client connection
+Client connection closed
+Accepted client connection
+Client connection closed
+Accepted client connection
+Client connection closed
+Accepted client connection
+Client connection closed
+Accepted client connection
+Client connection closed
+Accepted client connection
+Client connection closed
+Accepted client connection
+Client connection closed
+Accepted client connection
+Client connection closed
+Accepted client connection
+Client connection closed
+Accepted client connection
+Client connection closed
+Accepted client connection
+Client connection closed
+Accepted client connection
+Client connection closed
+Accepted client connection
+Client connection closed
+Accepted client connection
+Client connection closed
+Accepted client connection
+Client connection closed
+Accepted client connection
+Client connection closed
+Accepted client connection
+Client connection closed
+Accepted client connection
+Client connection closed
+Accepted client connection
+Client connection closed
+Accepted client connection
+Client connection closed
+Accepted client connection
+Client connection closed
+Accepted client connection
+Client connection closed
+Accepted client connection
+Client connection closed
+Accepted client connection
+Client connection closed
+Accepted client connection
+Client connection closed
+Accepted client connection
+[set_tensor] saved to '/home/uminhocp006/.cache/llama.cpp/rpc/8567ebc1f6463b0e'
+[set_tensor] saved to '/home/uminhocp006/.cache/llama.cpp/rpc/ac45b6b7ee413dd9'
+[set_tensor] saved to '/home/uminhocp006/.cache/llama.cpp/rpc/81eae447f50d56a6'
+[set_tensor] saved to '/home/uminhocp006/.cache/llama.cpp/rpc/23eaa20cc5233627'
+[set_tensor] saved to '/home/uminhocp006/.cache/llama.cpp/rpc/ad8ebb2b30acaf23'
+[set_tensor] saved to '/home/uminhocp006/.cache/llama.cpp/rpc/92c505e40d763cc6'
+[set_tensor] saved to '/home/uminhocp006/.cache/llama.cpp/rpc/bd67128178b22698'
+[set_tensor] saved to '/home/uminhocp006/.cache/llama.cpp/rpc/4bae7107d53cae0a'
+[set_tensor] saved to '/home/uminhocp006/.cache/llama.cpp/rpc/0235b4ed0eba595a'
+[set_tensor] saved to '/home/uminhocp006/.cache/llama.cpp/rpc/1341047c7c4d5f16'
+[set_tensor] saved to '/home/uminhocp006/.cache/llama.cpp/rpc/01cec3342bfef02e'
+[set_tensor] saved to '/home/uminhocp006/.cache/llama.cpp/rpc/cd35384609e3abce'
+[set_tensor] saved to '/home/uminhocp006/.cache/llama.cpp/rpc/2afd470032e9763b'
+[set_tensor] saved to '/home/uminhocp006/.cache/llama.cpp/rpc/7d3953e38282c658'
+[set_tensor] saved to '/home/uminhocp006/.cache/llama.cpp/rpc/03c6acc2cdad752a'
+[set_tensor] saved to '/home/uminhocp006/.cache/llama.cpp/rpc/3089051d7d52d4dc'
+[set_tensor] saved to '/home/uminhocp006/.cache/llama.cpp/rpc/1c5e3f772eff53dc'
+[set_tensor] saved to '/home/uminhocp006/.cache/llama.cpp/rpc/8cac708b53d80c88'
+[set_tensor] saved to '/home/uminhocp006/.cache/llama.cpp/rpc/e1ab5d9b5fe6999e'
+[set_tensor] saved to '/home/uminhocp006/.cache/llama.cpp/rpc/95eaf145e8f52fda'
+[set_tensor] saved to '/home/uminhocp006/.cache/llama.cpp/rpc/55f9f36f864081e1'
+[set_tensor] saved to '/home/uminhocp006/.cache/llama.cpp/rpc/1b1dd3e7e95a9604'
+[set_tensor] saved to '/home/uminhocp006/.cache/llama.cpp/rpc/b1e7aeae68065652'
+[set_tensor] saved to '/home/uminhocp006/.cache/llama.cpp/rpc/4ccb5e8727996dd0'

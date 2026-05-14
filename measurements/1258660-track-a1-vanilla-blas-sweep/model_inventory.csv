@@ -1,0 +1,5 @@
+label,path,bytes
+model-1-mandatory,llamacpp-tq/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf,4920739232
+model-2,llamacpp-tq/models/SmolLM2-360M-Instruct.Q4_K_M.gguf,270590592
+model-3,llamacpp-tq/models/gemma-4-E4B-it-OBLITERATED-Q4_K_M.gguf,5335289792
+model-4,llamacpp-tq/models/gpt-oss-20b-Q4_K_M.gguf,11624759488

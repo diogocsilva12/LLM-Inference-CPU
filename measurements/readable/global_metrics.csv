@@ -1,0 +1,2 @@
+scope,configuration_count,model_count,engine_count,prompt_count,request_count,successful_runs,ttft_s_mean,tpot_s_mean,throughput_output_tok_s_mean,total_throughput_output_tok_s_mean,goodput_sla_fraction_mean,max_vmhwm_kb
+all_measurements,160,4,6,15,2400,2372,0.8656676561091682,0.2354365765858776,6.58283417683019,15614.482667441209,0.5904166666666667,21984396.0

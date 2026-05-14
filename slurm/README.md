@@ -11,6 +11,7 @@ Build, run, and helper jobs are in `slurm/config/`:
 - `config/build-llama.sh`: build the TurboQuant llama.cpp fork on ARM CPU nodes.
 - `config/run-llama.sh`: run `llama-server` on ARM CPU nodes.
 - `config/build-llama-x86.sh`: build on x86 CPU nodes via the matrix builder.
+- `config/build-turboquant-x86.sh`: optional TurboQuant x86 build helper; not used by the default full sweep.
 - `config/run-llama-x86.sh`: run on x86 CPU nodes via the matrix runner.
 - `config/build-llama-matrix.sh`: target-aware incremental build for `arm-cpu`, `x86-cpu`, and optional `a100-cuda`.
 - `config/run-llama-matrix.sh`: target-aware server runner.
@@ -22,6 +23,7 @@ Build, run, and helper jobs are in `slurm/config/`:
 Track A1 sweep benchmark jobs are in `slurm/sweep_benchmark/`:
 
 - `sweep_benchmark/run-track-a1-server-sweep.sh`: Track A1 HTTP sweep; starts `llama-server`, records TTFT/TPOT/output/memory, and scores mandatory prompt answers.
+- `sweep_benchmark/run-track-a1-node-scaling.sh`: Track A1 RPC scalability run; launches one `llama-server` coordinator plus `rpc-server` workers at 46 cores per node.
 - `sweep_benchmark/run-track-a1-server-sweep-x86.sh`: x86 wrapper for the Track A1 HTTP sweep.
 - `sweep_benchmark/run-track-a1-vanilla-blas-sweep.sh`: compare the two vanilla BLAS builds with the same HTTP sweep.
 
@@ -37,6 +39,12 @@ x86:
 
 ```bash
 sbatch slurm/config/build-llama-x86.sh
+```
+
+Optional TurboQuant x86 build:
+
+```bash
+sbatch slurm/config/build-turboquant-x86.sh
 ```
 
 Vanilla BLAS variants:
@@ -80,7 +88,7 @@ sbatch slurm/config/run-llama.sh
 
 ## Track A1 HTTP Sweep
 
-Use this for the requested Track A1 run over TurboQuant and vanilla `llama.cpp`, three models, thread scaling, concurrency, context length, decode length, and KV-cache quantisation. By default, vanilla uses `f16:f16`, TurboQuant uses `turbo3:turbo3` and `turbo4:turbo4`, and the prompt set is the three mandatory prompts plus six additional prompts:
+Use this for the requested Track A1 run over TurboQuant and vanilla `llama.cpp`, three models, thread scaling, concurrency, context length, decode length, and KV-cache quantisation. By default, vanilla uses only `f16:f16`, TurboQuant uses `turbo2:turbo2`, `turbo3:turbo3`, and `turbo4:turbo4`, and the prompt set is five prompts per category with the three mandatory prompts always included:
 
 ```bash
 MODEL_SPECS="model-1-mandatory=llamacpp-tq/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf;model-2=llamacpp-tq/models/SmolLM2-360M-Instruct.Q4_K_M.gguf;model-3=llamacpp-tq/models/gemma-4-E4B-it-OBLITERATED-Q4_K_M.gguf" \
@@ -98,6 +106,7 @@ Outputs go to `measurements/<jobid>-track-a1-server-sweep/`:
 - `mandatory_answer_quality.csv`: answer-quality checks for the three mandatory prompts.
 - `engine_inventory.csv`: compared engine repositories and server binaries.
 - `resources.csv`: sampled server RSS and CPU percent inside each configuration directory.
+- `node_resources.csv`: sampled whole-node CPU and memory in each configuration directory, using `dstat` when available and a `/proc` fallback otherwise.
 - `server.log`: engine startup, cache type, and KV memory lines inside each configuration directory.
 - `system.txt`: node and configuration metadata inside each configuration directory.
 
@@ -106,6 +115,20 @@ For faster collection, run the same script as a SLURM array. The script can deri
 ```bash
 SUBMIT_ARRAY=1 ARRAY_CONCURRENCY=8 sbatch --export=ALL slurm/sweep_benchmark/run-track-a1-server-sweep.sh
 ```
+
+To submit the full CPU benchmark set at once after building all binaries, use:
+
+```bash
+ARRAY_CONCURRENCY=16 sbatch slurm/sweep_benchmark/submit-all-track-a1-sweeps.sh
+```
+
+The full launcher checks these binaries before submitting arrays:
+
+- `llamacpp-tq/llama-cpp-turboquant/build-slurm/bin/llama-server`
+- `llamacpp-vanilla/llama.cpp/build-slurm/bin/llama-server`
+- `llamacpp-vanilla/llama.cpp/build-slurm-x86/bin/llama-server`
+- `llamacpp-vanilla/llama.cpp/build-blas/openblas-fujitsu/bin/llama-server`
+- `llamacpp-vanilla/llama.cpp/build-blas/blis/bin/llama-server`
 
 Check the planned count first if needed:
 
@@ -133,7 +156,15 @@ For x86, use:
 SUBMIT_ARRAY=1 ARRAY_CONCURRENCY=8 sbatch --export=ALL slurm/sweep_benchmark/run-track-a1-server-sweep-x86.sh
 ```
 
-The x86 wrapper uses `ENGINE_BUILD_DIR_NAME=build-slurm-x86`, requests 128 CPUs, and sweeps `THREADS_LIST=8 16 24 32 48 64 96 128` by default.
+The x86 wrapper runs the x86 vanilla binary from `build-slurm-x86`, requests 128 CPUs, and sweeps `THREADS_LIST=8 16 24 32 48 64 96 128` by default.
+
+For distributed RPC node scalability on ARM, use:
+
+```bash
+SUBMIT_NODE_SWEEP=1 sbatch --export=ALL slurm/sweep_benchmark/run-track-a1-node-scaling.sh
+```
+
+The node-scaling wrapper submits 1, 2, 4, 6, 8, 16, 24, 32, 64, 128, and 256 node jobs by default. It chains those jobs with SLURM dependencies, so only one node-count run is active at a time and the next starts after the previous finishes. Rank 0 runs the `llama-server` coordinator with `--rpc`; ranks 1..N-1 run `rpc-server` workers. The script uses `build-slurm-rpc`, builds with `-DGGML_RPC=ON` when `AUTO_BUILD=1`, and defaults `RPC_MAX_SERVERS=255` for the 256-node case. It writes `a1_node_scaling_summary.csv` and `a1_node_scaling_scaling_summary.csv` under `measurements/<jobid>-track-a1-node-scaling/`.
 
 For the vanilla BLAS comparison, build both binaries first and then run:
 

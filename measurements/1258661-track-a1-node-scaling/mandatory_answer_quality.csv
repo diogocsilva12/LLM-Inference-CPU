@@ -1,0 +1,103 @@
+run_dir,prompt_id,category,trial,model,threads,ctx_size,max_tokens,status,error,quality_label,quality_score,quality_max_score,quality_notes,generated_text
+/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/measurements/1258661-track-a1-node-scaling/node-scaling-n1/node_count_1/rpc_coordinator_cna0842/t_46_c_8192_p_2_n_128_k_turbo3_v_turbo3,mandatory_short_capital_france,short,1,,,,128,200,,good,1,1,all rubric checks passed,The capital of France is Paris.
+/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/measurements/1258661-track-a1-node-scaling/node-scaling-n1/node_count_1/rpc_coordinator_cna0842/t_46_c_8192_p_2_n_128_k_turbo3_v_turbo3,mandatory_medium_ml_vs_dl,medium,1,,,,128,200,,good,4,4,all rubric checks passed,"**Machine Learning (ML) vs Deep Learning (DL)**
+
+Machine learning and deep learning are both subfields of artificial intelligence (AI) that deal with the development of algorithms that can learn from data and improve their performance over time. However, they differ in their approach, complexity, and application.
+
+**Machine Learning (ML)**
+
+Machine learning is a type of AI that enables computers to learn from data without being explicitly programmed. It uses statistical models and algorithms to analyze data and make predictions or decisions. ML is typically used for tasks that require a small to moderate amount of data, such as:
+
+* **Example:** A bank uses a"
+/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/measurements/1258661-track-a1-node-scaling/node-scaling-n1/node_count_1/rpc_coordinator_cna0842/t_46_c_8192_p_2_n_128_k_turbo3_v_turbo3,mandatory_long_transformer_cpu,long,1,,,,128,200,,weak,2,4,missing: mentions quantisation; explains quantisation benefit,"Based on the context provided, the main challenges when running large transformer models on CPU-only systems are:
+
+1. **Large Memory Footprint**: Transformer models are computationally intensive and require a significant amount of memory to store their weights and activations. This can be a challenge for CPU-only systems, which typically have limited memory and processing power.
+
+2. **Repeated Loading of Weights**: During the decoding phase, the model needs to load its weights repeatedly, which can lead to performance bottlenecks. This is because the weights need to be loaded into memory for each forward pass, which can be time-consuming and memory-intensive.
+
+To address these challenges"
+/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/measurements/1258661-track-a1-node-scaling/node-scaling-n16/node_count_16/rpc_coordinator_cna0924/t_46_c_8192_p_2_n_128_k_turbo3_v_turbo3,mandatory_short_capital_france,short,1,,,,128,200,,good,1,1,all rubric checks passed,The capital of France is Paris.
+/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/measurements/1258661-track-a1-node-scaling/node-scaling-n16/node_count_16/rpc_coordinator_cna0924/t_46_c_8192_p_2_n_128_k_turbo3_v_turbo3,mandatory_medium_ml_vs_dl,medium,1,,,,128,200,,good,4,4,all rubric checks passed,"**Machine Learning (ML) vs Deep Learning (DL)**
+
+Machine learning and deep learning are both subfields of artificial intelligence (AI) that deal with the development of algorithms that can learn from data and improve their performance over time. However, they differ in their approach, complexity, and application.
+
+**Machine Learning (ML)**
+
+Machine learning is a type of AI that enables computers to learn from data without being explicitly programmed. It uses statistical models and algorithms to analyze data and make predictions or decisions. ML is typically used for tasks that require a small to moderate amount of data, such as:
+
+* **Example:** A bank uses a"
+/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/measurements/1258661-track-a1-node-scaling/node-scaling-n16/node_count_16/rpc_coordinator_cna0924/t_46_c_8192_p_2_n_128_k_turbo3_v_turbo3,mandatory_long_transformer_cpu,long,1,,,,128,200,,weak,2,4,missing: mentions quantisation; explains quantisation benefit,"Based on the context provided, the main challenges when running large transformer models on CPU-only systems are:
+
+1. **Large Memory Footprint**: Transformer models are computationally intensive and require a significant amount of memory to store their weights and activations. This can be a challenge for CPU-only systems, which typically have limited memory and processing power.
+
+2. **Repeated Loading of Weights**: During the decoding phase, the model needs to load its weights repeatedly, which can lead to performance bottlenecks. This is because the weights need to be loaded into memory for each forward pass, which can be time-consuming and memory-intensive.
+
+To address these challenges"
+/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/measurements/1258661-track-a1-node-scaling/node-scaling-n2/node_count_2/rpc_coordinator_cna0855/t_46_c_8192_p_2_n_128_k_turbo3_v_turbo3,mandatory_short_capital_france,short,1,,,,128,200,,good,1,1,all rubric checks passed,The capital of France is Paris.
+/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/measurements/1258661-track-a1-node-scaling/node-scaling-n2/node_count_2/rpc_coordinator_cna0855/t_46_c_8192_p_2_n_128_k_turbo3_v_turbo3,mandatory_medium_ml_vs_dl,medium,1,,,,128,200,,good,4,4,all rubric checks passed,"**Machine Learning (ML) vs Deep Learning (DL)**
+
+Machine learning and deep learning are both subfields of artificial intelligence (AI) that deal with the development of algorithms that can learn from data and improve their performance over time. However, they differ in their approach, complexity, and application.
+
+**Machine Learning (ML)**
+
+Machine learning is a type of AI that enables computers to learn from data without being explicitly programmed. It uses statistical models and algorithms to analyze data and make predictions or decisions. ML is typically used for tasks that require a small to moderate amount of data, such as:
+
+* **Example:** A bank uses a"
+/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/measurements/1258661-track-a1-node-scaling/node-scaling-n2/node_count_2/rpc_coordinator_cna0855/t_46_c_8192_p_2_n_128_k_turbo3_v_turbo3,mandatory_long_transformer_cpu,long,1,,,,128,200,,weak,2,4,missing: mentions quantisation; explains quantisation benefit,"Based on the context provided, the main challenges when running large transformer models on CPU-only systems are:
+
+1. **Large Memory Footprint**: Transformer models are computationally intensive and require a significant amount of memory to store their weights and activations. This can be a challenge for CPU-only systems, which typically have limited memory and processing power.
+
+2. **Repeated Loading of Weights**: During the decoding phase, the model needs to load its weights repeatedly, which can lead to performance bottlenecks. This is because the weights need to be loaded into memory for each forward pass, which can be time-consuming and memory-intensive.
+
+To address these challenges"
+/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/measurements/1258661-track-a1-node-scaling/node-scaling-n4/node_count_4/rpc_coordinator_cna1581/t_46_c_8192_p_2_n_128_k_turbo3_v_turbo3,mandatory_short_capital_france,short,1,,,,128,200,,good,1,1,all rubric checks passed,The capital of France is Paris.
+/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/measurements/1258661-track-a1-node-scaling/node-scaling-n4/node_count_4/rpc_coordinator_cna1581/t_46_c_8192_p_2_n_128_k_turbo3_v_turbo3,mandatory_medium_ml_vs_dl,medium,1,,,,128,200,,good,4,4,all rubric checks passed,"**Machine Learning (ML) vs Deep Learning (DL)**
+
+Machine learning and deep learning are both subfields of artificial intelligence (AI) that deal with the development of algorithms that can learn from data and improve their performance over time. However, they differ in their approach, complexity, and application.
+
+**Machine Learning (ML)**
+
+Machine learning is a type of AI that enables computers to learn from data without being explicitly programmed. It uses statistical models and algorithms to analyze data and make predictions or decisions. ML is typically used for tasks that require a small to moderate amount of data, such as:
+
+* **Example:** A bank uses a"
+/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/measurements/1258661-track-a1-node-scaling/node-scaling-n4/node_count_4/rpc_coordinator_cna1581/t_46_c_8192_p_2_n_128_k_turbo3_v_turbo3,mandatory_long_transformer_cpu,long,1,,,,128,200,,weak,2,4,missing: mentions quantisation; explains quantisation benefit,"Based on the context provided, the main challenges when running large transformer models on CPU-only systems are:
+
+1. **Large Memory Footprint**: Transformer models are computationally intensive and require a significant amount of memory to store their weights and activations. This can be a challenge for CPU-only systems, which typically have limited memory and processing power.
+
+2. **Repeated Loading of Weights**: During the decoding phase, the model needs to load its weights repeatedly, which can lead to performance bottlenecks. This is because the weights need to be loaded into memory for each forward pass, which can be time-consuming and memory-intensive.
+
+To address these challenges"
+/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/measurements/1258661-track-a1-node-scaling/node-scaling-n6/node_count_6/rpc_coordinator_cna1581/t_46_c_8192_p_2_n_128_k_turbo3_v_turbo3,mandatory_short_capital_france,short,1,,,,128,200,,good,1,1,all rubric checks passed,The capital of France is Paris.
+/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/measurements/1258661-track-a1-node-scaling/node-scaling-n6/node_count_6/rpc_coordinator_cna1581/t_46_c_8192_p_2_n_128_k_turbo3_v_turbo3,mandatory_medium_ml_vs_dl,medium,1,,,,128,200,,good,4,4,all rubric checks passed,"**Machine Learning (ML) vs Deep Learning (DL)**
+
+Machine learning and deep learning are both subfields of artificial intelligence (AI) that deal with the development of algorithms that can learn from data and improve their performance over time. However, they differ in their approach, complexity, and application.
+
+**Machine Learning (ML)**
+
+Machine learning is a type of AI that enables computers to learn from data without being explicitly programmed. It uses statistical models and algorithms to analyze data and make predictions or decisions. ML is typically used for tasks that require a small to moderate amount of data, such as:
+
+* **Example:** A bank uses a"
+/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/measurements/1258661-track-a1-node-scaling/node-scaling-n6/node_count_6/rpc_coordinator_cna1581/t_46_c_8192_p_2_n_128_k_turbo3_v_turbo3,mandatory_long_transformer_cpu,long,1,,,,128,200,,weak,2,4,missing: mentions quantisation; explains quantisation benefit,"Based on the context provided, the main challenges when running large transformer models on CPU-only systems are:
+
+1. **Large Memory Footprint**: Transformer models are computationally intensive and require a significant amount of memory to store their weights and activations. This can be a challenge for CPU-only systems, which typically have limited memory and processing power.
+
+2. **Repeated Loading of Weights**: During the decoding phase, the model needs to load its weights repeatedly, which can lead to performance bottlenecks. This is because the weights need to be loaded into memory for each forward pass, which can be time-consuming and memory-intensive.
+
+To address these challenges"
+/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/measurements/1258661-track-a1-node-scaling/node-scaling-n8/node_count_8/rpc_coordinator_cna1610/t_46_c_8192_p_2_n_128_k_turbo3_v_turbo3,mandatory_short_capital_france,short,1,,,,128,200,,good,1,1,all rubric checks passed,The capital of France is Paris.
+/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/measurements/1258661-track-a1-node-scaling/node-scaling-n8/node_count_8/rpc_coordinator_cna1610/t_46_c_8192_p_2_n_128_k_turbo3_v_turbo3,mandatory_medium_ml_vs_dl,medium,1,,,,128,200,,good,4,4,all rubric checks passed,"**Machine Learning (ML) vs Deep Learning (DL)**
+
+Machine learning and deep learning are both subfields of artificial intelligence (AI) that deal with the development of algorithms that can learn from data and improve their performance over time. However, they differ in their approach, complexity, and application.
+
+**Machine Learning (ML)**
+
+Machine learning is a type of AI that enables computers to learn from data without being explicitly programmed. It uses statistical models and algorithms to analyze data and make predictions or decisions. ML is typically used for tasks that require a small to moderate amount of data, such as:
+
+* **Example:** A bank uses a"
+/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/measurements/1258661-track-a1-node-scaling/node-scaling-n8/node_count_8/rpc_coordinator_cna1610/t_46_c_8192_p_2_n_128_k_turbo3_v_turbo3,mandatory_long_transformer_cpu,long,1,,,,128,200,,weak,2,4,missing: mentions quantisation; explains quantisation benefit,"Based on the context provided, the main challenges when running large transformer models on CPU-only systems are:
+
+1. **Large Memory Footprint**: Transformer models are computationally intensive and require a significant amount of memory to store their weights and activations. This can be a challenge for CPU-only systems, which typically have limited memory and processing power.
+
+2. **Repeated Loading of Weights**: During the decoding phase, the model needs to load its weights repeatedly, which can lead to performance bottlenecks. This is because the weights need to be loaded into memory for each forward pass, which can be time-consuming and memory-intensive.
+
+To address these challenges"

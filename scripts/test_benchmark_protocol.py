@@ -37,6 +37,37 @@ def test_benchmark_client_supports_warmup_and_seed():
     assert args.seed == 42
 
 
+def test_limit_per_category_always_keeps_mandatory_prompts(tmp_path):
+    prompts = []
+    for category in ("short", "medium", "long"):
+        for idx in range(5):
+            prompts.append({
+                "id": f"{category}_nonmandatory_{idx}",
+                "category": category,
+                "mandatory": False,
+                "text": "non mandatory",
+            })
+        prompts.append({
+            "id": f"mandatory_{category}",
+            "category": category,
+            "mandatory": True,
+            "text": "mandatory",
+        })
+    prompt_file = tmp_path / "prompts.json"
+    prompt_file.write_text(json.dumps({"prompts": prompts}), encoding="utf-8")
+
+    _, selected = bench.load_prompts(
+        prompt_file,
+        {"short", "medium", "long"},
+        limit_per_category=5,
+        mandatory_only=False,
+    )
+    selected_ids = {prompt["id"] for prompt in selected}
+
+    assert len(selected) == 15
+    assert {"mandatory_short", "mandatory_medium", "mandatory_long"}.issubset(selected_ids)
+
+
 def test_server_track_a1_sweep_is_documented():
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
     suite = (ROOT / "slurm/sweep_benchmark/run-track-a1-server-sweep.sh").read_text(encoding="utf-8")
@@ -51,18 +82,18 @@ def test_server_track_a1_sweep_is_documented():
     assert "context-length" in suite
     assert "decode-length" in suite
     assert 'MANDATORY_ONLY="${MANDATORY_ONLY:-0}"' in suite
-    assert 'LIMIT_PER_CATEGORY="${LIMIT_PER_CATEGORY:-3}"' in suite
-    assert "three mandatory prompts plus six additional prompts" in readme
+    assert 'LIMIT_PER_CATEGORY="${LIMIT_PER_CATEGORY:-5}"' in suite
+    assert "five prompts per category" in readme
     assert "TurboQuant and vanilla" in readme
     assert "ENGINE_CACHE_SWEEPS" in suite
     assert "vanilla only `f16:f16`" in readme
     assert "TurboQuant with `turbo3:turbo3` and `turbo4:turbo4`" in readme
 
 
-def test_server_sweep_runs_nine_prompt_protocol_with_warmup():
+def test_server_sweep_runs_fifteen_prompt_protocol_with_warmup():
     text = (ROOT / "slurm/sweep_benchmark/run-track-a1-server-sweep.sh").read_text(encoding="utf-8")
     assert 'MANDATORY_ONLY="${MANDATORY_ONLY:-0}"' in text
-    assert 'LIMIT_PER_CATEGORY="${LIMIT_PER_CATEGORY:-3}"' in text
+    assert 'LIMIT_PER_CATEGORY="${LIMIT_PER_CATEGORY:-5}"' in text
     assert 'WARMUP_TRIALS="${WARMUP_TRIALS:-1}"' in text
     assert "mandatory_answer_quality.csv" in text
     assert "evaluate_mandatory_outputs.py" in text
@@ -79,12 +110,30 @@ def test_server_sweep_can_submit_derived_array_and_skip_known_bad_configs():
     assert "SUBMIT_ARRAY=1 ARRAY_CONCURRENCY=8" in readme
 
 
+def test_node_scaling_sweep_runs_fifteen_prompt_protocol():
+    text = (ROOT / "slurm/sweep_benchmark/run-track-a1-node-scaling.sh").read_text(encoding="utf-8")
+    readme = (ROOT / "README.md").read_text(encoding="utf-8")
+    assert 'NODE_COUNTS="${NODE_COUNTS:-1 2 4 6 8 16 24 32 64 128 256}"' in text
+    assert 'THREADS="${THREADS:-46}"' in text
+    assert 'LIMIT_PER_CATEGORY="${LIMIT_PER_CATEGORY:-5}"' in text
+    assert 'MANDATORY_ONLY="${MANDATORY_ONLY:-0}"' in text
+    assert "rpc_endpoints" in text
+    assert "rpc-server" in text
+    assert "--rpc" in text
+    assert "node-scaling-n" in text
+    assert "a1_node_scaling_summary.csv" in text
+    assert "a1_node_scaling_scaling_summary.csv" in text
+    assert "1, 2, 4, 6, 8, 16, 24, 32, 64, 128, and 256 nodes" in readme
+
+
 def main():
     test_prompt_file_has_ten_per_category_and_mandatory_prompts()
     test_benchmark_client_supports_warmup_and_seed()
+    test_limit_per_category_always_keeps_mandatory_prompts(Path("/tmp"))
     test_server_track_a1_sweep_is_documented()
-    test_server_sweep_runs_nine_prompt_protocol_with_warmup()
+    test_server_sweep_runs_fifteen_prompt_protocol_with_warmup()
     test_server_sweep_can_submit_derived_array_and_skip_known_bad_configs()
+    test_node_scaling_sweep_runs_fifteen_prompt_protocol()
     print("ok")
 
 

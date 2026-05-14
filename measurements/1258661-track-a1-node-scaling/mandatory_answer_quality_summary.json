@@ -1,0 +1,164 @@
+[
+  {
+    "run_dir": "/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/measurements/1258661-track-a1-node-scaling/node-scaling-n1/node_count_1/rpc_coordinator_cna0842/t_46_c_8192_p_2_n_128_k_turbo3_v_turbo3",
+    "prompt_id": "mandatory_long_transformer_cpu",
+    "runs": 1,
+    "good_or_acceptable_runs": 0,
+    "quality_fraction_mean": 0.5,
+    "labels": "weak",
+    "representative_notes": "missing: mentions quantisation; explains quantisation benefit"
+  },
+  {
+    "run_dir": "/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/measurements/1258661-track-a1-node-scaling/node-scaling-n1/node_count_1/rpc_coordinator_cna0842/t_46_c_8192_p_2_n_128_k_turbo3_v_turbo3",
+    "prompt_id": "mandatory_medium_ml_vs_dl",
+    "runs": 1,
+    "good_or_acceptable_runs": 1,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/measurements/1258661-track-a1-node-scaling/node-scaling-n1/node_count_1/rpc_coordinator_cna0842/t_46_c_8192_p_2_n_128_k_turbo3_v_turbo3",
+    "prompt_id": "mandatory_short_capital_france",
+    "runs": 1,
+    "good_or_acceptable_runs": 1,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/measurements/1258661-track-a1-node-scaling/node-scaling-n16/node_count_16/rpc_coordinator_cna0924/t_46_c_8192_p_2_n_128_k_turbo3_v_turbo3",
+    "prompt_id": "mandatory_long_transformer_cpu",
+    "runs": 1,
+    "good_or_acceptable_runs": 0,
+    "quality_fraction_mean": 0.5,
+    "labels": "weak",
+    "representative_notes": "missing: mentions quantisation; explains quantisation benefit"
+  },
+  {
+    "run_dir": "/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/measurements/1258661-track-a1-node-scaling/node-scaling-n16/node_count_16/rpc_coordinator_cna0924/t_46_c_8192_p_2_n_128_k_turbo3_v_turbo3",
+    "prompt_id": "mandatory_medium_ml_vs_dl",
+    "runs": 1,
+    "good_or_acceptable_runs": 1,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/measurements/1258661-track-a1-node-scaling/node-scaling-n16/node_count_16/rpc_coordinator_cna0924/t_46_c_8192_p_2_n_128_k_turbo3_v_turbo3",
+    "prompt_id": "mandatory_short_capital_france",
+    "runs": 1,
+    "good_or_acceptable_runs": 1,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/measurements/1258661-track-a1-node-scaling/node-scaling-n2/node_count_2/rpc_coordinator_cna0855/t_46_c_8192_p_2_n_128_k_turbo3_v_turbo3",
+    "prompt_id": "mandatory_long_transformer_cpu",
+    "runs": 1,
+    "good_or_acceptable_runs": 0,
+    "quality_fraction_mean": 0.5,
+    "labels": "weak",
+    "representative_notes": "missing: mentions quantisation; explains quantisation benefit"
+  },
+  {
+    "run_dir": "/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/measurements/1258661-track-a1-node-scaling/node-scaling-n2/node_count_2/rpc_coordinator_cna0855/t_46_c_8192_p_2_n_128_k_turbo3_v_turbo3",
+    "prompt_id": "mandatory_medium_ml_vs_dl",
+    "runs": 1,
+    "good_or_acceptable_runs": 1,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/measurements/1258661-track-a1-node-scaling/node-scaling-n2/node_count_2/rpc_coordinator_cna0855/t_46_c_8192_p_2_n_128_k_turbo3_v_turbo3",
+    "prompt_id": "mandatory_short_capital_france",
+    "runs": 1,
+    "good_or_acceptable_runs": 1,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/measurements/1258661-track-a1-node-scaling/node-scaling-n4/node_count_4/rpc_coordinator_cna1581/t_46_c_8192_p_2_n_128_k_turbo3_v_turbo3",
+    "prompt_id": "mandatory_long_transformer_cpu",
+    "runs": 1,
+    "good_or_acceptable_runs": 0,
+    "quality_fraction_mean": 0.5,
+    "labels": "weak",
+    "representative_notes": "missing: mentions quantisation; explains quantisation benefit"
+  },
+  {
+    "run_dir": "/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/measurements/1258661-track-a1-node-scaling/node-scaling-n4/node_count_4/rpc_coordinator_cna1581/t_46_c_8192_p_2_n_128_k_turbo3_v_turbo3",
+    "prompt_id": "mandatory_medium_ml_vs_dl",
+    "runs": 1,
+    "good_or_acceptable_runs": 1,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/measurements/1258661-track-a1-node-scaling/node-scaling-n4/node_count_4/rpc_coordinator_cna1581/t_46_c_8192_p_2_n_128_k_turbo3_v_turbo3",
+    "prompt_id": "mandatory_short_capital_france",
+    "runs": 1,
+    "good_or_acceptable_runs": 1,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/measurements/1258661-track-a1-node-scaling/node-scaling-n6/node_count_6/rpc_coordinator_cna1581/t_46_c_8192_p_2_n_128_k_turbo3_v_turbo3",
+    "prompt_id": "mandatory_long_transformer_cpu",
+    "runs": 1,
+    "good_or_acceptable_runs": 0,
+    "quality_fraction_mean": 0.5,
+    "labels": "weak",
+    "representative_notes": "missing: mentions quantisation; explains quantisation benefit"
+  },
+  {
+    "run_dir": "/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/measurements/1258661-track-a1-node-scaling/node-scaling-n6/node_count_6/rpc_coordinator_cna1581/t_46_c_8192_p_2_n_128_k_turbo3_v_turbo3",
+    "prompt_id": "mandatory_medium_ml_vs_dl",
+    "runs": 1,
+    "good_or_acceptable_runs": 1,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/measurements/1258661-track-a1-node-scaling/node-scaling-n6/node_count_6/rpc_coordinator_cna1581/t_46_c_8192_p_2_n_128_k_turbo3_v_turbo3",
+    "prompt_id": "mandatory_short_capital_france",
+    "runs": 1,
+    "good_or_acceptable_runs": 1,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/measurements/1258661-track-a1-node-scaling/node-scaling-n8/node_count_8/rpc_coordinator_cna1610/t_46_c_8192_p_2_n_128_k_turbo3_v_turbo3",
+    "prompt_id": "mandatory_long_transformer_cpu",
+    "runs": 1,
+    "good_or_acceptable_runs": 0,
+    "quality_fraction_mean": 0.5,
+    "labels": "weak",
+    "representative_notes": "missing: mentions quantisation; explains quantisation benefit"
+  },
+  {
+    "run_dir": "/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/measurements/1258661-track-a1-node-scaling/node-scaling-n8/node_count_8/rpc_coordinator_cna1610/t_46_c_8192_p_2_n_128_k_turbo3_v_turbo3",
+    "prompt_id": "mandatory_medium_ml_vs_dl",
+    "runs": 1,
+    "good_or_acceptable_runs": 1,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  },
+  {
+    "run_dir": "/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/measurements/1258661-track-a1-node-scaling/node-scaling-n8/node_count_8/rpc_coordinator_cna1610/t_46_c_8192_p_2_n_128_k_turbo3_v_turbo3",
+    "prompt_id": "mandatory_short_capital_france",
+    "runs": 1,
+    "good_or_acceptable_runs": 1,
+    "quality_fraction_mean": 1.0,
+    "labels": "good",
+    "representative_notes": "all rubric checks passed"
+  }
+]

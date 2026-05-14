@@ -1,0 +1,110 @@
+[
+  {
+    "run_dir": "/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/measurements/1261455-track-a1-gptoss-120b-node-scaling/node-scaling-n12/node_count_12/rpc_coordinator_cna0870/t_46_c_2048_p_1_n_64_k_f16_v_f16",
+    "prompt_id": "mandatory_long_transformer_cpu",
+    "runs": 1,
+    "good_or_acceptable_runs": 0,
+    "quality_fraction_mean": 0.0,
+    "labels": "missing",
+    "representative_notes": "empty generated output"
+  },
+  {
+    "run_dir": "/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/measurements/1261455-track-a1-gptoss-120b-node-scaling/node-scaling-n12/node_count_12/rpc_coordinator_cna0870/t_46_c_2048_p_1_n_64_k_f16_v_f16",
+    "prompt_id": "mandatory_medium_ml_vs_dl",
+    "runs": 1,
+    "good_or_acceptable_runs": 0,
+    "quality_fraction_mean": 0.0,
+    "labels": "missing",
+    "representative_notes": "empty generated output"
+  },
+  {
+    "run_dir": "/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/measurements/1261455-track-a1-gptoss-120b-node-scaling/node-scaling-n12/node_count_12/rpc_coordinator_cna0870/t_46_c_2048_p_1_n_64_k_f16_v_f16",
+    "prompt_id": "mandatory_short_capital_france",
+    "runs": 1,
+    "good_or_acceptable_runs": 0,
+    "quality_fraction_mean": 0.0,
+    "labels": "missing",
+    "representative_notes": "empty generated output"
+  },
+  {
+    "run_dir": "/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/measurements/1261455-track-a1-gptoss-120b-node-scaling/node-scaling-n16/node_count_16/rpc_coordinator_cna0874/t_46_c_2048_p_1_n_64_k_f16_v_f16",
+    "prompt_id": "mandatory_long_transformer_cpu",
+    "runs": 1,
+    "good_or_acceptable_runs": 0,
+    "quality_fraction_mean": 0.0,
+    "labels": "missing",
+    "representative_notes": "empty generated output"
+  },
+  {
+    "run_dir": "/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/measurements/1261455-track-a1-gptoss-120b-node-scaling/node-scaling-n16/node_count_16/rpc_coordinator_cna0874/t_46_c_2048_p_1_n_64_k_f16_v_f16",
+    "prompt_id": "mandatory_medium_ml_vs_dl",
+    "runs": 1,
+    "good_or_acceptable_runs": 0,
+    "quality_fraction_mean": 0.0,
+    "labels": "missing",
+    "representative_notes": "empty generated output"
+  },
+  {
+    "run_dir": "/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/measurements/1261455-track-a1-gptoss-120b-node-scaling/node-scaling-n16/node_count_16/rpc_coordinator_cna0874/t_46_c_2048_p_1_n_64_k_f16_v_f16",
+    "prompt_id": "mandatory_short_capital_france",
+    "runs": 1,
+    "good_or_acceptable_runs": 0,
+    "quality_fraction_mean": 0.0,
+    "labels": "missing",
+    "representative_notes": "empty generated output"
+  },
+  {
+    "run_dir": "/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/measurements/1261455-track-a1-gptoss-120b-node-scaling/node-scaling-n6/node_count_6/rpc_coordinator_cna0864/t_46_c_2048_p_1_n_64_k_f16_v_f16",
+    "prompt_id": "mandatory_long_transformer_cpu",
+    "runs": 1,
+    "good_or_acceptable_runs": 0,
+    "quality_fraction_mean": 0.0,
+    "labels": "missing",
+    "representative_notes": "empty generated output"
+  },
+  {
+    "run_dir": "/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/measurements/1261455-track-a1-gptoss-120b-node-scaling/node-scaling-n6/node_count_6/rpc_coordinator_cna0864/t_46_c_2048_p_1_n_64_k_f16_v_f16",
+    "prompt_id": "mandatory_medium_ml_vs_dl",
+    "runs": 1,
+    "good_or_acceptable_runs": 0,
+    "quality_fraction_mean": 0.0,
+    "labels": "missing",
+    "representative_notes": "empty generated output"
+  },
+  {
+    "run_dir": "/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/measurements/1261455-track-a1-gptoss-120b-node-scaling/node-scaling-n6/node_count_6/rpc_coordinator_cna0864/t_46_c_2048_p_1_n_64_k_f16_v_f16",
+    "prompt_id": "mandatory_short_capital_france",
+    "runs": 1,
+    "good_or_acceptable_runs": 0,
+    "quality_fraction_mean": 0.0,
+    "labels": "missing",
+    "representative_notes": "empty generated output"
+  },
+  {
+    "run_dir": "/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/measurements/1261455-track-a1-gptoss-120b-node-scaling/node-scaling-n8/node_count_8/rpc_coordinator_cna0866/t_46_c_2048_p_1_n_64_k_f16_v_f16",
+    "prompt_id": "mandatory_long_transformer_cpu",
+    "runs": 1,
+    "good_or_acceptable_runs": 0,
+    "quality_fraction_mean": 0.0,
+    "labels": "missing",
+    "representative_notes": "empty generated output"
+  },
+  {
+    "run_dir": "/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/measurements/1261455-track-a1-gptoss-120b-node-scaling/node-scaling-n8/node_count_8/rpc_coordinator_cna0866/t_46_c_2048_p_1_n_64_k_f16_v_f16",
+    "prompt_id": "mandatory_medium_ml_vs_dl",
+    "runs": 1,
+    "good_or_acceptable_runs": 0,
+    "quality_fraction_mean": 0.0,
+    "labels": "missing",
+    "representative_notes": "empty generated output"
+  },
+  {
+    "run_dir": "/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/measurements/1261455-track-a1-gptoss-120b-node-scaling/node-scaling-n8/node_count_8/rpc_coordinator_cna0866/t_46_c_2048_p_1_n_64_k_f16_v_f16",
+    "prompt_id": "mandatory_short_capital_france",
+    "runs": 1,
+    "good_or_acceptable_runs": 0,
+    "quality_fraction_mean": 0.0,
+    "labels": "missing",
+    "representative_notes": "empty generated output"
+  }
+]

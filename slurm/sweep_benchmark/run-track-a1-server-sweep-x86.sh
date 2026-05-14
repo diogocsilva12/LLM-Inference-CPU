@@ -43,6 +43,10 @@ fi
 
 export OUTPUT_SUFFIX="${OUTPUT_SUFFIX:-track-a1-server-sweep-x86}"
 export ENGINE_BUILD_DIR_NAME="${ENGINE_BUILD_DIR_NAME:-build-slurm-x86}"
+export ENGINE_SPECS="${ENGINE_SPECS:-vanilla-x86=$PROJECT_DIR/llamacpp-vanilla/llama.cpp}"
+export ENGINE_BIN_SPECS="${ENGINE_BIN_SPECS:-vanilla-x86=$PROJECT_DIR/llamacpp-vanilla/llama.cpp/build-slurm-x86/bin/llama-server}"
+export ENGINE_CACHE_SWEEPS="${ENGINE_CACHE_SWEEPS:-vanilla-x86=f16:f16}"
+export AUTO_BUILD="${AUTO_BUILD:-0}"
 export THREADS="${THREADS:-32}"
 export THREADS_LIST="${THREADS_LIST:-8 16 24 32 48 64 96 128}"
 export CONCURRENCY_LIST="${CONCURRENCY_LIST:-1 2 4 8 16}"

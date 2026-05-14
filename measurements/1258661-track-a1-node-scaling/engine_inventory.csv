@@ -1,0 +1,2 @@
+label,repo,server_bin,rpc_server_bin,cache_type_k,cache_type_v,rpc_max_servers
+llamacpp-optimal,/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/llamacpp-tq/llama-cpp-turboquant,/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/llamacpp-tq/llama-cpp-turboquant/build-slurm-rpc/bin/llama-server,/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/llamacpp-tq/llama-cpp-turboquant/build-slurm-rpc/bin/rpc-server,turbo3,turbo3,255

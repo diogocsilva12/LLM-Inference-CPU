@@ -1,0 +1,422 @@
+build_info: b0-unknown
+system_info: n_threads = 46 (n_threads_batch = 46) / 48 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | SVE = 1 | SVE_CNT = 64 | OPENMP = 1 | REPACK = 1 | 
+init: using 47 threads for HTTP server
+start: binding port with default address family
+main: loading model
+srv    load_model: loading model '/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/llamacpp-tq/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf'
+llama_model_load_from_file_impl: using device RPC0 (cna1217:50053) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC1 (cna1218:50054) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC2 (cna1219:50055) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC3 (cna1220:50056) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC4 (cna1221:50057) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC5 (cna1222:50058) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC6 (cna1223:50059) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC7 (cna1224:50060) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC8 (cna1225:50061) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC9 (cna1226:50062) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC10 (cna1227:50063) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC11 (cna1228:50064) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC12 (cna1229:50065) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC13 (cna1230:50066) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC14 (cna1231:50067) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC15 (cna1232:50068) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC16 (cna1233:50069) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC17 (cna1234:50070) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC18 (cna1235:50071) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC19 (cna1236:50072) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC20 (cna1237:50073) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC21 (cna1238:50074) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC22 (cna1239:50075) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC23 (cna1240:50076) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC24 (cna1241:50077) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC25 (cna1242:50078) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC26 (cna1243:50079) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC27 (cna1244:50080) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC28 (cna1245:50081) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC29 (cna1246:50082) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC30 (cna1247:50083) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC31 (cna1248:50084) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC32 (cna1249:50085) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC33 (cna1250:50086) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC34 (cna1251:50087) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC35 (cna1252:50088) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC36 (cna1253:50089) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC37 (cna1254:50090) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC38 (cna1255:50091) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC39 (cna1256:50092) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC40 (cna1257:50093) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC41 (cna1258:50094) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC42 (cna1259:50095) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC43 (cna1260:50096) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC44 (cna1261:50097) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC45 (cna1262:50098) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC46 (cna1263:50099) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC47 (cna1264:50100) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC48 (cna1265:50101) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC49 (cna1266:50102) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC50 (cna1267:50103) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC51 (cna1268:50104) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC52 (cna1269:50105) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC53 (cna1270:50106) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC54 (cna1271:50107) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC55 (cna1272:50108) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC56 (cna1273:50109) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC57 (cna1274:50110) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC58 (cna1275:50111) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC59 (cna1276:50112) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC60 (cna1277:50113) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC61 (cna1278:50114) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC62 (cna1279:50115) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC63 (cna1280:50116) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC64 (cna1281:50117) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC65 (cna1282:50118) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC66 (cna1283:50119) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC67 (cna1284:50120) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC68 (cna1285:50121) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC69 (cna1286:50122) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC70 (cna1287:50123) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC71 (cna1288:50124) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC72 (cna1289:50125) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC73 (cna1290:50126) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC74 (cna1291:50127) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC75 (cna1292:50128) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC76 (cna1293:50129) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC77 (cna1294:50130) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC78 (cna1295:50131) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC79 (cna1296:50132) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC80 (cna1297:50133) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC81 (cna1298:50134) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC82 (cna1299:50135) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC83 (cna1300:50136) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC84 (cna1301:50137) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC85 (cna1302:50138) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC86 (cna1303:50139) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC87 (cna1304:50140) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC88 (cna1305:50141) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC89 (cna1306:50142) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC90 (cna1307:50143) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC91 (cna1308:50144) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC92 (cna1309:50145) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC93 (cna1310:50146) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC94 (cna1311:50147) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC95 (cna1312:50148) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC96 (cna1313:50149) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC97 (cna1314:50150) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC98 (cna1315:50151) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC99 (cna1316:50152) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC100 (cna1317:50153) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC101 (cna1318:50154) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC102 (cna1319:50155) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC103 (cna1320:50156) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC104 (cna1321:50157) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC105 (cna1322:50158) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC106 (cna1323:50159) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC107 (cna1324:50160) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC108 (cna1325:50161) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC109 (cna1326:50162) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC110 (cna1327:50163) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC111 (cna1328:50164) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC112 (cna1329:50165) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC113 (cna1330:50166) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC114 (cna1331:50167) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC115 (cna1332:50168) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC116 (cna1333:50169) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC117 (cna1334:50170) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC118 (cna1335:50171) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC119 (cna1336:50172) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC120 (cna1337:50173) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC121 (cna1338:50174) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC122 (cna1339:50175) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC123 (cna1340:50176) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC124 (cna1341:50177) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC125 (cna1342:50178) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC126 (cna1343:50179) (unknown id) - 32140 MiB free
+llama_model_loader: loaded meta data with 33 key-value pairs and 292 tensors from /projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/llamacpp-tq/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = llama
+llama_model_loader: - kv   1:                               general.type str              = model
+llama_model_loader: - kv   2:                               general.name str              = Meta Llama 3.1 8B Instruct
+llama_model_loader: - kv   3:                           general.finetune str              = Instruct
+llama_model_loader: - kv   4:                           general.basename str              = Meta-Llama-3.1
+llama_model_loader: - kv   5:                         general.size_label str              = 8B
+llama_model_loader: - kv   6:                            general.license str              = llama3.1
+llama_model_loader: - kv   7:                               general.tags arr[str,6]       = ["facebook", "meta", "pytorch", "llam...
+llama_model_loader: - kv   8:                          general.languages arr[str,8]       = ["en", "de", "fr", "it", "pt", "hi", ...
+llama_model_loader: - kv   9:                          llama.block_count u32              = 32
+llama_model_loader: - kv  10:                       llama.context_length u32              = 131072
+llama_model_loader: - kv  11:                     llama.embedding_length u32              = 4096
+llama_model_loader: - kv  12:                  llama.feed_forward_length u32              = 14336
+llama_model_loader: - kv  13:                 llama.attention.head_count u32              = 32
+llama_model_loader: - kv  14:              llama.attention.head_count_kv u32              = 8
+llama_model_loader: - kv  15:                       llama.rope.freq_base f32              = 500000.000000
+llama_model_loader: - kv  16:     llama.attention.layer_norm_rms_epsilon f32              = 0.000010
+llama_model_loader: - kv  17:                          general.file_type u32              = 15
+llama_model_loader: - kv  18:                           llama.vocab_size u32              = 128256
+llama_model_loader: - kv  19:                 llama.rope.dimension_count u32              = 128
+llama_model_loader: - kv  20:                       tokenizer.ggml.model str              = gpt2
+llama_model_loader: - kv  21:                         tokenizer.ggml.pre str              = llama-bpe
+llama_model_loader: - kv  22:                      tokenizer.ggml.tokens arr[str,128256]  = ["!", "\"", "#", "$", "%", "&", "'", ...
+llama_model_loader: - kv  23:                  tokenizer.ggml.token_type arr[i32,128256]  = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+llama_model_loader: - kv  24:                      tokenizer.ggml.merges arr[str,280147]  = ["Ġ Ġ", "Ġ ĠĠĠ", "ĠĠ ĠĠ", "...
+llama_model_loader: - kv  25:                tokenizer.ggml.bos_token_id u32              = 128000
+llama_model_loader: - kv  26:                tokenizer.ggml.eos_token_id u32              = 128009
+llama_model_loader: - kv  27:                    tokenizer.chat_template str              = {{- bos_token }}\n{%- if custom_tools ...
+llama_model_loader: - kv  28:               general.quantization_version u32              = 2
+llama_model_loader: - kv  29:                      quantize.imatrix.file str              = /models_out/Meta-Llama-3.1-8B-Instruc...
+llama_model_loader: - kv  30:                   quantize.imatrix.dataset str              = /training_dir/calibration_datav3.txt
+llama_model_loader: - kv  31:             quantize.imatrix.entries_count i32              = 224
+llama_model_loader: - kv  32:              quantize.imatrix.chunks_count i32              = 125
+llama_model_loader: - type  f32:   66 tensors
+llama_model_loader: - type q4_K:  193 tensors
+llama_model_loader: - type q6_K:   33 tensors
+print_info: file format = GGUF V3 (latest)
+print_info: file type   = Q4_K - Medium
+print_info: file size   = 4.58 GiB (4.89 BPW) 
+load: 0 unused tokens
+load: printing all EOG tokens:
+load:   - 128001 ('<|end_of_text|>')
+load:   - 128008 ('<|eom_id|>')
+load:   - 128009 ('<|eot_id|>')
+load: special tokens cache size = 256
+load: token to piece cache size = 0.7999 MB
+print_info: arch                  = llama
+print_info: vocab_only            = 0
+print_info: no_alloc              = 0
+print_info: n_ctx_train           = 131072
+print_info: n_embd                = 4096
+print_info: n_embd_inp            = 4096
+print_info: n_layer               = 32
+print_info: n_head                = 32
+print_info: n_head_kv             = 8
+print_info: n_rot                 = 128
+print_info: n_swa                 = 0
+print_info: is_swa_any            = 0
+print_info: n_embd_head_k         = 128
+print_info: n_embd_head_v         = 128
+print_info: n_gqa                 = 4
+print_info: n_embd_k_gqa          = 1024
+print_info: n_embd_v_gqa          = 1024
+print_info: f_norm_eps            = 0.0e+00
+print_info: f_norm_rms_eps        = 1.0e-05
+print_info: f_clamp_kqv           = 0.0e+00
+print_info: f_max_alibi_bias      = 0.0e+00
+print_info: f_logit_scale         = 0.0e+00
+print_info: f_attn_scale          = 0.0e+00
+print_info: n_ff                  = 14336
+print_info: n_expert              = 0
+print_info: n_expert_used         = 0
+print_info: n_expert_groups       = 0
+print_info: n_group_used          = 0
+print_info: causal attn           = 1
+print_info: pooling type          = -1
+print_info: rope type             = 0
+print_info: rope scaling          = linear
+print_info: freq_base_train       = 500000.0
+print_info: freq_scale_train      = 1
+print_info: n_ctx_orig_yarn       = 131072
+print_info: rope_yarn_log_mul     = 0.0000
+print_info: rope_finetuned        = unknown
+print_info: model type            = 8B
+print_info: model params          = 8.03 B
+print_info: general.name          = Meta Llama 3.1 8B Instruct
+print_info: vocab type            = BPE
+print_info: n_vocab               = 128256
+print_info: n_merges              = 280147
+print_info: BOS token             = 128000 '<|begin_of_text|>'
+print_info: EOS token             = 128009 '<|eot_id|>'
+print_info: EOT token             = 128009 '<|eot_id|>'
+print_info: EOM token             = 128008 '<|eom_id|>'
+print_info: LF token              = 198 'Ċ'
+print_info: EOG token             = 128001 '<|end_of_text|>'
+print_info: EOG token             = 128008 '<|eom_id|>'
+print_info: EOG token             = 128009 '<|eot_id|>'
+print_info: max token length      = 256
+load_tensors: loading model tensors, this can take a while... (mmap = true, direct_io = false)
+load_tensors: offloading output layer to GPU
+load_tensors: offloading 31 repeating layers to GPU
+load_tensors: offloaded 33/33 layers to GPU
+load_tensors:   CPU_Mapped model buffer size =   281.81 MiB
+load_tensors: RPC0[cna1217:50053] model buffer size =   132.50 MiB
+load_tensors: RPC0[cna1220:50056] model buffer size =   132.50 MiB
+load_tensors: RPC0[cna1224:50060] model buffer size =   132.50 MiB
+load_tensors: RPC0[cna1228:50064] model buffer size =   132.50 MiB
+load_tensors: RPC0[cna1232:50068] model buffer size =   117.03 MiB
+load_tensors: RPC0[cna1236:50072] model buffer size =   117.03 MiB
+load_tensors: RPC0[cna1240:50076] model buffer size =   132.50 MiB
+load_tensors: RPC0[cna1243:50079] model buffer size =   117.03 MiB
+load_tensors: RPC0[cna1247:50083] model buffer size =   117.03 MiB
+load_tensors: RPC0[cna1251:50087] model buffer size =   117.03 MiB
+load_tensors: RPC0[cna1255:50091] model buffer size =   132.50 MiB
+load_tensors: RPC0[cna1259:50095] model buffer size =   117.03 MiB
+load_tensors: RPC0[cna1263:50099] model buffer size =   117.03 MiB
+load_tensors: RPC0[cna1267:50103] model buffer size =   132.50 MiB
+load_tensors: RPC0[cna1270:50106] model buffer size =   117.03 MiB
+load_tensors: RPC0[cna1274:50110] model buffer size =   117.03 MiB
+load_tensors: RPC0[cna1278:50114] model buffer size =   132.50 MiB
+load_tensors: RPC0[cna1282:50118] model buffer size =   117.03 MiB
+load_tensors: RPC0[cna1286:50122] model buffer size =   117.03 MiB
+load_tensors: RPC0[cna1290:50126] model buffer size =   132.50 MiB
+load_tensors: RPC0[cna1293:50129] model buffer size =   117.03 MiB
+load_tensors: RPC0[cna1297:50133] model buffer size =   132.50 MiB
+load_tensors: RPC0[cna1301:50137] model buffer size =   117.03 MiB
+load_tensors: RPC0[cna1305:50141] model buffer size =   117.03 MiB
+load_tensors: RPC0[cna1309:50145] model buffer size =   132.50 MiB
+load_tensors: RPC0[cna1313:50149] model buffer size =   117.03 MiB
+load_tensors: RPC0[cna1317:50153] model buffer size =   117.03 MiB
+load_tensors: RPC0[cna1320:50156] model buffer size =   132.50 MiB
+load_tensors: RPC0[cna1324:50160] model buffer size =   132.50 MiB
+load_tensors: RPC0[cna1328:50164] model buffer size =   132.50 MiB
+load_tensors: RPC0[cna1332:50168] model buffer size =   132.50 MiB
+load_tensors: RPC0[cna1336:50172] model buffer size =   132.50 MiB
+load_tensors: RPC0[cna1340:50176] model buffer size =   410.99 MiB
+.......................................................................................
+common_init_result: added <|end_of_text|> logit bias = -inf
+common_init_result: added <|eom_id|> logit bias = -inf
+common_init_result: added <|eot_id|> logit bias = -inf
+llama_context: constructing llama_context
+llama_context: n_seq_max     = 2
+llama_context: n_ctx         = 8192
+llama_context: n_ctx_seq     = 4096
+llama_context: n_batch       = 2048
+llama_context: n_ubatch      = 512
+llama_context: causal_attn   = 1
+llama_context: flash_attn    = enabled
+llama_context: kv_unified    = false
+llama_context: freq_base     = 500000.0
+llama_context: freq_scale    = 1
+llama_context: n_ctx_seq (4096) < n_ctx_train (131072) -- the full capacity of the model will not be utilized
+llama_context:        CPU  output buffer size =     0.98 MiB
+llama_kv_cache: RPC0[cna1217:50053] KV buffer size =     6.38 MiB
+llama_kv_cache: TurboQuant rotation matrices initialized (128x128)
+llama_kv_cache: RPC0[cna1220:50056] KV buffer size =     6.25 MiB
+llama_kv_cache: TurboQuant rotation matrices initialized (128x128)
+llama_kv_cache: RPC0[cna1224:50060] KV buffer size =     6.25 MiB
+llama_kv_cache: TurboQuant rotation matrices initialized (128x128)
+llama_kv_cache: RPC0[cna1228:50064] KV buffer size =     6.25 MiB
+llama_kv_cache: TurboQuant rotation matrices initialized (128x128)
+llama_kv_cache: RPC0[cna1232:50068] KV buffer size =     6.25 MiB
+llama_kv_cache: TurboQuant rotation matrices initialized (128x128)
+llama_kv_cache: RPC0[cna1236:50072] KV buffer size =     6.25 MiB
+llama_kv_cache: TurboQuant rotation matrices initialized (128x128)
+llama_kv_cache: RPC0[cna1240:50076] KV buffer size =     6.25 MiB
+llama_kv_cache: TurboQuant rotation matrices initialized (128x128)
+llama_kv_cache: RPC0[cna1243:50079] KV buffer size =     6.25 MiB
+llama_kv_cache: TurboQuant rotation matrices initialized (128x128)
+llama_kv_cache: RPC0[cna1247:50083] KV buffer size =     6.25 MiB
+llama_kv_cache: TurboQuant rotation matrices initialized (128x128)
+llama_kv_cache: RPC0[cna1251:50087] KV buffer size =     6.25 MiB
+llama_kv_cache: TurboQuant rotation matrices initialized (128x128)
+llama_kv_cache: RPC0[cna1255:50091] KV buffer size =     6.25 MiB
+llama_kv_cache: TurboQuant rotation matrices initialized (128x128)
+llama_kv_cache: RPC0[cna1259:50095] KV buffer size =     6.25 MiB
+llama_kv_cache: TurboQuant rotation matrices initialized (128x128)
+llama_kv_cache: RPC0[cna1263:50099] KV buffer size =     6.25 MiB
+llama_kv_cache: TurboQuant rotation matrices initialized (128x128)
+llama_kv_cache: RPC0[cna1267:50103] KV buffer size =     6.25 MiB
+llama_kv_cache: TurboQuant rotation matrices initialized (128x128)
+llama_kv_cache: RPC0[cna1270:50106] KV buffer size =     6.25 MiB
+llama_kv_cache: TurboQuant rotation matrices initialized (128x128)
+llama_kv_cache: RPC0[cna1274:50110] KV buffer size =     6.25 MiB
+llama_kv_cache: TurboQuant rotation matrices initialized (128x128)
+llama_kv_cache: RPC0[cna1278:50114] KV buffer size =     6.25 MiB
+llama_kv_cache: TurboQuant rotation matrices initialized (128x128)
+llama_kv_cache: RPC0[cna1282:50118] KV buffer size =     6.25 MiB
+llama_kv_cache: TurboQuant rotation matrices initialized (128x128)
+llama_kv_cache: RPC0[cna1286:50122] KV buffer size =     6.25 MiB
+llama_kv_cache: TurboQuant rotation matrices initialized (128x128)
+llama_kv_cache: RPC0[cna1290:50126] KV buffer size =     6.25 MiB
+llama_kv_cache: TurboQuant rotation matrices initialized (128x128)
+llama_kv_cache: RPC0[cna1293:50129] KV buffer size =     6.25 MiB
+llama_kv_cache: TurboQuant rotation matrices initialized (128x128)
+llama_kv_cache: RPC0[cna1297:50133] KV buffer size =     6.25 MiB
+llama_kv_cache: TurboQuant rotation matrices initialized (128x128)
+llama_kv_cache: RPC0[cna1301:50137] KV buffer size =     6.25 MiB
+llama_kv_cache: TurboQuant rotation matrices initialized (128x128)
+llama_kv_cache: RPC0[cna1305:50141] KV buffer size =     6.25 MiB
+llama_kv_cache: TurboQuant rotation matrices initialized (128x128)
+llama_kv_cache: RPC0[cna1309:50145] KV buffer size =     6.25 MiB
+llama_kv_cache: TurboQuant rotation matrices initialized (128x128)
+llama_kv_cache: RPC0[cna1313:50149] KV buffer size =     6.25 MiB
+llama_kv_cache: TurboQuant rotation matrices initialized (128x128)
+llama_kv_cache: RPC0[cna1317:50153] KV buffer size =     6.25 MiB
+llama_kv_cache: TurboQuant rotation matrices initialized (128x128)
+llama_kv_cache: RPC0[cna1320:50156] KV buffer size =     6.25 MiB
+llama_kv_cache: TurboQuant rotation matrices initialized (128x128)
+llama_kv_cache: RPC0[cna1324:50160] KV buffer size =     6.25 MiB
+llama_kv_cache: TurboQuant rotation matrices initialized (128x128)
+llama_kv_cache: RPC0[cna1328:50164] KV buffer size =     6.25 MiB
+llama_kv_cache: TurboQuant rotation matrices initialized (128x128)
+llama_kv_cache: RPC0[cna1332:50168] KV buffer size =     6.25 MiB
+llama_kv_cache: TurboQuant rotation matrices initialized (128x128)
+llama_kv_cache: RPC0[cna1336:50172] KV buffer size =     6.25 MiB
+llama_kv_cache: TurboQuant rotation matrices initialized (128x128)
+llama_kv_cache: size =  200.00 MiB (  4096 cells,  32 layers,  2/2 seqs), K (turbo3):  100.00 MiB, V (turbo3):  100.00 MiB
+llama_kv_cache: attn_rot_k = 0, n_embd_head_k_all = 128
+llama_kv_cache: attn_rot_v = 0, n_embd_head_k_all = 128
+sched_reserve: reserving ...
+/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/llamacpp-tq/llama-cpp-turboquant/ggml/src/ggml-backend.cpp:1735: GGML_ASSERT(n_backends <= GGML_SCHED_MAX_BACKENDS) failed
+No symbol table is loaded.  Use the "file" command.
+[New LWP 45265]
+[New LWP 45266]
+[New LWP 45267]
+[New LWP 45268]
+[New LWP 45269]
+[New LWP 45270]
+[New LWP 45271]
+[New LWP 45272]
+[New LWP 45273]
+[New LWP 45274]
+[New LWP 45275]
+[New LWP 45276]
+[New LWP 45277]
+[New LWP 45278]
+[New LWP 45279]
+[New LWP 45280]
+[New LWP 45281]
+[New LWP 45282]
+[New LWP 45283]
+[New LWP 45284]
+[New LWP 45285]
+[New LWP 45286]
+[New LWP 45287]
+[New LWP 45288]
+[New LWP 45289]
+[New LWP 45290]
+[New LWP 45291]
+[New LWP 45292]
+[New LWP 45293]
+[New LWP 45294]
+[New LWP 45295]
+[New LWP 45296]
+[New LWP 45297]
+[New LWP 45298]
+[New LWP 45299]
+[New LWP 45300]
+[New LWP 45301]
+[New LWP 45302]
+[New LWP 45303]
+[New LWP 45304]
+[New LWP 45305]
+[New LWP 45306]
+[New LWP 45307]
+[New LWP 45308]
+[New LWP 45309]
+[New LWP 45310]
+[New LWP 45311]
+[New LWP 45312]
+[New LWP 45313]
+warning: File "/share/apps-arm/ohpc/easybuild/software/rocky/8.5/a64fx/software/GCCcore/13.3.0/lib64/libstdc++.so.6.0.32-gdb.py" auto-loading has been declined by your `auto-load safe-path' set to "$debugdir:$datadir/auto-load".
+To enable execution of this file add
+	add-auto-load-safe-path /share/apps-arm/ohpc/easybuild/software/rocky/8.5/a64fx/software/GCCcore/13.3.0/lib64/libstdc++.so.6.0.32-gdb.py
+line to your configuration file "/home/uminhocp006/.gdbinit".
+To completely disable this security protection add
+	set auto-load safe-path /
+line to your configuration file "/home/uminhocp006/.gdbinit".
+For more information about this security protection see the
+"Auto-loading safe path" section in the GDB manual.  E.g., run from the shell:
+	info "(gdb)Auto-loading safe path"
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib64/libthread_db.so.1".
+0x0000ffffbd9a24c0 in waitpid () from /lib64/libpthread.so.0
+No symbol "frame" in current context.
+[Inferior 1 (process 45256) detached]

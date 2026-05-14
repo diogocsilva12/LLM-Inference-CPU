@@ -129,6 +129,7 @@ def summarize_run(run_dir, ttft_sla, tpot_sla):
             "run_dir": str(run_dir),
             "suite": system.get("suite"),
             "engine": system.get("engine"),
+            "node_count": system.get("node_count"),
             "node_rank": system.get("rank") or path_metadata["node_rank"],
             "node": system.get("node") or path_metadata["node"],
             "model": system.get("model"),
@@ -175,6 +176,7 @@ def aggregate_scaling(rows):
             row.get("experiment_dir"),
             row.get("suite"),
             row.get("engine"),
+            row.get("node_count"),
             row.get("model"),
             row.get("model_label"),
             row.get("threads"),
@@ -195,6 +197,7 @@ def aggregate_scaling(rows):
             experiment_dir,
             suite,
             engine,
+            node_count,
             model,
             model_label,
             threads,
@@ -214,11 +217,15 @@ def aggregate_scaling(rows):
         vmhwm = [safe_float(r.get("max_vmhwm_kb")) for r in items]
         throughput_clean = [v for v in throughput if v is not None]
         node_ids = {r.get("node_rank") or r.get("run_dir") for r in items}
+        replica_count = len(node_ids)
+        if node_count and suite and "node-scaling" in suite:
+            replica_count = int(node_count)
         aggregate_rows.append({
             "experiment_dir": experiment_dir,
             "suite": suite,
             "engine": engine,
-            "replica_count": len(node_ids),
+            "node_count": node_count,
+            "replica_count": replica_count,
             "model": model,
             "model_label": model_label,
             "threads": threads,
@@ -275,6 +282,7 @@ def main() -> int:
         "run_dir",
         "suite",
         "engine",
+        "node_count",
         "node_rank",
         "node",
         "model",
@@ -311,6 +319,7 @@ def main() -> int:
             "experiment_dir",
             "suite",
             "engine",
+            "node_count",
             "replica_count",
             "model",
             "model_label",

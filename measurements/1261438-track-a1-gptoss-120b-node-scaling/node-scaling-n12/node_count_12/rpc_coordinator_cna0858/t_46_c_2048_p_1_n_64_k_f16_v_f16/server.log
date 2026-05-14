@@ -1,0 +1,349 @@
+build_info: b0-unknown
+system_info: n_threads = 46 (n_threads_batch = 46) / 48 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | SVE = 1 | SVE_CNT = 64 | OPENMP = 1 | REPACK = 1 | 
+init: using 47 threads for HTTP server
+start: binding port with default address family
+main: loading model
+srv    load_model: loading model '/share/chatbot/models/gpt-oss-120b-Q8_0.gguf'
+llama_model_load_from_file_impl: using device RPC0 (cna0859:50053) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC1 (cna0860:50054) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC2 (cna0861:50055) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC3 (cna0862:50056) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC4 (cna0863:50057) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC5 (cna0864:50058) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC6 (cna0865:50059) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC7 (cna0866:50060) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC8 (cna0867:50061) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC9 (cna0868:50062) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC10 (cna0869:50063) (unknown id) - 32140 MiB free
+llama_model_loader: loaded meta data with 39 key-value pairs and 687 tensors from /share/chatbot/models/gpt-oss-120b-Q8_0.gguf (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = gpt-oss
+llama_model_loader: - kv   1:                               general.type str              = model
+llama_model_loader: - kv   2:                               general.name str              = Gpt Oss 120b
+llama_model_loader: - kv   3:                           general.basename str              = gpt-oss
+llama_model_loader: - kv   4:                         general.size_label str              = 120B
+llama_model_loader: - kv   5:                            general.license str              = apache-2.0
+llama_model_loader: - kv   6:                               general.tags arr[str,2]       = ["vllm", "text-generation"]
+llama_model_loader: - kv   7:                        gpt-oss.block_count u32              = 36
+llama_model_loader: - kv   8:                     gpt-oss.context_length u32              = 131072
+llama_model_loader: - kv   9:                   gpt-oss.embedding_length u32              = 2880
+llama_model_loader: - kv  10:                gpt-oss.feed_forward_length u32              = 2880
+llama_model_loader: - kv  11:               gpt-oss.attention.head_count u32              = 64
+llama_model_loader: - kv  12:            gpt-oss.attention.head_count_kv u32              = 8
+llama_model_loader: - kv  13:                     gpt-oss.rope.freq_base f32              = 150000.000000
+llama_model_loader: - kv  14:   gpt-oss.attention.layer_norm_rms_epsilon f32              = 0.000010
+llama_model_loader: - kv  15:                       gpt-oss.expert_count u32              = 128
+llama_model_loader: - kv  16:                  gpt-oss.expert_used_count u32              = 4
+llama_model_loader: - kv  17:               gpt-oss.attention.key_length u32              = 64
+llama_model_loader: - kv  18:             gpt-oss.attention.value_length u32              = 64
+llama_model_loader: - kv  19:           gpt-oss.attention.sliding_window u32              = 128
+llama_model_loader: - kv  20:         gpt-oss.expert_feed_forward_length u32              = 2880
+llama_model_loader: - kv  21:                  gpt-oss.rope.scaling.type str              = yarn
+llama_model_loader: - kv  22:                gpt-oss.rope.scaling.factor f32              = 32.000000
+llama_model_loader: - kv  23: gpt-oss.rope.scaling.original_context_length u32              = 4096
+llama_model_loader: - kv  24:                       tokenizer.ggml.model str              = gpt2
+llama_model_loader: - kv  25:                         tokenizer.ggml.pre str              = gpt-4o
+llama_model_loader: - kv  26:                      tokenizer.ggml.tokens arr[str,201088]  = ["!", "\"", "#", "$", "%", "&", "'", ...
+llama_model_loader: - kv  27:                  tokenizer.ggml.token_type arr[i32,201088]  = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+llama_model_loader: - kv  28:                      tokenizer.ggml.merges arr[str,446189]  = ["Ġ Ġ", "Ġ ĠĠĠ", "ĠĠ ĠĠ", "...
+llama_model_loader: - kv  29:                tokenizer.ggml.bos_token_id u32              = 199998
+llama_model_loader: - kv  30:                tokenizer.ggml.eos_token_id u32              = 200002
+llama_model_loader: - kv  31:            tokenizer.ggml.padding_token_id u32              = 199999
+llama_model_loader: - kv  32:                    tokenizer.chat_template str              = {#-\n  In addition to the normal input...
+llama_model_loader: - kv  33:               general.quantization_version u32              = 2
+llama_model_loader: - kv  34:                          general.file_type u32              = 7
+llama_model_loader: - kv  35:                      quantize.imatrix.file str              = gpt-oss-120b/gpt-oss-120b.dat
+llama_model_loader: - kv  36:                   quantize.imatrix.dataset str              = calibration_datav3.txt
+llama_model_loader: - kv  37:             quantize.imatrix.entries_count u32              = 288
+llama_model_loader: - kv  38:              quantize.imatrix.chunks_count u32              = 122
+llama_model_loader: - type  f32:  433 tensors
+llama_model_loader: - type q8_0:  146 tensors
+llama_model_loader: - type mxfp4:  108 tensors
+print_info: file format = GGUF V3 (latest)
+print_info: file type   = Q8_0
+print_info: file size   = 59.02 GiB (4.34 BPW) 
+load: 0 unused tokens
+load: setting token '<|message|>' (200008) attribute to USER_DEFINED (16), old attributes: 8
+load: setting token '<|start|>' (200006) attribute to USER_DEFINED (16), old attributes: 8
+load: setting token '<|constrain|>' (200003) attribute to USER_DEFINED (16), old attributes: 8
+load: setting token '<|channel|>' (200005) attribute to USER_DEFINED (16), old attributes: 8
+load: printing all EOG tokens:
+load:   - 199999 ('<|endoftext|>')
+load:   - 200002 ('<|return|>')
+load:   - 200007 ('<|end|>')
+load:   - 200012 ('<|call|>')
+load: special_eog_ids contains both '<|return|>' and '<|call|>', or '<|calls|>' and '<|flush|>' tokens, removing '<|end|>' token from EOG list
+load: special tokens cache size = 21
+load: token to piece cache size = 1.3332 MB
+print_info: arch                  = gpt-oss
+print_info: vocab_only            = 0
+print_info: no_alloc              = 0
+print_info: n_ctx_train           = 131072
+print_info: n_embd                = 2880
+print_info: n_embd_inp            = 2880
+print_info: n_layer               = 36
+print_info: n_head                = 64
+print_info: n_head_kv             = 8
+print_info: n_rot                 = 64
+print_info: n_swa                 = 128
+print_info: is_swa_any            = 1
+print_info: n_embd_head_k         = 64
+print_info: n_embd_head_v         = 64
+print_info: n_gqa                 = 8
+print_info: n_embd_k_gqa          = 512
+print_info: n_embd_v_gqa          = 512
+print_info: f_norm_eps            = 0.0e+00
+print_info: f_norm_rms_eps        = 1.0e-05
+print_info: f_clamp_kqv           = 0.0e+00
+print_info: f_max_alibi_bias      = 0.0e+00
+print_info: f_logit_scale         = 0.0e+00
+print_info: f_attn_scale          = 0.0e+00
+print_info: n_ff                  = 2880
+print_info: n_expert              = 128
+print_info: n_expert_used         = 4
+print_info: n_expert_groups       = 0
+print_info: n_group_used          = 0
+print_info: causal attn           = 1
+print_info: pooling type          = -1
+print_info: rope type             = 2
+print_info: rope scaling          = yarn
+print_info: freq_base_train       = 150000.0
+print_info: freq_scale_train      = 0.03125
+print_info: freq_base_swa         = 150000.0
+print_info: freq_scale_swa        = 0.03125
+print_info: n_embd_head_k_swa     = 64
+print_info: n_embd_head_v_swa     = 64
+print_info: n_rot_swa             = 64
+print_info: n_ctx_orig_yarn       = 4096
+print_info: rope_yarn_log_mul     = 0.0000
+print_info: rope_finetuned        = unknown
+print_info: model type            = 120B
+print_info: model params          = 116.83 B
+print_info: general.name          = Gpt Oss 120b
+print_info: n_ff_exp              = 2880
+print_info: vocab type            = BPE
+print_info: n_vocab               = 201088
+print_info: n_merges              = 446189
+print_info: BOS token             = 199998 '<|startoftext|>'
+print_info: EOS token             = 200002 '<|return|>'
+print_info: EOT token             = 199999 '<|endoftext|>'
+print_info: PAD token             = 199999 '<|endoftext|>'
+print_info: LF token              = 198 'Ċ'
+print_info: EOG token             = 199999 '<|endoftext|>'
+print_info: EOG token             = 200002 '<|return|>'
+print_info: EOG token             = 200012 '<|call|>'
+print_info: max token length      = 256
+load_tensors: loading model tensors, this can take a while... (mmap = true, direct_io = false)
+load_tensors: offloading output layer to GPU
+load_tensors: offloading 35 repeating layers to GPU
+load_tensors: offloaded 37/37 layers to GPU
+load_tensors:   CPU_Mapped model buffer size =   586.82 MiB
+load_tensors: RPC0[cna0859:50053] model buffer size =  6584.98 MiB
+load_tensors: RPC0[cna0860:50054] model buffer size =  4938.73 MiB
+load_tensors: RPC0[cna0861:50055] model buffer size =  6584.98 MiB
+load_tensors: RPC0[cna0862:50056] model buffer size =  4938.73 MiB
+load_tensors: RPC0[cna0863:50057] model buffer size =  4938.73 MiB
+load_tensors: RPC0[cna0864:50058] model buffer size =  6584.98 MiB
+load_tensors: RPC0[cna0865:50059] model buffer size =  4938.73 MiB
+load_tensors: RPC0[cna0866:50060] model buffer size =  4938.73 MiB
+load_tensors: RPC0[cna0867:50061] model buffer size =  6584.98 MiB
+load_tensors: RPC0[cna0868:50062] model buffer size =  4938.73 MiB
+load_tensors: RPC0[cna0869:50063] model buffer size =  3879.32 MiB
+....................................................................................................
+common_init_result: added <|endoftext|> logit bias = -inf
+common_init_result: added <|return|> logit bias = -inf
+common_init_result: added <|call|> logit bias = -inf
+llama_context: constructing llama_context
+llama_context: n_seq_max     = 1
+llama_context: n_ctx         = 2048
+llama_context: n_ctx_seq     = 2048
+llama_context: n_batch       = 2048
+llama_context: n_ubatch      = 512
+llama_context: causal_attn   = 1
+llama_context: flash_attn    = enabled
+llama_context: kv_unified    = false
+llama_context: freq_base     = 150000.0
+llama_context: freq_scale    = 0.03125
+llama_context: n_ctx_seq (2048) < n_ctx_train (131072) -- the full capacity of the model will not be utilized
+llama_context:        CPU  output buffer size =     0.77 MiB
+llama_kv_cache_iswa: creating non-SWA KV cache, size = 2048 cells
+llama_kv_cache: RPC0[cna0859:50053] KV buffer size =     8.00 MiB
+llama_kv_cache: RPC0[cna0860:50054] KV buffer size =     4.00 MiB
+llama_kv_cache: RPC0[cna0861:50055] KV buffer size =     8.00 MiB
+llama_kv_cache: RPC0[cna0862:50056] KV buffer size =     8.00 MiB
+llama_kv_cache: RPC0[cna0863:50057] KV buffer size =     4.00 MiB
+llama_kv_cache: RPC0[cna0864:50058] KV buffer size =     8.00 MiB
+llama_kv_cache: RPC0[cna0865:50059] KV buffer size =     8.00 MiB
+llama_kv_cache: RPC0[cna0866:50060] KV buffer size =     4.00 MiB
+llama_kv_cache: RPC0[cna0867:50061] KV buffer size =     8.00 MiB
+llama_kv_cache: RPC0[cna0868:50062] KV buffer size =     8.00 MiB
+llama_kv_cache: RPC0[cna0869:50063] KV buffer size =     4.00 MiB
+llama_kv_cache: size =   72.00 MiB (  2048 cells,  18 layers,  1/1 seqs), K (f16):   36.00 MiB, V (f16):   36.00 MiB
+llama_kv_cache: attn_rot_k = 0, n_embd_head_k_all = 64
+llama_kv_cache: attn_rot_v = 0, n_embd_head_k_all = 64
+llama_kv_cache_iswa: creating     SWA KV cache, size = 768 cells
+llama_kv_cache: RPC0[cna0859:50053] KV buffer size =     3.00 MiB
+llama_kv_cache: RPC0[cna0860:50054] KV buffer size =     3.00 MiB
+llama_kv_cache: RPC0[cna0861:50055] KV buffer size =     3.00 MiB
+llama_kv_cache: RPC0[cna0862:50056] KV buffer size =     1.50 MiB
+llama_kv_cache: RPC0[cna0863:50057] KV buffer size =     3.00 MiB
+llama_kv_cache: RPC0[cna0864:50058] KV buffer size =     3.00 MiB
+llama_kv_cache: RPC0[cna0865:50059] KV buffer size =     1.50 MiB
+llama_kv_cache: RPC0[cna0866:50060] KV buffer size =     3.00 MiB
+llama_kv_cache: RPC0[cna0867:50061] KV buffer size =     3.00 MiB
+llama_kv_cache: RPC0[cna0868:50062] KV buffer size =     1.50 MiB
+llama_kv_cache: RPC0[cna0869:50063] KV buffer size =     1.50 MiB
+llama_kv_cache: size =   27.00 MiB (   768 cells,  18 layers,  1/1 seqs), K (f16):   13.50 MiB, V (f16):   13.50 MiB
+llama_kv_cache: attn_rot_k = 0, n_embd_head_k_all = 64
+llama_kv_cache: attn_rot_v = 0, n_embd_head_k_all = 64
+sched_reserve: reserving ...
+sched_reserve: resolving fused Gated Delta Net support:
+sched_reserve: fused Gated Delta Net (autoregressive) enabled
+sched_reserve: fused Gated Delta Net (chunked) enabled
+sched_reserve: RPC0[cna0859:50053] compute buffer size =    95.02 MiB
+sched_reserve: RPC0[cna0860:50054] compute buffer size =    89.52 MiB
+sched_reserve: RPC0[cna0861:50055] compute buffer size =    89.52 MiB
+sched_reserve: RPC0[cna0862:50056] compute buffer size =    89.52 MiB
+sched_reserve: RPC0[cna0863:50057] compute buffer size =    89.52 MiB
+sched_reserve: RPC0[cna0864:50058] compute buffer size =    89.52 MiB
+sched_reserve: RPC0[cna0865:50059] compute buffer size =    89.52 MiB
+sched_reserve: RPC0[cna0866:50060] compute buffer size =    89.52 MiB
+sched_reserve: RPC0[cna0867:50061] compute buffer size =    89.52 MiB
+sched_reserve: RPC0[cna0868:50062] compute buffer size =    89.52 MiB
+sched_reserve: RPC0[cna0869:50063] compute buffer size =   398.38 MiB
+sched_reserve:        CPU compute buffer size =    16.77 MiB
+sched_reserve: graph nodes  = 2024
+sched_reserve: graph splits = 12
+sched_reserve: reserve took 585.94 ms, sched copies = 1
+common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+srv    load_model: initializing slots, n_slots = 1
+no implementations specified for speculative decoding
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 2048
+srv    load_model: prompt cache is enabled, size limit: 8192 MiB
+srv    load_model: use `--cache-ram 0` to disable the prompt cache
+srv    load_model: for more info see https://github.com/ggml-org/llama.cpp/pull/16391
+srv          init: init: --cache-idle-slots requires --kv-unified, disabling
+init: chat template, example_format: '<|start|>system<|message|>You are ChatGPT, a large language model trained by OpenAI.
+Knowledge cutoff: 2024-06
+Current date: 2026-05-14
+
+Reasoning: medium
+
+# Valid channels: analysis, commentary, final. Channel must be included for every message.<|end|><|start|>developer<|message|># Instructions
+
+You are a helpful assistant<|end|><|start|>user<|message|>Hello<|end|><|start|>assistant<|channel|>final<|message|>Hi there<|end|><|start|>user<|message|>How are you?<|end|><|start|>assistant'
+srv          init: init: chat template, thinking = 1
+main: model loaded
+main: server is listening on http://127.0.0.1:19080
+main: starting the main loop...
+srv  update_slots: all slots are idle
+srv  params_from_: Chat format: peg-native
+slot get_availabl: id  0 | task -1 | selected slot by LRU, t_last = -1
+srv  get_availabl: updating prompt cache
+srv          load:  - looking for better prompt, base f_keep = -1.000, sim = 0.000
+srv        update:  - cache state: 0 prompts, 0.000 MiB (limits: 8192.000 MiB, 2048 tokens, 8589934592 est)
+srv  get_availabl: prompt cache update took 0.01 ms
+slot launch_slot_: id  0 | task -1 | sampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist 
+slot launch_slot_: id  0 | task 0 | processing task, is_child = 0
+slot update_slots: id  0 | task 0 | new prompt, n_ctx_slot = 2048, n_keep = 0, task.n_tokens = 74
+slot update_slots: id  0 | task 0 | n_tokens = 0, memory_seq_rm [0, end)
+slot update_slots: id  0 | task 0 | prompt processing progress, n_tokens = 70, batch.n_tokens = 70, progress = 0.945946
+slot update_slots: id  0 | task 0 | n_tokens = 70, memory_seq_rm [70, end)
+slot init_sampler: id  0 | task 0 | init sampler, took 0.06 ms, tokens: text = 74, total = 74
+slot update_slots: id  0 | task 0 | prompt processing done, n_tokens = 74, batch.n_tokens = 4
+slot create_check: id  0 | task 0 | created context checkpoint 1 of 32 (pos_min = 0, pos_max = 69, n_tokens = 70, size = 2.462 MiB)
+srv  log_server_r: done request: POST /v1/chat/completions 127.0.0.1 200
+slot print_timing: id  0 | task 0 | 
+prompt eval time =   15531.95 ms /    74 tokens (  209.89 ms per token,     4.76 tokens per second)
+       eval time =   16332.27 ms /    64 tokens (  255.19 ms per token,     3.92 tokens per second)
+      total time =   31864.22 ms /   138 tokens
+slot      release: id  0 | task 0 | stop processing: n_tokens = 137, truncated = 0
+srv  update_slots: all slots are idle
+srv  params_from_: Chat format: peg-native
+slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, sim_best = 0.753 (> 0.100 thold), f_keep = 0.467
+srv  get_availabl: updating prompt cache
+srv   prompt_save:  - saving prompt with length 137, total state size = 9.637 MiB
+srv          load:  - looking for better prompt, base f_keep = 0.467, sim = 0.753
+srv        update:  - cache state: 1 prompts, 12.099 MiB (limits: 8192.000 MiB, 2048 tokens, 92760 est)
+srv        update:    - prompt 0x1231e80:     137 tokens, checkpoints:  1,    12.099 MiB
+srv  get_availabl: prompt cache update took 116.42 ms
+slot launch_slot_: id  0 | task -1 | sampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist 
+slot launch_slot_: id  0 | task 66 | processing task, is_child = 0
+slot update_slots: id  0 | task 66 | new prompt, n_ctx_slot = 2048, n_keep = 0, task.n_tokens = 85
+slot update_slots: id  0 | task 66 | n_past = 64, slot.prompt.tokens.size() = 137, seq_id = 0, pos_min = 0, n_swa = 128
+slot update_slots: id  0 | task 66 | Checking checkpoint with [0, 69] against 0...
+slot update_slots: id  0 | task 66 | restored context checkpoint (pos_min = 0, pos_max = 69, n_tokens = 70, n_past = 64, size = 2.462 MiB)
+slot update_slots: id  0 | task 66 | erased invalidated context checkpoint (pos_min = 0, pos_max = 69, n_tokens = 70, n_swa = 128, pos_next = 64, size = 2.462 MiB)
+slot update_slots: id  0 | task 66 | n_tokens = 64, memory_seq_rm [64, end)
+slot update_slots: id  0 | task 66 | prompt processing progress, n_tokens = 81, batch.n_tokens = 17, progress = 0.952941
+slot create_check: id  0 | task 66 | created context checkpoint 1 of 32 (pos_min = 0, pos_max = 63, n_tokens = 64, size = 2.251 MiB)
+slot update_slots: id  0 | task 66 | n_tokens = 81, memory_seq_rm [81, end)
+slot init_sampler: id  0 | task 66 | init sampler, took 0.04 ms, tokens: text = 85, total = 85
+slot update_slots: id  0 | task 66 | prompt processing done, n_tokens = 85, batch.n_tokens = 4
+srv  log_server_r: done request: POST /v1/chat/completions 127.0.0.1 200
+slot print_timing: id  0 | task 66 | 
+prompt eval time =    4668.06 ms /    21 tokens (  222.29 ms per token,     4.50 tokens per second)
+       eval time =   16644.02 ms /    64 tokens (  260.06 ms per token,     3.85 tokens per second)
+      total time =   21312.08 ms /    85 tokens
+slot      release: id  0 | task 66 | stop processing: n_tokens = 148, truncated = 0
+srv  update_slots: all slots are idle
+srv  params_from_: Chat format: peg-native
+slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, sim_best = 0.308 (> 0.100 thold), f_keep = 0.432
+srv  get_availabl: updating prompt cache
+srv   prompt_save:  - saving prompt with length 148, total state size = 10.410 MiB
+srv          load:  - looking for better prompt, base f_keep = 0.432, sim = 0.308
+srv        update:  - cache state: 2 prompts, 24.761 MiB (limits: 8192.000 MiB, 2048 tokens, 94291 est)
+srv        update:    - prompt 0x1231e80:     137 tokens, checkpoints:  1,    12.099 MiB
+srv        update:    - prompt 0xfff0a4012b90:     148 tokens, checkpoints:  1,    12.662 MiB
+srv  get_availabl: prompt cache update took 128.61 ms
+slot launch_slot_: id  0 | task -1 | sampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> min-p -> ?xtc -> temp-ext -> dist 
+slot launch_slot_: id  0 | task 132 | processing task, is_child = 0
+slot update_slots: id  0 | task 132 | new prompt, n_ctx_slot = 2048, n_keep = 0, task.n_tokens = 208
+slot update_slots: id  0 | task 132 | n_past = 64, slot.prompt.tokens.size() = 148, seq_id = 0, pos_min = 0, n_swa = 128
+slot update_slots: id  0 | task 132 | Checking checkpoint with [0, 63] against 0...
+slot update_slots: id  0 | task 132 | restored context checkpoint (pos_min = 0, pos_max = 63, n_tokens = 64, n_past = 63, size = 2.251 MiB)
+slot update_slots: id  0 | task 132 | n_tokens = 63, memory_seq_rm [63, end)
+slot update_slots: id  0 | task 132 | prompt processing progress, n_tokens = 204, batch.n_tokens = 141, progress = 0.980769
+slot update_slots: id  0 | task 132 | n_tokens = 204, memory_seq_rm [204, end)
+slot init_sampler: id  0 | task 132 | init sampler, took 0.11 ms, tokens: text = 208, total = 208
+slot update_slots: id  0 | task 132 | prompt processing done, n_tokens = 208, batch.n_tokens = 4
+slot create_check: id  0 | task 132 | created context checkpoint 2 of 32 (pos_min = 0, pos_max = 203, n_tokens = 204, size = 7.175 MiB)
+srv  log_server_r: done request: POST /v1/chat/completions 127.0.0.1 200
+slot print_timing: id  0 | task 132 | 
+prompt eval time =   29811.74 ms /   145 tokens (  205.60 ms per token,     4.86 tokens per second)
+       eval time =   16591.51 ms /    64 tokens (  259.24 ms per token,     3.86 tokens per second)
+      total time =   46403.26 ms /   209 tokens
+slot      release: id  0 | task 132 | stop processing: n_tokens = 271, truncated = 0
+srv  update_slots: all slots are idle
+srv    operator(): operator(): cleaning up before exit...
+common_memory_breakdown_print: | memory breakdown [MiB]    | total    free    self   model   context   compute       unaccounted |
+common_memory_breakdown_print: |   - RPC0 (cna0859:50053)  | 32140 = 32140 + (6690 =  6584 +      11 +      95) + 17592186037725 |
+common_memory_breakdown_print: |   - RPC1 (cna0860:50054)  | 32140 = 32140 + (5035 =  4938 +       7 +      89) + 17592186039380 |
+common_memory_breakdown_print: |   - RPC2 (cna0861:50055)  | 32140 = 32140 + (6685 =  6584 +      11 +      89) + 17592186037730 |
+common_memory_breakdown_print: |   - RPC3 (cna0862:50056)  | 32140 = 32140 + (5037 =  4938 +       9 +      89) + 17592186039378 |
+common_memory_breakdown_print: |   - RPC4 (cna0863:50057)  | 32140 = 32140 + (5035 =  4938 +       7 +      89) + 17592186039380 |
+common_memory_breakdown_print: |   - RPC5 (cna0864:50058)  | 32140 = 32140 + (6685 =  6584 +      11 +      89) + 17592186037730 |
+common_memory_breakdown_print: |   - RPC6 (cna0865:50059)  | 32140 = 32140 + (5037 =  4938 +       9 +      89) + 17592186039378 |
+common_memory_breakdown_print: |   - RPC7 (cna0866:50060)  | 32140 = 32140 + (5035 =  4938 +       7 +      89) + 17592186039380 |
+common_memory_breakdown_print: |   - RPC8 (cna0867:50061)  | 32140 = 32140 + (6685 =  6584 +      11 +      89) + 17592186037730 |
+common_memory_breakdown_print: |   - RPC9 (cna0868:50062)  | 32140 = 32140 + (5037 =  4938 +       9 +      89) + 17592186039378 |
+common_memory_breakdown_print: |   - RPC10 (cna0869:50063) | 32140 = 32140 + (4283 =  3879 +       5 +     398) + 17592186040132 |
+common_memory_breakdown_print: |   - Host                  |                   603 =   586 +       0 +      16                   |
+/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/llamacpp-tq/llama-cpp-turboquant/ggml/src/ggml-rpc/ggml-rpc.cpp:403: Remote RPC server crashed or returned malformed response
+No symbol table is loaded.  Use the "file" command.
+[New LWP 85006]
+warning: File "/share/apps-arm/ohpc/easybuild/software/rocky/8.5/a64fx/software/GCCcore/13.3.0/lib64/libstdc++.so.6.0.32-gdb.py" auto-loading has been declined by your `auto-load safe-path' set to "$debugdir:$datadir/auto-load".
+To enable execution of this file add
+	add-auto-load-safe-path /share/apps-arm/ohpc/easybuild/software/rocky/8.5/a64fx/software/GCCcore/13.3.0/lib64/libstdc++.so.6.0.32-gdb.py
+line to your configuration file "/home/uminhocp006/.gdbinit".
+To completely disable this security protection add
+	set auto-load safe-path /
+line to your configuration file "/home/uminhocp006/.gdbinit".
+For more information about this security protection see the
+"Auto-loading safe path" section in the GDB manual.  E.g., run from the shell:
+	info "(gdb)Auto-loading safe path"
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib64/libthread_db.so.1".
+0x0000ffffbd9a24c0 in waitpid () from /lib64/libpthread.so.0
+No symbol "frame" in current context.
+[Inferior 1 (process 85001) detached]

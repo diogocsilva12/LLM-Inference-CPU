@@ -1,0 +1,23 @@
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+WARNING: Host ('0.0.0.0') is != '127.0.0.1'
+         Never expose the RPC server to an open network!
+         This is an experimental feature and is not secure!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Starting RPC server v4.0.0
+  endpoint       : 0.0.0.0:50117
+  local cache    : /home/uminhocp006/.cache/llama.cpp/rpc/
+Devices:
+  CPU: CPU (32140 MiB, 32140 MiB free)
+  transport      : TCP (RDMA auto-negotiate enabled)
+Accepted client connection
+Client connection closed
+Accepted client connection
+Client connection closed
+Accepted client connection
+Client connection closed
+Accepted client connection
+Client connection closed
+Accepted client connection
+Client connection closed

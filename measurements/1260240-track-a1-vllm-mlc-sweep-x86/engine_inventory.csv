@@ -1,0 +1,3 @@
+label,repo,server_bin,cache_sweep,ld_preload
+vllm,/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/vllm,/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/slurm/config/serve-vllm-openai-adapter.sh,f16:f16,
+mlc,/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/mclllm,/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/slurm/config/serve-mlc-openai-adapter.sh,f16:f16,

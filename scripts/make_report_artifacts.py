@@ -13,6 +13,33 @@ import summarize_a1_results
 DEFAULT_SUMMARY_NAME = "a1_all_results_summary.csv"
 DEFAULT_SCALING_NAME = "a1_all_results_scaling_summary.csv"
 
+NODE_RESOURCE_SUMMARY_FIELDS = [
+    "experiment_dir",
+    "run_dir",
+    "suite",
+    "engine",
+    "node_count",
+    "node_rank",
+    "node",
+    "model_label",
+    "threads",
+    "ctx_size",
+    "parallel_requests",
+    "cache_type_k",
+    "cache_type_v",
+    "max_tokens",
+    "source_file",
+    "source_format",
+    "samples",
+    "mean_cpu_busy_percent",
+    "max_cpu_busy_percent",
+    "mean_mem_used_kb",
+    "max_mem_used_kb",
+    "mean_mem_used_gib",
+    "max_mem_used_gib",
+    "mem_total_kb",
+]
+
 
 def safe_float(value):
     if value is None or value == "":
@@ -24,10 +51,10 @@ def safe_float(value):
 
 
 def arch_for(path):
-    parts = set(path.parts)
-    if "arm" in parts:
+    path_text = "/".join(path.parts).lower()
+    if "arm" in path_text:
         return "arm"
-    if "x86" in parts:
+    if "x86" in path_text:
         return "x86"
     return "unknown"
 
@@ -58,6 +85,7 @@ def regenerate_summaries(root, summary_out, scaling_out, ttft_sla, tpot_sla):
         "run_dir",
         "suite",
         "engine",
+        "node_count",
         "node_rank",
         "node",
         "model",
@@ -92,6 +120,7 @@ def regenerate_summaries(root, summary_out, scaling_out, ttft_sla, tpot_sla):
         "experiment_dir",
         "suite",
         "engine",
+        "node_count",
         "replica_count",
         "model",
         "model_label",
@@ -129,6 +158,27 @@ def collect_scaling_rows(root):
             row["source"] = str(path)
             rows.append(row)
     return rows
+
+
+def add_derived_metrics(rows):
+    for row in rows:
+        tpot = safe_float(row.get("tpot_s_mean_across_replicas"))
+        if tpot is not None and tpot > 0.0 and math.isfinite(tpot):
+            row["decode_throughput_tok_s"] = 1.0 / tpot
+        else:
+            row["decode_throughput_tok_s"] = ""
+    return rows
+
+
+def read_readable_scaling(root, filename):
+    path = root / "readable" / filename
+    if not path.exists():
+        return []
+    rows = read_csv(path)
+    for row in rows:
+        row["arch"] = arch_for(Path(row.get("experiment_dir", "")))
+        row["source"] = str(path)
+    return add_derived_metrics(rows)
 
 
 def write_csv(path, rows, fieldnames):
@@ -171,6 +221,11 @@ def mean(values):
     return sum(clean) / len(clean) if clean else None
 
 
+def max_clean(values):
+    clean = [value for value in values if value is not None and math.isfinite(value)]
+    return max(clean) if clean else None
+
+
 def categorical_mean_points(rows, category_key, value_key, filters=None):
     filters = filters or {}
     groups = {}
@@ -191,6 +246,167 @@ def categorical_mean_points(rows, category_key, value_key, filters=None):
         for idx, label in enumerate(sorted(labels))
         if mean(groups[label]) is not None
     ]
+
+
+def group_by(rows, fields):
+    groups = {}
+    for row in rows:
+        key = tuple(row.get(field, "") for field in fields)
+        groups.setdefault(key, []).append(row)
+    return groups
+
+
+def procfs_cpu_busy(prev, cur):
+    fields = [
+        "cpu_user_jiffies",
+        "cpu_nice_jiffies",
+        "cpu_system_jiffies",
+        "cpu_idle_jiffies",
+        "cpu_iowait_jiffies",
+        "cpu_irq_jiffies",
+        "cpu_softirq_jiffies",
+        "cpu_steal_jiffies",
+    ]
+    prev_values = [safe_float(prev.get(field)) or 0.0 for field in fields]
+    cur_values = [safe_float(cur.get(field)) or 0.0 for field in fields]
+    deltas = [cur_value - prev_value for prev_value, cur_value in zip(prev_values, cur_values)]
+    total = sum(delta for delta in deltas if delta >= 0)
+    if total <= 0:
+        return None
+    idle = max(deltas[3], 0.0) + max(deltas[4], 0.0)
+    return max(0.0, min(100.0, 100.0 * (total - idle) / total))
+
+
+def dstat_cpu_busy(row):
+    idle = safe_float(row.get("cpu_idle_percent"))
+    if idle is not None:
+        return max(0.0, min(100.0, 100.0 - idle))
+    values = [
+        safe_float(row.get("cpu_user_percent")),
+        safe_float(row.get("cpu_system_percent")),
+        safe_float(row.get("cpu_wait_percent")),
+    ]
+    clean = [value for value in values if value is not None]
+    return sum(clean) if clean else None
+
+
+def memory_used_kb(row):
+    value = safe_float(row.get("mem_used_kb"))
+    if value is not None:
+        return value
+    dstat_used = row.get("dstat_mem_used", "")
+    if not dstat_used:
+        return None
+    match = re.match(r"^\s*([0-9.]+)\s*([kKmMgGtT]?)\s*$", dstat_used)
+    if not match:
+        return safe_float(dstat_used)
+    amount = float(match.group(1))
+    suffix = match.group(2).lower()
+    factors = {"": 1.0, "k": 1.0, "m": 1024.0, "g": 1024.0 * 1024.0, "t": 1024.0 * 1024.0 * 1024.0}
+    return amount * factors.get(suffix, 1.0)
+
+
+def summarize_node_resources(resource_rows):
+    summaries = []
+    group_fields = ["source_file"]
+    for _, items in sorted(group_by(resource_rows, group_fields).items()):
+        ordered = sorted(items, key=lambda row: safe_float(row.get("sample_index")) or 0.0)
+        first = ordered[0]
+        cpu_busy = []
+        if first.get("source_format") == "procfs":
+            for prev, cur in zip(ordered, ordered[1:]):
+                cpu_busy.append(procfs_cpu_busy(prev, cur))
+        else:
+            cpu_busy = [dstat_cpu_busy(row) for row in ordered]
+        mem_used = [memory_used_kb(row) for row in ordered]
+        mean_mem = mean(mem_used)
+        max_mem = max_clean(mem_used)
+        row = {field: first.get(field, "") for field in NODE_RESOURCE_SUMMARY_FIELDS}
+        row.update({
+            "samples": len(ordered),
+            "mean_cpu_busy_percent": mean(cpu_busy),
+            "max_cpu_busy_percent": max_clean(cpu_busy),
+            "mean_mem_used_kb": mean_mem,
+            "max_mem_used_kb": max_mem,
+            "mean_mem_used_gib": mean_mem / (1024.0 * 1024.0) if mean_mem is not None else "",
+            "max_mem_used_gib": max_mem / (1024.0 * 1024.0) if max_mem is not None else "",
+            "mem_total_kb": first.get("mem_total_kb", ""),
+        })
+        summaries.append({field: row.get(field, "") for field in NODE_RESOURCE_SUMMARY_FIELDS})
+    return summaries
+
+
+def write_node_resource_artifacts(root, out_dir):
+    resource_path = root / "readable" / "node_resource_metrics.csv"
+    if not resource_path.exists():
+        write_csv(out_dir / "node_resource_summary.csv", [], NODE_RESOURCE_SUMMARY_FIELDS)
+        return []
+    resource_rows = read_csv(resource_path)
+    summary_rows = summarize_node_resources(resource_rows)
+    write_csv(out_dir / "node_resource_summary.csv", summary_rows, NODE_RESOURCE_SUMMARY_FIELDS)
+    scatter_svg(
+        out_dir / "node_cpu_busy_by_suite.svg",
+        "Mean node CPU busy by suite",
+        "suite index",
+        "CPU busy %",
+        categorical_mean_points(summary_rows, "suite", "mean_cpu_busy_percent"),
+    )
+    scatter_svg(
+        out_dir / "node_memory_used_by_suite.svg",
+        "Max node memory used by suite",
+        "suite index",
+        "memory used GiB",
+        categorical_mean_points(summary_rows, "suite", "max_mem_used_gib"),
+    )
+    scatter_svg(
+        out_dir / "node_cpu_busy_vs_concurrency.svg",
+        "Node CPU busy vs concurrency",
+        "parallel requests",
+        "CPU busy %",
+        [
+            (safe_float(row.get("parallel_requests")), safe_float(row.get("mean_cpu_busy_percent")), row)
+            for row in summary_rows
+            if safe_float(row.get("parallel_requests")) is not None
+            and safe_float(row.get("mean_cpu_busy_percent")) is not None
+        ],
+    )
+    scatter_svg(
+        out_dir / "node_memory_used_vs_concurrency.svg",
+        "Node memory used vs concurrency",
+        "parallel requests",
+        "memory used GiB",
+        [
+            (safe_float(row.get("parallel_requests")), safe_float(row.get("max_mem_used_gib")), row)
+            for row in summary_rows
+            if safe_float(row.get("parallel_requests")) is not None
+            and safe_float(row.get("max_mem_used_gib")) is not None
+        ],
+    )
+    scatter_svg(
+        out_dir / "node_cpu_busy_vs_node_count.svg",
+        "Node CPU busy vs node count",
+        "node count",
+        "CPU busy %",
+        [
+            (safe_float(row.get("node_count")), safe_float(row.get("mean_cpu_busy_percent")), row)
+            for row in summary_rows
+            if safe_float(row.get("node_count")) is not None
+            and safe_float(row.get("mean_cpu_busy_percent")) is not None
+        ],
+    )
+    scatter_svg(
+        out_dir / "node_memory_used_vs_node_count.svg",
+        "Node memory used vs node count",
+        "node count",
+        "memory used GiB",
+        [
+            (safe_float(row.get("node_count")), safe_float(row.get("max_mem_used_gib")), row)
+            for row in summary_rows
+            if safe_float(row.get("node_count")) is not None
+            and safe_float(row.get("max_mem_used_gib")) is not None
+        ],
+    )
+    return summary_rows
 
 
 def scatter_svg(path, title, x_label, y_label, points):
@@ -268,6 +484,13 @@ def write_standard_plots(out_dir, rows):
         points_for(rows, "thread-scaling", "threads", "tpot_s_mean_across_replicas"),
     )
     scatter_svg(
+        out_dir / "decode_throughput_vs_threads.svg",
+        "Decode throughput vs thread count",
+        "threads",
+        "decode tokens/s",
+        points_for(rows, "thread-scaling", "threads", "decode_throughput_tok_s"),
+    )
+    scatter_svg(
         out_dir / "ttft_vs_threads.svg",
         "TTFT vs thread count",
         "threads",
@@ -289,6 +512,13 @@ def write_standard_plots(out_dir, rows):
         points_for(rows, "concurrency", "parallel_requests", "tpot_s_mean_across_replicas"),
     )
     scatter_svg(
+        out_dir / "decode_throughput_vs_concurrency.svg",
+        "Decode throughput vs concurrent requests",
+        "parallel requests",
+        "decode tokens/s",
+        points_for(rows, "concurrency", "parallel_requests", "decode_throughput_tok_s"),
+    )
+    scatter_svg(
         out_dir / "ttft_vs_context.svg",
         "TTFT vs context size",
         "context size",
@@ -303,11 +533,25 @@ def write_standard_plots(out_dir, rows):
         points_for(rows, "context-length", "ctx_size", "tpot_s_mean_across_replicas"),
     )
     scatter_svg(
+        out_dir / "decode_throughput_vs_context.svg",
+        "Decode throughput vs context size",
+        "context size",
+        "decode tokens/s",
+        points_for(rows, "context-length", "ctx_size", "decode_throughput_tok_s"),
+    )
+    scatter_svg(
         out_dir / "throughput_vs_decode_length.svg",
         "Throughput vs decode length",
         "max tokens",
         "output tokens/s",
         points_for(rows, "decode-length", "max_tokens", "total_throughput_output_tok_s_mean"),
+    )
+    scatter_svg(
+        out_dir / "decode_throughput_vs_decode_length.svg",
+        "Decode throughput vs decode length",
+        "max tokens",
+        "decode tokens/s",
+        points_for(rows, "decode-length", "max_tokens", "decode_throughput_tok_s"),
     )
     scatter_svg(
         out_dir / "goodput_vs_decode_length.svg",
@@ -345,6 +589,13 @@ def write_standard_plots(out_dir, rows):
         categorical_mean_points(rows, "cache_type_k", "total_throughput_output_tok_s_mean"),
     )
     scatter_svg(
+        out_dir / "decode_throughput_by_cache.svg",
+        "Mean decode throughput by K cache type",
+        "cache index",
+        "decode tokens/s",
+        categorical_mean_points(rows, "cache_type_k", "decode_throughput_tok_s"),
+    )
+    scatter_svg(
         out_dir / "memory_vs_model.svg",
         "Memory vs model experiment index",
         "model run index",
@@ -355,6 +606,53 @@ def write_standard_plots(out_dir, rows):
             if suite_model_index(row.get("model_label", "") or row.get("suite", "")) is not None
             and safe_float(row.get("max_vmhwm_kb")) is not None
         ],
+    )
+
+
+def write_nonzero_plots(out_dir, rows):
+    if not rows:
+        return
+    scatter_svg(
+        out_dir / "throughput_vs_threads_nonzero.svg",
+        "Throughput vs thread count, nonzero outputs only",
+        "threads",
+        "output tokens/s",
+        points_for(rows, "thread-scaling", "threads", "total_throughput_output_tok_s_mean"),
+    )
+    scatter_svg(
+        out_dir / "throughput_vs_concurrency_nonzero.svg",
+        "Throughput vs concurrent requests, nonzero outputs only",
+        "parallel requests",
+        "output tokens/s",
+        points_for(rows, "concurrency", "parallel_requests", "total_throughput_output_tok_s_mean"),
+    )
+    scatter_svg(
+        out_dir / "throughput_vs_decode_length_nonzero.svg",
+        "Throughput vs decode length, nonzero outputs only",
+        "max tokens",
+        "output tokens/s",
+        points_for(rows, "decode-length", "max_tokens", "total_throughput_output_tok_s_mean"),
+    )
+    scatter_svg(
+        out_dir / "decode_throughput_vs_threads_nonzero.svg",
+        "Decode throughput vs thread count, nonzero outputs only",
+        "threads",
+        "decode tokens/s",
+        points_for(rows, "thread-scaling", "threads", "decode_throughput_tok_s"),
+    )
+    scatter_svg(
+        out_dir / "decode_throughput_vs_concurrency_nonzero.svg",
+        "Decode throughput vs concurrent requests, nonzero outputs only",
+        "parallel requests",
+        "decode tokens/s",
+        points_for(rows, "concurrency", "parallel_requests", "decode_throughput_tok_s"),
+    )
+    scatter_svg(
+        out_dir / "throughput_by_engine_nonzero.svg",
+        "Mean throughput by engine, nonzero outputs only",
+        "engine index",
+        "output tokens/s",
+        categorical_mean_points(rows, "engine", "total_throughput_output_tok_s_mean"),
     )
 
 
@@ -381,11 +679,18 @@ def main():
             row["source"] = str(scaling_out)
     else:
         rows = collect_scaling_rows(args.root)
+    rows = add_derived_metrics(rows)
     if rows:
         fieldnames = sorted({key for row in rows for key in row})
         write_csv(out_dir / "all_scaling_rows.csv", rows, fieldnames)
 
     write_standard_plots(out_dir, rows)
+    nonzero_rows = read_readable_scaling(args.root, "a1_scaling_summary_nonzero.csv")
+    if nonzero_rows:
+        fieldnames = sorted({key for row in nonzero_rows for key in row})
+        write_csv(out_dir / "all_scaling_rows_nonzero.csv", nonzero_rows, fieldnames)
+    write_nonzero_plots(out_dir, nonzero_rows)
+    write_node_resource_artifacts(args.root, out_dir)
 
     bottleneck = args.root / "bottleneck_model.csv"
     if bottleneck.exists():

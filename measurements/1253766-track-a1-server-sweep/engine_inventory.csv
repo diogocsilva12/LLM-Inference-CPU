@@ -1,3 +1,0 @@
-label,repo,server_bin,cache_sweep
-tq,/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/llamacpp-tq/llama-cpp-turboquant,/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/llamacpp-tq/llama-cpp-turboquant/build-slurm/bin/llama-server,turbo3:turbo3 turbo4:turbo4
-vanilla,/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/llamacpp-vanilla/llama.cpp,/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/llamacpp-vanilla/llama.cpp/build-slurm/bin/llama-server,f16:f16

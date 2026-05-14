@@ -1,0 +1,18 @@
+warning: no usable GPU found, --gpu-layers option will be ignored
+warning: one possible reason is that llama.cpp was compiled without GPU support
+warning: consult docs/build.md for compilation instructions
+error while handling argument "--numa": expected value for argument
+
+usage:
+--numa TYPE                             attempt optimizations that help on some NUMA systems
+                                        - distribute: spread execution evenly over all nodes
+                                        - isolate: only spawn threads on CPUs on the node that execution
+                                        started on
+                                        - numactl: use the CPU map provided by numactl
+                                        if run without this previously, it is recommended to drop the system
+                                        page cache before using this
+                                        see https://github.com/ggml-org/llama.cpp/issues/1437
+                                        (env: LLAMA_ARG_NUMA)
+
+
+to show complete usage, run with -h

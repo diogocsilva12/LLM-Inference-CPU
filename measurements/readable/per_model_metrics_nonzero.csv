@@ -1,0 +1,6 @@
+model_label,model,configuration_count,engine_count,prompt_count,request_count,successful_runs,ttft_s_mean,tpot_s_mean,throughput_output_tok_s_mean,total_throughput_output_tok_s_mean,goodput_sla_fraction_mean,max_vmhwm_kb
+model-1-mandatory,/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/llamacpp-tq/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf,6,1,15,90,90,0.9654297593014134,0.2950760969075573,3.262492107612592,293.6242896851333,0.022222222222222223,5239424.0
+model-1-mandatory,llamacpp-tq/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf,136,5,15,2012,2012,0.8173773838768951,0.2412215608713108,6.017574460361393,12107.359814247124,0.6635188866799204,9629512.0
+model-2,llamacpp-tq/models/SmolLM2-360M-Instruct.Q4_K_M.gguf,4,4,15,60,60,0.08170671932166443,0.019457332816933178,50.02852586595103,3001.711551957062,1.0,595584.0
+model-3,llamacpp-tq/models/gemma-4-E4B-it-OBLITERATED-Q4_K_M.gguf,7,5,10,35,35,3.743004700682858,0.13456072303052807,5.7709101780049625,201.98185623017366,0.5714285714285714,7722940.0
+model-4,llamacpp-tq/models/gpt-oss-20b-Q4_K_M.gguf,7,5,1,7,7,5.795995954852385,0.1470920674109948,1.400736474530982,9.805155321716875,0.0,21984396.0

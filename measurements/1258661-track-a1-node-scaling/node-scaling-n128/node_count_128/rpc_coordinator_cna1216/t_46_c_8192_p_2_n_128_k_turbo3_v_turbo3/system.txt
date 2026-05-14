@@ -1,0 +1,54 @@
+timestamp=2026-05-13T16:20:05+01:00
+track=A1
+suite=node-scaling-n128
+engine=llamacpp-optimal
+role=rpc-coordinator
+rank=0
+node=cna1216
+node_count=128
+rpc_endpoints=cna1217:50053,cna1218:50054,cna1219:50055,cna1220:50056,cna1221:50057,cna1222:50058,cna1223:50059,cna1224:50060,cna1225:50061,cna1226:50062,cna1227:50063,cna1228:50064,cna1229:50065,cna1230:50066,cna1231:50067,cna1232:50068,cna1233:50069,cna1234:50070,cna1235:50071,cna1236:50072,cna1237:50073,cna1238:50074,cna1239:50075,cna1240:50076,cna1241:50077,cna1242:50078,cna1243:50079,cna1244:50080,cna1245:50081,cna1246:50082,cna1247:50083,cna1248:50084,cna1249:50085,cna1250:50086,cna1251:50087,cna1252:50088,cna1253:50089,cna1254:50090,cna1255:50091,cna1256:50092,cna1257:50093,cna1258:50094,cna1259:50095,cna1260:50096,cna1261:50097,cna1262:50098,cna1263:50099,cna1264:50100,cna1265:50101,cna1266:50102,cna1267:50103,cna1268:50104,cna1269:50105,cna1270:50106,cna1271:50107,cna1272:50108,cna1273:50109,cna1274:50110,cna1275:50111,cna1276:50112,cna1277:50113,cna1278:50114,cna1279:50115,cna1280:50116,cna1281:50117,cna1282:50118,cna1283:50119,cna1284:50120,cna1285:50121,cna1286:50122,cna1287:50123,cna1288:50124,cna1289:50125,cna1290:50126,cna1291:50127,cna1292:50128,cna1293:50129,cna1294:50130,cna1295:50131,cna1296:50132,cna1297:50133,cna1298:50134,cna1299:50135,cna1300:50136,cna1301:50137,cna1302:50138,cna1303:50139,cna1304:50140,cna1305:50141,cna1306:50142,cna1307:50143,cna1308:50144,cna1309:50145,cna1310:50146,cna1311:50147,cna1312:50148,cna1313:50149,cna1314:50150,cna1315:50151,cna1316:50152,cna1317:50153,cna1318:50154,cna1319:50155,cna1320:50156,cna1321:50157,cna1322:50158,cna1323:50159,cna1324:50160,cna1325:50161,cna1326:50162,cna1327:50163,cna1328:50164,cna1329:50165,cna1330:50166,cna1331:50167,cna1332:50168,cna1333:50169,cna1334:50170,cna1335:50171,cna1336:50172,cna1337:50173,cna1338:50174,cna1339:50175,cna1340:50176,cna1341:50177,cna1342:50178,cna1343:50179
+rpc_max_servers=255
+allocated_nodes=cna[1216-1343]
+partition=normal-arm
+model_label=model-1-mandatory
+model=/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/llamacpp-tq/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf
+repo_dir=/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/llamacpp-tq/llama-cpp-turboquant
+server_bin=/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/llamacpp-tq/llama-cpp-turboquant/build-slurm-rpc/bin/llama-server
+rpc_server_bin=/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/llamacpp-tq/llama-cpp-turboquant/build-slurm-rpc/bin/rpc-server
+threads=46
+threads_batch=46
+ctx_size=8192
+parallel_requests=2
+bench_concurrency=2
+cache_type_k=turbo3
+cache_type_v=turbo3
+max_tokens=128
+n_gpu_layers=999
+fit_params=off
+flash_attn=on
+trials=1
+warmup_trials=1
+mandatory_only=0
+limit_per_category=5
+enable_node_resource_monitor=1
+resource_monitor_interval=1
+server_extra_args=
+Architecture:        aarch64
+Byte Order:          Little Endian
+CPU(s):              48
+On-line CPU(s) list: 0-47
+Thread(s) per core:  1
+Core(s) per cluster: 12
+Socket(s):           -
+Cluster(s):          4
+NUMA node(s):        4
+Vendor ID:           FUJITSU
+Model:               0
+Model name:          A64FX
+Stepping:            0x1
+BogoMIPS:            200.00
+NUMA node0 CPU(s):   0-11
+NUMA node1 CPU(s):   12-23
+NUMA node2 CPU(s):   24-35
+NUMA node3 CPU(s):   36-47
+Flags:               fp asimd evtstrm sha1 sha2 crc32 atomics fphp asimdhp cpuid asimdrdm fcma dcpop sve

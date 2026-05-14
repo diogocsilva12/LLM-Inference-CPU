@@ -63,6 +63,48 @@ count_words() {
   printf '%s' "$count"
 }
 
+start_node_resource_monitor() {
+  local output_path="$1"
+  local watched_pid="$2"
+  local role="${3:-node}"
+
+  if [[ "$ENABLE_NODE_RESOURCE_MONITOR" != "1" && "$ENABLE_NODE_RESOURCE_MONITOR" != "true" ]]; then
+    return 0
+  fi
+
+  if command -v dstat >/dev/null 2>&1; then
+    dstat --time --cpu --mem --output "$output_path" "$RESOURCE_MONITOR_INTERVAL" >/dev/null 2>&1 &
+    printf '%s\n' "$!"
+    return 0
+  fi
+
+  (
+    echo "timestamp,role,cpu_user_jiffies,cpu_nice_jiffies,cpu_system_jiffies,cpu_idle_jiffies,cpu_iowait_jiffies,cpu_irq_jiffies,cpu_softirq_jiffies,cpu_steal_jiffies,mem_total_kb,mem_available_kb,mem_used_kb,mem_free_kb,swap_total_kb,swap_free_kb"
+    while kill -0 "$watched_pid" 2>/dev/null; do
+      local ts
+      local cpu_label cpu_user cpu_nice cpu_system cpu_idle cpu_iowait cpu_irq cpu_softirq cpu_steal cpu_guest cpu_guest_nice
+      local mem_values
+      ts="$(date --iso-8601=seconds)"
+      read -r cpu_label cpu_user cpu_nice cpu_system cpu_idle cpu_iowait cpu_irq cpu_softirq cpu_steal cpu_guest cpu_guest_nice < /proc/stat
+      mem_values="$(awk '
+        /^MemTotal:/ {total=$2}
+        /^MemAvailable:/ {available=$2}
+        /^MemFree:/ {free=$2}
+        /^SwapTotal:/ {swap_total=$2}
+        /^SwapFree:/ {swap_free=$2}
+        END {
+          if (available == "") available = free
+          used = total - available
+          printf "%s,%s,%s,%s,%s,%s", total+0, available+0, used+0, free+0, swap_total+0, swap_free+0
+        }
+      ' /proc/meminfo)"
+      echo "$ts,$role,${cpu_user:-0},${cpu_nice:-0},${cpu_system:-0},${cpu_idle:-0},${cpu_iowait:-0},${cpu_irq:-0},${cpu_softirq:-0},${cpu_steal:-0},$mem_values"
+      sleep "$RESOURCE_MONITOR_INTERVAL"
+    done
+  ) > "$output_path" &
+  printf '%s\n' "$!"
+}
+
 load_modules
 
 SUBMIT_DIR="${SLURM_SUBMIT_DIR:-$PWD}"
@@ -111,13 +153,15 @@ TRIALS="${TRIALS:-3}"
 WARMUP_TRIALS="${WARMUP_TRIALS:-1}"
 TIMEOUT="${TIMEOUT:-900}"
 MANDATORY_ONLY="${MANDATORY_ONLY:-0}"
-LIMIT_PER_CATEGORY="${LIMIT_PER_CATEGORY:-3}"
+LIMIT_PER_CATEGORY="${LIMIT_PER_CATEGORY:-5}"
+ENABLE_NODE_RESOURCE_MONITOR="${ENABLE_NODE_RESOURCE_MONITOR:-1}"
+RESOURCE_MONITOR_INTERVAL="${RESOURCE_MONITOR_INTERVAL:-1}"
 N_GPU_LAYERS="${N_GPU_LAYERS:-0}"
 FLASH_ATTN="${FLASH_ATTN:-off}"
 FIT_PARAMS="${FIT_PARAMS:-off}"
 CACHE_TYPE_K="${CACHE_TYPE_K:-f16}"
 CACHE_TYPE_V="${CACHE_TYPE_V:-f16}"
-DEFAULT_ENGINE_CACHE_SWEEPS="tq=turbo3:turbo3 turbo4:turbo4;vanilla=f16:f16"
+DEFAULT_ENGINE_CACHE_SWEEPS="tq=turbo2:turbo2 turbo3:turbo3 turbo4:turbo4;vanilla=f16:f16"
 ENGINE_CACHE_SWEEPS="${ENGINE_CACHE_SWEEPS:-$DEFAULT_ENGINE_CACHE_SWEEPS}"
 CACHE_SWEEP="$(normalize_list "${CACHE_SWEEP:-$CACHE_TYPE_K:$CACHE_TYPE_V}")"
 SERVER_EXTRA_ARGS="${SERVER_EXTRA_ARGS:-}"
@@ -157,14 +201,14 @@ build_engine_if_needed() {
   local server_bin="$2"
   local lock_dir="$repo_dir/.build-slurm.lock"
 
-  if [[ ! -f "$repo_dir/CMakeLists.txt" ]]; then
-    echo "Missing llama.cpp repository: $repo_dir" >&2
-    exit 1
-  fi
-
   if [[ -x "$server_bin" ]]; then
     echo "[BUILD] Reusing $server_bin"
     return
+  fi
+
+  if [[ ! -f "$repo_dir/CMakeLists.txt" ]]; then
+    echo "Missing llama.cpp repository: $repo_dir" >&2
+    exit 1
   fi
 
   if [[ "$AUTO_BUILD" != "1" && "$AUTO_BUILD" != "true" ]]; then
@@ -326,8 +370,8 @@ for item in "${MODEL_ITEMS[@]}"; do
   fi
   label="${item%%=*}"
   model_path="${item#*=}"
-  if [[ ! -f "$model_path" ]]; then
-    echo "Missing model file for $label: $model_path" >&2
+  if [[ ! -e "$model_path" ]]; then
+    echo "Missing model path for $label: $model_path" >&2
     exit 1
   fi
   MODEL_LABELS+=("$(safe_name "$label")")
@@ -352,7 +396,13 @@ write_inventories() {
   {
     echo "label,path,bytes"
     for idx in "${!MODEL_LABELS[@]}"; do
-      bytes="$(stat -c '%s' "${MODEL_PATHS[$idx]}")"
+      if [[ -f "${MODEL_PATHS[$idx]}" ]]; then
+        bytes="$(stat -c '%s' "${MODEL_PATHS[$idx]}")"
+      elif [[ -d "${MODEL_PATHS[$idx]}" ]]; then
+        bytes="$(find "${MODEL_PATHS[$idx]}" -type f -printf '%s\n' 2>/dev/null | awk '{s += $1} END {print s + 0}')"
+      else
+        bytes=0
+      fi
       echo "${MODEL_LABELS[$idx]},${MODEL_PATHS[$idx]},$bytes"
     done
   } > "$OUTPUT_DIR/model_inventory.csv"
@@ -399,6 +449,7 @@ run_config() {
   local threads_batch="${THREADS_BATCH:-$threads}"
   local server_log="$run_dir/server.log"
   local resource_log="$run_dir/resources.csv"
+  local node_resource_log="$run_dir/node_resources.csv"
   local raw_out="$run_dir/requests.jsonl"
   local summary_out="$run_dir/summary.json"
   local system_out="$run_dir/system.txt"
@@ -434,6 +485,8 @@ run_config() {
     echo "warmup_trials=$WARMUP_TRIALS"
     echo "mandatory_only=$MANDATORY_ONLY"
     echo "limit_per_category=${LIMIT_PER_CATEGORY:-<unset>}"
+    echo "enable_node_resource_monitor=$ENABLE_NODE_RESOURCE_MONITOR"
+    echo "resource_monitor_interval=$RESOURCE_MONITOR_INTERVAL"
     echo "server_extra_args=${server_args[*]}"
     lscpu || true
   } > "$system_out"
@@ -464,8 +517,13 @@ run_config() {
     > "$server_log" 2>&1 &
   local server_pid=$!
   local monitor_pid=""
+  local node_monitor_pid=""
 
   cleanup_config() {
+    if [[ -n "$node_monitor_pid" ]]; then
+      kill "$node_monitor_pid" 2>/dev/null || true
+      wait "$node_monitor_pid" 2>/dev/null || true
+    fi
     if [[ -n "$monitor_pid" ]]; then
       kill "$monitor_pid" 2>/dev/null || true
       wait "$monitor_pid" 2>/dev/null || true
@@ -510,6 +568,7 @@ run_config() {
     done
   ) >> "$resource_log" &
   monitor_pid=$!
+  node_monitor_pid="$(start_node_resource_monitor "$node_resource_log" "$server_pid" "server")"
 
   bench_args=(
     "$BENCH_SCRIPT"

@@ -1,0 +1,54 @@
+timestamp=2026-05-13T16:16:28+01:00
+track=A1
+suite=node-scaling-n32
+engine=llamacpp-optimal
+role=rpc-coordinator
+rank=0
+node=cna1216
+node_count=32
+rpc_endpoints=cna1217:50053,cna1218:50054,cna1219:50055,cna1220:50056,cna1221:50057,cna1222:50058,cna1223:50059,cna1224:50060,cna1225:50061,cna1226:50062,cna1227:50063,cna1228:50064,cna1229:50065,cna1230:50066,cna1231:50067,cna1232:50068,cna1233:50069,cna1234:50070,cna1235:50071,cna1236:50072,cna1237:50073,cna1238:50074,cna1239:50075,cna1240:50076,cna1241:50077,cna1242:50078,cna1243:50079,cna1244:50080,cna1245:50081,cna1246:50082,cna1247:50083
+rpc_max_servers=255
+allocated_nodes=cna[1216-1247]
+partition=normal-arm
+model_label=model-1-mandatory
+model=/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/llamacpp-tq/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf
+repo_dir=/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/llamacpp-tq/llama-cpp-turboquant
+server_bin=/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/llamacpp-tq/llama-cpp-turboquant/build-slurm-rpc/bin/llama-server
+rpc_server_bin=/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/llamacpp-tq/llama-cpp-turboquant/build-slurm-rpc/bin/rpc-server
+threads=46
+threads_batch=46
+ctx_size=8192
+parallel_requests=2
+bench_concurrency=2
+cache_type_k=turbo3
+cache_type_v=turbo3
+max_tokens=128
+n_gpu_layers=999
+fit_params=off
+flash_attn=on
+trials=1
+warmup_trials=1
+mandatory_only=0
+limit_per_category=5
+enable_node_resource_monitor=1
+resource_monitor_interval=1
+server_extra_args=
+Architecture:        aarch64
+Byte Order:          Little Endian
+CPU(s):              48
+On-line CPU(s) list: 0-47
+Thread(s) per core:  1
+Core(s) per cluster: 12
+Socket(s):           -
+Cluster(s):          4
+NUMA node(s):        4
+Vendor ID:           FUJITSU
+Model:               0
+Model name:          A64FX
+Stepping:            0x1
+BogoMIPS:            200.00
+NUMA node0 CPU(s):   0-11
+NUMA node1 CPU(s):   12-23
+NUMA node2 CPU(s):   24-35
+NUMA node3 CPU(s):   36-47
+Flags:               fp asimd evtstrm sha1 sha2 crc32 atomics fphp asimdhp cpuid asimdrdm fcma dcpop sve

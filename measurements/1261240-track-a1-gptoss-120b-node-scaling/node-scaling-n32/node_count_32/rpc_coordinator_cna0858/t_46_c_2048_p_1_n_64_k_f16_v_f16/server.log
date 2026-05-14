@@ -1,0 +1,192 @@
+build_info: b0-unknown
+system_info: n_threads = 46 (n_threads_batch = 46) / 48 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | SVE = 1 | SVE_CNT = 64 | OPENMP = 1 | REPACK = 1 | 
+init: using 47 threads for HTTP server
+start: binding port with default address family
+main: loading model
+srv    load_model: loading model '/share/chatbot/models/gpt-oss-120b-Q8_0.gguf'
+llama_model_load_from_file_impl: using device RPC0 (cna0859:50053) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC1 (cna0860:50054) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC2 (cna0861:50055) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC3 (cna0862:50056) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC4 (cna0863:50057) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC5 (cna0864:50058) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC6 (cna0865:50059) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC7 (cna0866:50060) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC8 (cna0867:50061) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC9 (cna0868:50062) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC10 (cna0869:50063) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC11 (cna0870:50064) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC12 (cna0871:50065) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC13 (cna0872:50066) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC14 (cna0873:50067) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC15 (cna0874:50068) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC16 (cna0875:50069) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC17 (cna0876:50070) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC18 (cna0877:50071) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC19 (cna0878:50072) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC20 (cna0879:50073) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC21 (cna0880:50074) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC22 (cna0881:50075) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC23 (cna0882:50076) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC24 (cna0883:50077) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC25 (cna0884:50078) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC26 (cna0885:50079) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC27 (cna0886:50080) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC28 (cna0887:50081) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC29 (cna0888:50082) (unknown id) - 32140 MiB free
+llama_model_load_from_file_impl: using device RPC30 (cna0889:50083) (unknown id) - 32140 MiB free
+llama_model_loader: loaded meta data with 39 key-value pairs and 687 tensors from /share/chatbot/models/gpt-oss-120b-Q8_0.gguf (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = gpt-oss
+llama_model_loader: - kv   1:                               general.type str              = model
+llama_model_loader: - kv   2:                               general.name str              = Gpt Oss 120b
+llama_model_loader: - kv   3:                           general.basename str              = gpt-oss
+llama_model_loader: - kv   4:                         general.size_label str              = 120B
+llama_model_loader: - kv   5:                            general.license str              = apache-2.0
+llama_model_loader: - kv   6:                               general.tags arr[str,2]       = ["vllm", "text-generation"]
+llama_model_loader: - kv   7:                        gpt-oss.block_count u32              = 36
+llama_model_loader: - kv   8:                     gpt-oss.context_length u32              = 131072
+llama_model_loader: - kv   9:                   gpt-oss.embedding_length u32              = 2880
+llama_model_loader: - kv  10:                gpt-oss.feed_forward_length u32              = 2880
+llama_model_loader: - kv  11:               gpt-oss.attention.head_count u32              = 64
+llama_model_loader: - kv  12:            gpt-oss.attention.head_count_kv u32              = 8
+llama_model_loader: - kv  13:                     gpt-oss.rope.freq_base f32              = 150000.000000
+llama_model_loader: - kv  14:   gpt-oss.attention.layer_norm_rms_epsilon f32              = 0.000010
+llama_model_loader: - kv  15:                       gpt-oss.expert_count u32              = 128
+llama_model_loader: - kv  16:                  gpt-oss.expert_used_count u32              = 4
+llama_model_loader: - kv  17:               gpt-oss.attention.key_length u32              = 64
+llama_model_loader: - kv  18:             gpt-oss.attention.value_length u32              = 64
+llama_model_loader: - kv  19:           gpt-oss.attention.sliding_window u32              = 128
+llama_model_loader: - kv  20:         gpt-oss.expert_feed_forward_length u32              = 2880
+llama_model_loader: - kv  21:                  gpt-oss.rope.scaling.type str              = yarn
+llama_model_loader: - kv  22:                gpt-oss.rope.scaling.factor f32              = 32.000000
+llama_model_loader: - kv  23: gpt-oss.rope.scaling.original_context_length u32              = 4096
+llama_model_loader: - kv  24:                       tokenizer.ggml.model str              = gpt2
+llama_model_loader: - kv  25:                         tokenizer.ggml.pre str              = gpt-4o
+llama_model_loader: - kv  26:                      tokenizer.ggml.tokens arr[str,201088]  = ["!", "\"", "#", "$", "%", "&", "'", ...
+llama_model_loader: - kv  27:                  tokenizer.ggml.token_type arr[i32,201088]  = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+llama_model_loader: - kv  28:                      tokenizer.ggml.merges arr[str,446189]  = ["Ġ Ġ", "Ġ ĠĠĠ", "ĠĠ ĠĠ", "...
+llama_model_loader: - kv  29:                tokenizer.ggml.bos_token_id u32              = 199998
+llama_model_loader: - kv  30:                tokenizer.ggml.eos_token_id u32              = 200002
+llama_model_loader: - kv  31:            tokenizer.ggml.padding_token_id u32              = 199999
+llama_model_loader: - kv  32:                    tokenizer.chat_template str              = {#-\n  In addition to the normal input...
+llama_model_loader: - kv  33:               general.quantization_version u32              = 2
+llama_model_loader: - kv  34:                          general.file_type u32              = 7
+llama_model_loader: - kv  35:                      quantize.imatrix.file str              = gpt-oss-120b/gpt-oss-120b.dat
+llama_model_loader: - kv  36:                   quantize.imatrix.dataset str              = calibration_datav3.txt
+llama_model_loader: - kv  37:             quantize.imatrix.entries_count u32              = 288
+llama_model_loader: - kv  38:              quantize.imatrix.chunks_count u32              = 122
+llama_model_loader: - type  f32:  433 tensors
+llama_model_loader: - type q8_0:  146 tensors
+llama_model_loader: - type mxfp4:  108 tensors
+print_info: file format = GGUF V3 (latest)
+print_info: file type   = Q8_0
+print_info: file size   = 59.02 GiB (4.34 BPW) 
+load: 0 unused tokens
+load: setting token '<|message|>' (200008) attribute to USER_DEFINED (16), old attributes: 8
+load: setting token '<|start|>' (200006) attribute to USER_DEFINED (16), old attributes: 8
+load: setting token '<|constrain|>' (200003) attribute to USER_DEFINED (16), old attributes: 8
+load: setting token '<|channel|>' (200005) attribute to USER_DEFINED (16), old attributes: 8
+load: printing all EOG tokens:
+load:   - 199999 ('<|endoftext|>')
+load:   - 200002 ('<|return|>')
+load:   - 200007 ('<|end|>')
+load:   - 200012 ('<|call|>')
+load: special_eog_ids contains both '<|return|>' and '<|call|>', or '<|calls|>' and '<|flush|>' tokens, removing '<|end|>' token from EOG list
+load: special tokens cache size = 21
+load: token to piece cache size = 1.3332 MB
+print_info: arch                  = gpt-oss
+print_info: vocab_only            = 0
+print_info: no_alloc              = 0
+print_info: n_ctx_train           = 131072
+print_info: n_embd                = 2880
+print_info: n_embd_inp            = 2880
+print_info: n_layer               = 36
+print_info: n_head                = 64
+print_info: n_head_kv             = 8
+print_info: n_rot                 = 64
+print_info: n_swa                 = 128
+print_info: is_swa_any            = 1
+print_info: n_embd_head_k         = 64
+print_info: n_embd_head_v         = 64
+print_info: n_gqa                 = 8
+print_info: n_embd_k_gqa          = 512
+print_info: n_embd_v_gqa          = 512
+print_info: f_norm_eps            = 0.0e+00
+print_info: f_norm_rms_eps        = 1.0e-05
+print_info: f_clamp_kqv           = 0.0e+00
+print_info: f_max_alibi_bias      = 0.0e+00
+print_info: f_logit_scale         = 0.0e+00
+print_info: f_attn_scale          = 0.0e+00
+print_info: n_ff                  = 2880
+print_info: n_expert              = 128
+print_info: n_expert_used         = 4
+print_info: n_expert_groups       = 0
+print_info: n_group_used          = 0
+print_info: causal attn           = 1
+print_info: pooling type          = -1
+print_info: rope type             = 2
+print_info: rope scaling          = yarn
+print_info: freq_base_train       = 150000.0
+print_info: freq_scale_train      = 0.03125
+print_info: freq_base_swa         = 150000.0
+print_info: freq_scale_swa        = 0.03125
+print_info: n_embd_head_k_swa     = 64
+print_info: n_embd_head_v_swa     = 64
+print_info: n_rot_swa             = 64
+print_info: n_ctx_orig_yarn       = 4096
+print_info: rope_yarn_log_mul     = 0.0000
+print_info: rope_finetuned        = unknown
+print_info: model type            = 120B
+print_info: model params          = 116.83 B
+print_info: general.name          = Gpt Oss 120b
+print_info: n_ff_exp              = 2880
+print_info: vocab type            = BPE
+print_info: n_vocab               = 201088
+print_info: n_merges              = 446189
+print_info: BOS token             = 199998 '<|startoftext|>'
+print_info: EOS token             = 200002 '<|return|>'
+print_info: EOT token             = 199999 '<|endoftext|>'
+print_info: PAD token             = 199999 '<|endoftext|>'
+print_info: LF token              = 198 'Ċ'
+print_info: EOG token             = 199999 '<|endoftext|>'
+print_info: EOG token             = 200002 '<|return|>'
+print_info: EOG token             = 200012 '<|call|>'
+print_info: max token length      = 256
+load_tensors: loading model tensors, this can take a while... (mmap = true, direct_io = false)
+load_tensors: offloading output layer to GPU
+load_tensors: offloading 35 repeating layers to GPU
+load_tensors: offloaded 37/37 layers to GPU
+load_tensors:   CPU_Mapped model buffer size =   586.82 MiB
+load_tensors: RPC0[cna0859:50053] model buffer size =  3292.49 MiB
+load_tensors: RPC0[cna0860:50054] model buffer size =  1646.24 MiB
+load_tensors: RPC0[cna0861:50055] model buffer size =  1646.24 MiB
+load_tensors: RPC0[cna0862:50056] model buffer size =  1646.24 MiB
+load_tensors: RPC0[cna0863:50057] model buffer size =  1646.24 MiB
+load_tensors: RPC0[cna0864:50058] model buffer size =  3292.49 MiB
+load_tensors: RPC0[cna0865:50059] model buffer size =  1646.24 MiB
+load_tensors: RPC0[cna0866:50060] model buffer size =  1646.24 MiB
+load_tensors: RPC0[cna0867:50061] model buffer size =  1646.24 MiB
+load_tensors: RPC0[cna0868:50062] model buffer size =  1646.24 MiB
+load_tensors: RPC0[cna0869:50063] model buffer size =  3292.49 MiB
+load_tensors: RPC0[cna0870:50064] model buffer size =  1646.24 MiB
+load_tensors: RPC0[cna0871:50065] model buffer size =  1646.24 MiB
+load_tensors: RPC0[cna0872:50066] model buffer size =  1646.24 MiB
+load_tensors: RPC0[cna0873:50067] model buffer size =  1646.24 MiB
+load_tensors: RPC0[cna0874:50068] model buffer size =  3292.49 MiB
+load_tensors: RPC0[cna0875:50069] model buffer size =  1646.24 MiB
+load_tensors: RPC0[cna0876:50070] model buffer size =  1646.24 MiB
+load_tensors: RPC0[cna0877:50071] model buffer size =  1646.24 MiB
+load_tensors: RPC0[cna0878:50072] model buffer size =  1646.24 MiB
+load_tensors: RPC0[cna0879:50073] model buffer size =  3292.49 MiB
+load_tensors: RPC0[cna0880:50074] model buffer size =  1646.24 MiB
+load_tensors: RPC0[cna0881:50075] model buffer size =  1646.24 MiB
+load_tensors: RPC0[cna0882:50076] model buffer size =  1646.24 MiB
+load_tensors: RPC0[cna0883:50077] model buffer size =  1646.24 MiB
+load_tensors: RPC0[cna0884:50078] model buffer size =  3292.49 MiB
+load_tensors: RPC0[cna0885:50079] model buffer size =  1646.24 MiB
+load_tensors: RPC0[cna0886:50080] model buffer size =  1646.24 MiB
+load_tensors: RPC0[cna0887:50081] model buffer size =  1646.24 MiB
+load_tensors: RPC0[cna0888:50082] model buffer size =  1646.24 MiB
+load_tensors: RPC0[cna0889:50083] model buffer size =   586.83 MiB
+....................

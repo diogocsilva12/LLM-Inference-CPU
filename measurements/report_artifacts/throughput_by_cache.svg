@@ -5,13 +5,15 @@
 <text x='350.0' y='440' font-size='13'>cache index</text>
 <text x='15' y='220.0' font-size='13' transform='rotate(-90 15,220.0)'>output tokens/s</text>
 <text x='90' y='410' font-size='11'>1</text>
-<text x='690' y='410' font-size='11'>3</text>
-<text x='20' y='390' font-size='11'>5.02</text>
-<text x='20' y='55' font-size='11'>7.58</text>
+<text x='690' y='410' font-size='11'>4</text>
+<text x='20' y='390' font-size='11'>4.53</text>
+<text x='20' y='55' font-size='11'>7.86</text>
 <circle cx='90.00' cy='50.00' r='4' fill='#2ca02c'/>
 <text x='96.00' y='44.00' font-size='10'>f16</text>
-<circle cx='410.00' cy='390.00' r='4' fill='#2ca02c'/>
-<text x='416.00' y='384.00' font-size='10'>turbo3</text>
-<circle cx='730.00' cy='364.12' r='4' fill='#2ca02c'/>
-<text x='736.00' y='358.12' font-size='10'>turbo4</text>
+<circle cx='303.33' cy='319.97' r='4' fill='#2ca02c'/>
+<text x='309.33' y='313.97' font-size='10'>turbo2</text>
+<circle cx='516.67' cy='390.00' r='4' fill='#2ca02c'/>
+<text x='522.67' y='384.00' font-size='10'>turbo3</text>
+<circle cx='730.00' cy='335.98' r='4' fill='#2ca02c'/>
+<text x='736.00' y='329.98' font-size='10'>turbo4</text>
 </svg>

@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# macOS / editor metadata
+.DS_Store
+._*
+.vscode/
+.idea/
+
+# Benchmark outputs and scheduler logs
+measurements/
+slurm_logs/
+*.out
+*.err
+job_out_*
+job_error_*
+mlc_out_*
+mlc_error_*
+
+# Large local model/runtime artifacts
+*.gguf
+*.bin
+TinyLlama-MLC/
+
+# Local engine/runtime checkouts or environments not meant for source diffs
+mclllm/
+vllm/
+
+# Generated reports/artifacts
+*.aux
+*.log
+*.toc

@@ -1,0 +1,37 @@
+timestamp=2026-05-13T15:14:01+01:00
+track=A1
+suite=node-scaling-n2
+engine=llamacpp-optimal
+role=rpc-worker
+rank=1
+node=cna0856
+node_count=2
+allocated_nodes=cna[0855-0856]
+partition=normal-arm
+repo_dir=/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/llamacpp-tq/llama-cpp-turboquant
+rpc_server_bin=/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/llamacpp-tq/llama-cpp-turboquant/build-slurm-rpc/bin/rpc-server
+rpc_bind_host=0.0.0.0
+rpc_port=50053
+rpc_use_cache=1
+threads=46
+enable_node_resource_monitor=1
+resource_monitor_interval=1
+Architecture:        aarch64
+Byte Order:          Little Endian
+CPU(s):              48
+On-line CPU(s) list: 0-47
+Thread(s) per core:  1
+Core(s) per cluster: 12
+Socket(s):           -
+Cluster(s):          4
+NUMA node(s):        4
+Vendor ID:           FUJITSU
+Model:               0
+Model name:          A64FX
+Stepping:            0x1
+BogoMIPS:            200.00
+NUMA node0 CPU(s):   0-11
+NUMA node1 CPU(s):   12-23
+NUMA node2 CPU(s):   24-35
+NUMA node3 CPU(s):   36-47
+Flags:               fp asimd evtstrm sha1 sha2 crc32 atomics fphp asimdhp cpuid asimdrdm fcma dcpop sve

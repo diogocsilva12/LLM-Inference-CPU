@@ -30,14 +30,23 @@ def load_prompts(
     if mandatory_only:
         prompts = [p for p in prompts if p.get("mandatory") is True]
     if limit_per_category is not None:
+        mandatory_counts = {}
+        for prompt in prompts:
+            if prompt.get("mandatory") is True:
+                category = prompt.get("category", "unknown")
+                mandatory_counts[category] = mandatory_counts.get(category, 0) + 1
         counts = {}
         selected = []
         for prompt in prompts:
             category = prompt.get("category", "unknown")
             counts.setdefault(category, 0)
-            if counts[category] < limit_per_category:
+            if prompt.get("mandatory") is True:
                 selected.append(prompt)
-                counts[category] += 1
+            else:
+                nonmandatory_limit = max(0, limit_per_category - mandatory_counts.get(category, 0))
+                if counts[category] < nonmandatory_limit:
+                    selected.append(prompt)
+                    counts[category] += 1
         prompts = selected
     return data.get("generation", {}), prompts
 

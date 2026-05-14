@@ -1,0 +1,7 @@
+index,suite,engine,model_label,model,threads,ctx_size,parallel_requests,bench_concurrency,max_tokens,cache_type_k,cache_type_v
+0,model-set,vllm,model-1-mandatory,/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/llamacpp-tq/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf,46,1024,1,1,128,f16,f16
+1,model-set,mlc,model-1-mandatory,/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/llamacpp-tq/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf,46,1024,1,1,128,f16,f16
+2,model-set,vllm,model-2,/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/llamacpp-tq/models/SmolLM2-360M-Instruct.Q4_K_M.gguf,46,1024,1,1,128,f16,f16
+3,model-set,mlc,model-2,/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/llamacpp-tq/models/SmolLM2-360M-Instruct.Q4_K_M.gguf,46,1024,1,1,128,f16,f16
+4,model-set,vllm,model-3,/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/llamacpp-tq/models/gemma-4-E4B-it-OBLITERATED-Q4_K_M.gguf,46,1024,1,1,128,f16,f16
+5,model-set,mlc,model-3,/projects/F202500010HPCVLABUMINHO/uminhocp006/aded-project-llamacpp/llamacpp-tq/models/gemma-4-E4B-it-OBLITERATED-Q4_K_M.gguf,46,1024,1,1,128,f16,f16

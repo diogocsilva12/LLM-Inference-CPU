@@ -400,8 +400,8 @@ and sampled peak memory. Each configuration uses three measured trials after
 one warmup trial. Goodput uses the harness SLA of TTFT no larger than 2.0 s and
 TPOT no larger than 0.2 s. The prompt file contains at least ten prompts per category and
 marks the three mandatory assignment prompts. These sweeps used
-\texttt{LIMIT\_PER\_CATEGORY=3}, so the measured workload covers nine prompts
-per configuration: the three mandatory prompts plus six additional prompts.
+\texttt{LIMIT\_PER\_CATEGORY=5}, so the measured workload covers fifteen prompts
+per configuration, with the three mandatory prompts always included.
 That is sufficient for the mandatory-prompt analysis below, but it is a partial
 run relative to the strict full-workload requirement of ten measured prompts per
 category. Generated text for the mandatory prompts is stored in
