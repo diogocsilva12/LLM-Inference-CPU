@@ -1,5 +1,6 @@
 # Track A1 llama.cpp Server Sweep
 
+
 This repository contains the Track A1 benchmark harness for evaluating the `llama.cpp` engine family on Deucalion CPU nodes. It compares vanilla `llama.cpp`, TurboQuant, selected BLAS builds, ARM versus x86 wrappers, and RPC node-scaling runs using one OpenAI-compatible streaming benchmark protocol.
 
 The main entrypoints are under `slurm/sweep_benchmark/`; Python utilities under `scripts/` benchmark, validate, summarize, and plot the raw outputs written to `measurements/`.
@@ -259,3 +260,7 @@ For SLURM changes, also run a small dev-partition smoke test before generating r
 ## Codebase hygiene notes
 
 The repository currently contains generated or local-only artifacts such as macOS AppleDouble files (`._*`), `.DS_Store`, Python `__pycache__/`, local virtual environments, SLURM logs, and large generated model/runtime folders. These should not be committed. Move or delete them only after confirming they are not needed for reproducibility.
+
+## Future works
+
+For the future work we are going to use numactl, and test with more representative benchmarks for each model optimization and flash-attention.
