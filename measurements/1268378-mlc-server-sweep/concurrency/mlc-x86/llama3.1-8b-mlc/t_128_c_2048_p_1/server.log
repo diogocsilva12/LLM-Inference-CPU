@@ -1,0 +1,19 @@
+[2026-05-14 22:27:48] INFO auto_device.py:80: [92mFound[0m device: cpu:0
+[2026-05-14 22:28:02] INFO jit.py:43: [1mMLC_JIT_POLICY[0m = ON. Can be one of: ON, OFF, REDO, READONLY
+[2026-05-14 22:28:02] INFO jit.py:168: Using cached model lib: [1m/home/uminhocp030/.cache/mlc_llm/model_lib/d7ce8fb91af2e8ca579fdc3648965d97.so[0m
+[2026-05-14 22:28:02] INFO engine_base.py:189: The selected engine mode is [92mlocal[0m. We choose small max batch size and KV cache capacity to use less GPU memory.
+[2026-05-14 22:28:02] INFO engine_base.py:214: If you don't have concurrent requests and only use the engine interactively, please select mode "interactive".
+[2026-05-14 22:28:02] INFO engine_base.py:219: If you have high concurrent requests and want to maximize the GPU memory utilization, please select mode "server".
+[22:28:03] /projects/F202500010HPCVLABUMINHO/uminhocp030/heretic-deucalion/mclllm/mlc-llm/cpp/serve/config.cc:804: Under mode "local", max batch size will be set to 4, max KV cache token capacity will be set to 8192, prefill chunk size will be set to 8192. 
+[22:28:03] /projects/F202500010HPCVLABUMINHO/uminhocp030/heretic-deucalion/mclllm/mlc-llm/cpp/serve/config.cc:804: Under mode "interactive", max batch size will be set to 1, max KV cache token capacity will be set to 131072, prefill chunk size will be set to 8192. 
+[22:28:03] /projects/F202500010HPCVLABUMINHO/uminhocp030/heretic-deucalion/mclllm/mlc-llm/cpp/serve/config.cc:804: Under mode "server", max batch size will be set to 128, max KV cache token capacity will be set to 1698099, prefill chunk size will be set to 8192. 
+[22:28:03] /projects/F202500010HPCVLABUMINHO/uminhocp030/heretic-deucalion/mclllm/mlc-llm/cpp/serve/config.cc:885: The actual engine mode is "local". So max batch size is 4, max KV cache token capacity is 8192, prefill chunk size is 8192.
+[22:28:03] /projects/F202500010HPCVLABUMINHO/uminhocp030/heretic-deucalion/mclllm/mlc-llm/cpp/serve/config.cc:890: Estimated total single GPU memory usage: 7598.157 MB (Parameters: 4308.133 MB. KVCache: 1234.073 MB. Temporary buffer: 2055.952 MB). The actual usage might be slightly larger than the estimated number.
+INFO:     Started server process [1128902]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:46546 - "GET /v1/models HTTP/1.1" 200 OK
+[2026-05-14 22:55:15] INFO engine.py:1371: request chatcmpl-3019cc4c5a45410ba48b2488daedeb1e cancelled
+INFO:     127.0.0.1:46708 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-05-14 22:58:13] INFO engine.py:1371: request chatcmpl-5f4ca59adf704d73a75824350ad7fe32 cancelled

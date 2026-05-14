@@ -72,3 +72,6 @@ INFO:     127.0.0.1:55348 - "GET /v1/models HTTP/1.1" 200 OK
 [2026-05-14 21:18:09] INFO engine.py:1371: request chatcmpl-f48ac2fda26e48ec9fcdcd35ee274beb cancelled
 INFO:     127.0.0.1:55394 - "POST /v1/chat/completions HTTP/1.1" 200 OK
 [2026-05-14 21:21:08] INFO engine.py:1371: request chatcmpl-9f49adad7167421687e160ab94b79afc cancelled
+[2026-05-14 21:53:17] INFO engine.py:1371: request chatcmpl-f49c84dc63564a37a6717f9e35654a24 cancelled
+[2026-05-14 21:56:15] INFO engine.py:1371: request chatcmpl-7710064fe2c34fbe961cf4cd36eb3c7c cancelled
+[2026-05-14 21:56:15] INFO engine.py:1371: request chatcmpl-e761a09c05934c09965abb2cbbcbd57d cancelled
