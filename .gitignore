@@ -1,7 +1,7 @@
 llamacpp-vanilla/*
 
 .*
-slurm/*
+slurm_output/
 .venv*/
 TinyLlama-MLC/*
 Llama3.1-MLC/*
