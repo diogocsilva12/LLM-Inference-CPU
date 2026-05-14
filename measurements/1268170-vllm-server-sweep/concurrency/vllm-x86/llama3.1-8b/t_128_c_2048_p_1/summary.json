@@ -1,0 +1,35 @@
+[
+  {
+    "category": "long",
+    "runs": 11,
+    "successful_runs": 11,
+    "ttft_s_mean": 26.676820993423462,
+    "ttft_s_stdev": 3.93649254360805,
+    "tpot_s_mean": 0.398021039573653,
+    "tpot_s_stdev": 0.00015511116612253607,
+    "throughput_output_tok_s_mean": 1.6617060672063928,
+    "throughput_output_tok_s_stdev": 0.08280721527870724
+  },
+  {
+    "category": "medium",
+    "runs": 10,
+    "successful_runs": 10,
+    "ttft_s_mean": 10.645736408233642,
+    "ttft_s_stdev": 1.6829387768704003,
+    "tpot_s_mean": 0.39733485668662966,
+    "tpot_s_stdev": 0.00019467061462042067,
+    "throughput_output_tok_s_mean": 2.0963923066117265,
+    "throughput_output_tok_s_stdev": 0.06162811795418857
+  },
+  {
+    "category": "short",
+    "runs": 10,
+    "successful_runs": 10,
+    "ttft_s_mean": 6.976061081886291,
+    "ttft_s_stdev": 1.1219484477657145,
+    "tpot_s_mean": 0.40351204033598814,
+    "tpot_s_stdev": 0.01939552407822553,
+    "throughput_output_tok_s_mean": 2.0736750616041917,
+    "throughput_output_tok_s_stdev": 0.5097768125955363
+  }
+]

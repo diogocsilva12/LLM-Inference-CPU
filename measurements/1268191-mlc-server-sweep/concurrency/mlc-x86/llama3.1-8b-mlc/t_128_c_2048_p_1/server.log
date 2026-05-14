@@ -1,0 +1,74 @@
+[2026-05-14 20:48:47] INFO auto_device.py:80: [92mFound[0m device: cpu:0
+[2026-05-14 20:48:58] INFO jit.py:43: [1mMLC_JIT_POLICY[0m = ON. Can be one of: ON, OFF, REDO, READONLY
+[2026-05-14 20:48:58] INFO jit.py:128: Compiling using commands below:
+[2026-05-14 20:48:58] INFO jit.py:129: [94m/projects/F202500010HPCVLABUMINHO/uminhocp030/heretic-deucalion/.venv-x86-mcl/bin/python -m mlc_llm compile /projects/F202500010HPCVLABUMINHO/uminhocp030/heretic-deucalion/Llama3.1-MLC --opt 'flashinfer=1;cublas_gemm=1;faster_transformer=0;cudagraph=1;cutlass=1;ipc_allreduce_strategy=NONE' --overrides '' --device cpu:0 --output /tmp/tmp2_n3xqxk/lib.so[0m
+[2026-05-14 20:49:03] INFO auto_config.py:67: [92mFound[0m model configuration: /projects/F202500010HPCVLABUMINHO/uminhocp030/heretic-deucalion/Llama3.1-MLC/mlc-chat-config.json
+[2026-05-14 20:49:03] INFO auto_target.py:110: Detecting target device: cpu:0
+[2026-05-14 20:49:03] INFO auto_target.py:112: [92mFound[0m target: {"kind": "llvm", "tag": "", "keys": ("cpu",), "mtriple": "x86_64-redhat-linux-gnu", "mcpu": "znver2"}
+[2026-05-14 20:49:03] INFO auto_target.py:129: [92mFound[0m host LLVM triple: [1mx86_64-redhat-linux-gnu[0m
+[2026-05-14 20:49:03] INFO auto_target.py:130: [92mFound[0m host LLVM CPU: [1mznver2[0m
+[2026-05-14 20:49:03] INFO auto_config.py:151: [92mFound[0m model type: [1mllama[0m. Use `--model-type` to override.
+[2026-05-14 20:49:03] INFO compile.py:133: TOP LEVEL MODEL CONFIG BEFORE OVERRIDES: LlamaConfig(hidden_size=4096, intermediate_size=14336, num_attention_heads=32, num_hidden_layers=32, rms_norm_eps=1e-05, vocab_size=128256, tie_word_embeddings=False, position_embedding_base=500000.0, rope_scaling={'factor': 8.0, 'low_freq_factor': 1.0, 'high_freq_factor': 4.0, 'original_max_position_embeddings': 8192, 'rope_type': 'llama3'}, context_window_size=131072, prefill_chunk_size=8192, num_key_value_heads=8, head_dim=128, tensor_parallel_shards=1, pipeline_parallel_stages=1, max_batch_size=128, disaggregation=False, kwargs={})
+[2026-05-14 20:49:03] INFO compile.py:144: Creating model from: LlamaConfig(hidden_size=4096, intermediate_size=14336, num_attention_heads=32, num_hidden_layers=32, rms_norm_eps=1e-05, vocab_size=128256, tie_word_embeddings=False, position_embedding_base=500000.0, rope_scaling={'factor': 8.0, 'low_freq_factor': 1.0, 'high_freq_factor': 4.0, 'original_max_position_embeddings': 8192, 'rope_type': 'llama3'}, context_window_size=131072, prefill_chunk_size=8192, num_key_value_heads=8, head_dim=128, tensor_parallel_shards=1, pipeline_parallel_stages=1, max_batch_size=128, disaggregation=False, kwargs={})
+[2026-05-14 20:49:03] INFO compile.py:162: Exporting the model to TVM compiler
+[2026-05-14 20:49:05] INFO compile.py:168: Running optimizations using TVM
+[2026-05-14 20:49:05] INFO compile.py:197: Registering metadata: {'model_type': 'llama', 'quantization': 'q4f16_1', 'context_window_size': 131072, 'sliding_window_size': -1, 'attention_sink_size': -1, 'prefill_chunk_size': 8192, 'tensor_parallel_shards': 1, 'pipeline_parallel_stages': 1, 'disaggregation': False, 'kv_state_kind': 'kv_cache', 'max_batch_size': 128, 'active_vocab_size': None, 'model_task': 'chat'}
+[2026-05-14 20:49:07] INFO pipeline.py:57: Running TVM Relax graph-level optimizations
+[2026-05-14 20:49:09] INFO pipeline.py:57: Lowering to TVM TIR kernels
+[20:49:10] /workspace/tvm/include/tvm/topi/transform.h:1253: Warning: Fast mode segfaults when there are out-of-bounds indices. Make sure input indices are in bound
+[20:49:10] /workspace/tvm/include/tvm/topi/transform.h:1253: Warning: Fast mode segfaults when there are out-of-bounds indices. Make sure input indices are in bound
+[20:49:11] /workspace/tvm/include/tvm/topi/transform.h:1253: Warning: Fast mode segfaults when there are out-of-bounds indices. Make sure input indices are in bound
+[2026-05-14 20:49:18] INFO pipeline.py:57: Running TVM TIR-level optimizations
+[2026-05-14 20:49:27] INFO pipeline.py:57: Running TVM Dlight low-level optimizations
+[2026-05-14 20:49:36] INFO pipeline.py:57: Lowering to VM bytecode
+[2026-05-14 20:49:37] INFO estimate_memory_usage.py:58: [Memory usage] Function `alloc_embedding_tensor`: 64.00 MB
+[2026-05-14 20:49:37] INFO estimate_memory_usage.py:58: [Memory usage] Function `batch_decode`: 14.00 MB
+[2026-05-14 20:49:37] INFO estimate_memory_usage.py:58: [Memory usage] Function `batch_decode_to_last_hidden_states`: 15.00 MB
+[2026-05-14 20:49:37] INFO estimate_memory_usage.py:58: [Memory usage] Function `batch_prefill`: 897.00 MB
+[2026-05-14 20:49:37] INFO estimate_memory_usage.py:58: [Memory usage] Function `batch_prefill_to_last_hidden_states`: 960.00 MB
+[2026-05-14 20:49:37] INFO estimate_memory_usage.py:58: [Memory usage] Function `batch_select_last_hidden_states`: 1.00 MB
+[2026-05-14 20:49:37] INFO estimate_memory_usage.py:58: [Memory usage] Function `batch_verify`: 896.00 MB
+[2026-05-14 20:49:37] INFO estimate_memory_usage.py:58: [Memory usage] Function `batch_verify_to_last_hidden_states`: 960.00 MB
+[2026-05-14 20:49:37] INFO estimate_memory_usage.py:58: [Memory usage] Function `create_tir_paged_kv_cache`: 0.00 MB
+[2026-05-14 20:49:37] INFO estimate_memory_usage.py:58: [Memory usage] Function `decode`: 0.11 MB
+[2026-05-14 20:49:37] INFO estimate_memory_usage.py:58: [Memory usage] Function `decode_to_last_hidden_states`: 0.12 MB
+[2026-05-14 20:49:37] INFO estimate_memory_usage.py:58: [Memory usage] Function `embed`: 64.00 MB
+[2026-05-14 20:49:37] INFO estimate_memory_usage.py:58: [Memory usage] Function `gather_hidden_states`: 0.00 MB
+[2026-05-14 20:49:37] INFO estimate_memory_usage.py:58: [Memory usage] Function `get_logits`: 0.00 MB
+[2026-05-14 20:49:37] INFO estimate_memory_usage.py:58: [Memory usage] Function `prefill`: 896.01 MB
+[2026-05-14 20:49:37] INFO estimate_memory_usage.py:58: [Memory usage] Function `prefill_to_last_hidden_states`: 960.00 MB
+[2026-05-14 20:49:37] INFO estimate_memory_usage.py:58: [Memory usage] Function `scatter_hidden_states`: 0.00 MB
+[2026-05-14 20:49:37] INFO estimate_memory_usage.py:58: [Memory usage] Function `softmax_with_temperature`: 0.00 MB
+[2026-05-14 20:49:38] INFO pipeline.py:57: Compiling external modules
+[2026-05-14 20:49:38] INFO pipeline.py:57: Compilation complete! Exporting to disk
+[2026-05-14 20:50:55] INFO model_metadata.py:91: [92mTotal memory usage without KV cache[0m: 5268.13 MB (Parameters: 4308.13 MB. Temporary buffer: 960.00 MB)
+[2026-05-14 20:50:55] INFO model_metadata.py:125: [92mKV cache size[0m: 0.12 MB per token in the context window
+[2026-05-14 20:50:55] INFO model_metadata.py:130: [92mTotal memory usage with a 4K KV cache[0m: 5780.13 MB
+[2026-05-14 20:50:55] INFO model_metadata.py:136: To reduce memory usage, tweak `prefill_chunk_size`, `context_window_size` and `sliding_window_size`
+[2026-05-14 20:50:55] INFO compile.py:225: Generated: [1m/tmp/tmp2_n3xqxk/lib.so[0m
+[1mCompiling with arguments:[0m
+  [1m--config[0m          LlamaConfig(hidden_size=4096, intermediate_size=14336, num_attention_heads=32, num_hidden_layers=32, rms_norm_eps=1e-05, vocab_size=128256, tie_word_embeddings=False, position_embedding_base=500000.0, rope_scaling={'factor': 8.0, 'low_freq_factor': 1.0, 'high_freq_factor': 4.0, 'original_max_position_embeddings': 8192, 'rope_type': 'llama3'}, context_window_size=131072, prefill_chunk_size=8192, num_key_value_heads=8, head_dim=128, tensor_parallel_shards=1, pipeline_parallel_stages=1, max_batch_size=128, disaggregation=False, kwargs={})
+  [1m--quantization[0m    GroupQuantize(name='q4f16_1', kind='group-quant', group_size=32, quantize_dtype='int4', storage_dtype='uint32', model_dtype='float16', linear_weight_layout='NK', quantize_embedding=True, quantize_final_fc=True, num_elem_per_storage=8, num_storage_per_group=4, max_int_value=7, tensor_parallel_shards=0)
+  [1m--model-type[0m      llama
+  [1m--target[0m          {"kind": "llvm", "tag": "", "keys": ("cpu",), "host": {"kind": "llvm", "tag": "", "keys": ("cpu",), "mtriple": "x86_64-redhat-linux-gnu", "mcpu": "znver2"}, "mtriple": "x86_64-redhat-linux-gnu", "mcpu": "znver2"}
+  [1m--opt[0m             flashinfer=0;cublas_gemm=0;faster_transformer=0;cudagraph=0;cutlass=0;ipc_allreduce_strategy=NONE
+  [1m--system-lib-prefix[0m ""
+  [1m--output[0m          /tmp/tmp2_n3xqxk/lib.so
+  [1m--overrides[0m       context_window_size=None;sliding_window_size=None;prefill_chunk_size=None;attention_sink_size=None;max_batch_size=None;tensor_parallel_shards=None;pipeline_parallel_stages=None;disaggregation=None
+[2026-05-14 20:50:56] INFO jit.py:136: Using compiled model lib: [1m/home/uminhocp030/.cache/mlc_llm/model_lib/d7ce8fb91af2e8ca579fdc3648965d97.so[0m
+[2026-05-14 20:50:56] INFO engine_base.py:189: The selected engine mode is [92mlocal[0m. We choose small max batch size and KV cache capacity to use less GPU memory.
+[2026-05-14 20:50:56] INFO engine_base.py:214: If you don't have concurrent requests and only use the engine interactively, please select mode "interactive".
+[2026-05-14 20:50:56] INFO engine_base.py:219: If you have high concurrent requests and want to maximize the GPU memory utilization, please select mode "server".
+[20:50:58] /projects/F202500010HPCVLABUMINHO/uminhocp030/heretic-deucalion/mclllm/mlc-llm/cpp/serve/config.cc:804: Under mode "local", max batch size will be set to 4, max KV cache token capacity will be set to 8192, prefill chunk size will be set to 8192. 
+[20:50:58] /projects/F202500010HPCVLABUMINHO/uminhocp030/heretic-deucalion/mclllm/mlc-llm/cpp/serve/config.cc:804: Under mode "interactive", max batch size will be set to 1, max KV cache token capacity will be set to 131072, prefill chunk size will be set to 8192. 
+[20:50:58] /projects/F202500010HPCVLABUMINHO/uminhocp030/heretic-deucalion/mclllm/mlc-llm/cpp/serve/config.cc:804: Under mode "server", max batch size will be set to 128, max KV cache token capacity will be set to 1698099, prefill chunk size will be set to 8192. 
+[20:50:58] /projects/F202500010HPCVLABUMINHO/uminhocp030/heretic-deucalion/mclllm/mlc-llm/cpp/serve/config.cc:885: The actual engine mode is "local". So max batch size is 4, max KV cache token capacity is 8192, prefill chunk size is 8192.
+[20:50:58] /projects/F202500010HPCVLABUMINHO/uminhocp030/heretic-deucalion/mclllm/mlc-llm/cpp/serve/config.cc:890: Estimated total single GPU memory usage: 7598.157 MB (Parameters: 4308.133 MB. KVCache: 1234.073 MB. Temporary buffer: 2055.952 MB). The actual usage might be slightly larger than the estimated number.
+INFO:     Started server process [832133]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:55348 - "GET /v1/models HTTP/1.1" 200 OK
+[2026-05-14 21:18:09] INFO engine.py:1371: request chatcmpl-f48ac2fda26e48ec9fcdcd35ee274beb cancelled
+INFO:     127.0.0.1:55394 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-05-14 21:21:08] INFO engine.py:1371: request chatcmpl-9f49adad7167421687e160ab94b79afc cancelled

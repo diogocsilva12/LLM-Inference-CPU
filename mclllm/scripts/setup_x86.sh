@@ -2,7 +2,7 @@
 #SBATCH --job-name=test-mcl
 #SBATCH --nodes=1
 #SBATCH --cpus-per-task=128
-#SBATCH --time=00:10:00
+#SBATCH --time=01:00:00
 #SBATCH --account=f202500010hpcvlabuminhox
 #SBATCH --partition=dev-x86
 #SBATCH --output=slurm_logs/job_out_%j

@@ -4,6 +4,7 @@ llamacpp-vanilla/*
 slurm/*
 .venv*/
 TinyLlama-MLC/*
+Llama3.1-MLC/*
 
 .venv-vllm/
 .venv-x86/

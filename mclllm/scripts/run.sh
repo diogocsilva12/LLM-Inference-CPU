@@ -11,29 +11,23 @@
 
 set -euo pipefail
 
-# 1. Carregar Módulos do Sistema
 source /share/env/module_select.sh
 module purge
 module load Python/3.13.1-GCCcore-14.2.0
 
-# 2. Definir Variáveis de Ambiente e Caminhos
 PROJECT="/projects/F202500010HPCVLABUMINHO/uminhocp030/heretic-deucalion"
 VENV="$PROJECT/.venv-x86-mcl"
 
-# 3. Ativar o Ambiente Virtual (A magia do LD_LIBRARY_PATH acontece aqui!)
 source "$VENV/bin/activate"
 
-# 4. Navegar para a diretoria onde está o código Python
 cd "$PROJECT"
 
-# 5. Imprimir estado e executar o script de JSON
 echo "========================================================="
 echo ">>> A INICIAR BENCHMARK MLC-LLM"
 echo ">>> Nó alocado: $SLURMD_NODENAME"
 echo ">>> Data/Hora: $(date)"
 echo "========================================================="
 
-# Correr o ficheiro Python que vai ler o JSON, processar os Batches e cuspir o novo JSON
 python benchmark.py
 
 echo "========================================================="
