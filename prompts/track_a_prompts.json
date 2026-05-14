@@ -1,0 +1,231 @@
+{
+  "metadata": {
+    "assignment": "Project Assignment #2 - Performance Analysis of LLM Inference Engines",
+    "track": "A1 - Single-Engine Deep Dive",
+    "notes": "Fixed workload with at least 10 prompts per category. Mandatory assignment prompts are marked with mandatory=true. Length targets are approximate because tokenization varies by model."
+  },
+  "generation": {
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "seed": 42
+  },
+  "prompts": [
+    {
+      "id": "mandatory_short_capital_france",
+      "category": "short",
+      "mandatory": true,
+      "length_target": "50-128 tokens",
+      "text": "What is the capital of France?"
+    },
+    {
+      "id": "short_cpu_quantisation",
+      "category": "short",
+      "mandatory": false,
+      "length_target": "50-128 tokens",
+      "text": "In two concise paragraphs, explain why quantisation is useful when running neural network inference on CPUs with limited memory bandwidth. Mention one benefit and one possible drawback."
+    },
+    {
+      "id": "short_threading_definition",
+      "category": "short",
+      "mandatory": false,
+      "length_target": "50-128 tokens",
+      "text": "Define thread parallelism for CPU inference. Explain why using more threads can improve throughput at first but eventually stop helping."
+    },
+    {
+      "id": "short_kv_cache",
+      "category": "short",
+      "mandatory": false,
+      "length_target": "50-128 tokens",
+      "text": "What is the KV cache in transformer inference, and why does it matter for long-context generation?"
+    },
+    {
+      "id": "short_batching",
+      "category": "short",
+      "mandatory": false,
+      "length_target": "50-128 tokens",
+      "text": "Explain the difference between latency and throughput in an inference server. Give one example where optimizing one can hurt the other."
+    },
+    {
+      "id": "short_memory_bandwidth",
+      "category": "short",
+      "mandatory": false,
+      "length_target": "50-128 tokens",
+      "text": "Why is memory bandwidth often a bottleneck during autoregressive decoding for large language models on CPUs?"
+    },
+    {
+      "id": "short_sla_goodput",
+      "category": "short",
+      "mandatory": false,
+      "length_target": "50-128 tokens",
+      "text": "Describe goodput for an LLM service using a latency SLA. Include a simple example with requests that pass and fail the SLA."
+    },
+    {
+      "id": "short_arm_x86",
+      "category": "short",
+      "mandatory": false,
+      "length_target": "50-128 tokens",
+      "text": "Compare ARM and x86 CPUs for LLM inference at a high level. Focus on vector instructions, memory bandwidth, and thread scaling."
+    },
+    {
+      "id": "short_prefill_decode",
+      "category": "short",
+      "mandatory": false,
+      "length_target": "50-128 tokens",
+      "text": "Explain the difference between prefill and decode phases in transformer inference, and say which metric mostly reflects each phase."
+    },
+    {
+      "id": "short_practical_recommendation",
+      "category": "short",
+      "mandatory": false,
+      "length_target": "50-128 tokens",
+      "text": "Give a practical recommendation for serving a small quantised language model on a CPU-only node with strict memory limits."
+    },
+    {
+      "id": "mandatory_medium_ml_vs_dl",
+      "category": "medium",
+      "mandatory": true,
+      "length_target": "256-512 tokens",
+      "text": "Explain the key differences between machine learning and deep learning, and provide an example of each."
+    },
+    {
+      "id": "medium_cpu_inference_pipeline",
+      "category": "medium",
+      "mandatory": false,
+      "length_target": "256-512 tokens",
+      "text": "A team is deploying a quantised chat model on a CPU-only cluster node. The server accepts HTTP requests, tokenizes the prompt, evaluates the prompt, and then generates one token at a time. Explain the main stages of this inference pipeline, what TTFT and TPOT measure, and which parts of the pipeline are most sensitive to prompt length, output length, and thread count."
+    },
+    {
+      "id": "medium_quant_tradeoff",
+      "category": "medium",
+      "mandatory": false,
+      "length_target": "256-512 tokens",
+      "text": "A model is available in Q8_0, Q5_K_M, Q4_K_M, and Q2_K quantisation formats. Write a short analysis of the expected trade-offs between memory footprint, throughput, and output quality. Explain why the smallest model is not always the best choice for a production CPU inference service."
+    },
+    {
+      "id": "medium_thread_scaling",
+      "category": "medium",
+      "mandatory": false,
+      "length_target": "256-512 tokens",
+      "text": "An inference benchmark is run with 8, 16, 24, and 48 threads. Throughput improves from 8 to 24 threads but barely changes at 48 threads, while latency becomes more variable. Explain at least three possible causes for this behavior and describe what additional measurements would help distinguish memory bandwidth saturation from scheduling overhead."
+    },
+    {
+      "id": "medium_concurrency",
+      "category": "medium",
+      "mandatory": false,
+      "length_target": "256-512 tokens",
+      "text": "An LLM server is benchmarked with 1, 2, 4, and 8 concurrent requests. Total throughput increases, but each request has worse TTFT and TPOT. Explain why this happens in a CPU-only setting. Include the roles of batching, cache pressure, memory bandwidth, and fairness between requests."
+    },
+    {
+      "id": "medium_performance_model",
+      "category": "medium",
+      "mandatory": false,
+      "length_target": "256-512 tokens",
+      "text": "Suppose a model file is 5 GB and the measured memory bandwidth of the node is 100 GB/s. Use a simple lower-bound model for decode TPOT based on loading model weights once per generated token. Explain the predicted value, why real observed TPOT may be higher, and what a large gap between predicted and observed values would imply."
+    },
+    {
+      "id": "medium_context_length",
+      "category": "medium",
+      "mandatory": false,
+      "length_target": "256-512 tokens",
+      "text": "A benchmark varies context size from 512 to 4096 tokens while keeping generation length fixed. Explain how increasing context length can affect TTFT, memory usage, KV-cache size, and decode performance. Distinguish between the cost of processing the prompt and the cost of generating each subsequent token."
+    },
+    {
+      "id": "medium_measurement_protocol",
+      "category": "medium",
+      "mandatory": false,
+      "length_target": "256-512 tokens",
+      "text": "Design a controlled benchmarking protocol for comparing two configurations of the same LLM inference engine on a shared HPC cluster. Include how to control node type, software modules, warm-up requests, number of trials, fixed prompts, generation settings, raw logs, resource monitoring, and how to report mean and standard deviation."
+    },
+    {
+      "id": "medium_kv_quantisation",
+      "category": "medium",
+      "mandatory": false,
+      "length_target": "256-512 tokens",
+      "text": "Explain KV-cache quantisation for transformer inference. Discuss why it can reduce memory use, why it may or may not improve decode throughput, and why the benefit can depend on context length, implementation overhead, and whether the workload is bandwidth-bound or compute-bound."
+    },
+    {
+      "id": "medium_report_conclusion",
+      "category": "medium",
+      "mandatory": false,
+      "length_target": "256-512 tokens",
+      "text": "Write a concise research-report conclusion for a CPU-only LLM inference study. The study measured TTFT, TPOT, throughput, memory, and goodput across model sizes, thread counts, concurrent requests, context lengths, decode lengths, KV-cache modes, and two CPU architectures. Explain how to turn these measurements into practical deployment recommendations."
+    },
+    {
+      "id": "mandatory_long_transformer_cpu",
+      "category": "long",
+      "mandatory": true,
+      "length_target": "1024+ tokens",
+      "text": "The transformer architecture, introduced in the paper \"Attention is All You Need\" by Vaswani et al. in 2017, has become the foundation for most modern large language models. Unlike recurrent neural networks, which process sequences sequentially, transformers process all tokens in parallel using self-attention mechanisms. This allows better parallelisation during training and has proven more effective at capturing long-range dependencies in text. When deploying transformers for inference on CPU, the main bottlenecks are the model's large memory footprint and the repeated loading of weights during the decoding phase. Based on this context, what are the main challenges when running large transformer models on CPU-only systems, and how might quantisation help address these challenges?"
+    },
+    {
+      "id": "long_hpc_case_study",
+      "category": "long",
+      "mandatory": false,
+      "length_target": "1024+ tokens",
+      "text": "A university research group wants to deploy local language model inference on a CPU-only HPC system. The cluster has separate ARM and x86 partitions, batch scheduling through SLURM, shared filesystems, and no GPU access for the assignment. The group selects llama.cpp because it supports GGUF models, HTTP serving, quantised weights, and configurable thread counts. They plan to benchmark three required report models: a mandatory Llama 3.1 8B Q4 model, a smaller TinyLlama 1.1B Q4 model, and a Qwen2.5 1.5B Q4 model. They may also run optional appendix experiments with GPT-OSS 20B Q4 and SmolLM2 360M Q4. They will measure TTFT, TPOT, throughput, memory high-water mark, CPU utilisation, and goodput against a latency SLA. The workload includes short factual prompts, medium explanatory prompts, and long context-heavy prompts. The team must compare model size, thread counts, context sizes, decode lengths, KV-cache modes, and concurrent requests. They also need to measure memory bandwidth using a STREAM-like triad and build a simple model that predicts a lower bound on TPOT from model size divided by bandwidth. Discuss how this team should structure the experiment, what pitfalls they must avoid, and how they should interpret results when observed TPOT is much larger than the bandwidth lower bound."
+    },
+    {
+      "id": "long_memory_bound_reasoning",
+      "category": "long",
+      "mandatory": false,
+      "length_target": "1024+ tokens",
+      "text": "Consider a transformer decoder running autoregressive inference. During each decode step, the model consumes the previous token, reads model weights, performs matrix-vector operations, updates attention state, samples the next token, and streams it back to the user. On a CPU-only node, the arithmetic units may be capable of more operations per second than the memory subsystem can feed when the batch size is small. This means the model can become memory-bandwidth bound: the time per output token is dominated by moving weights and intermediate data rather than by floating-point arithmetic alone. Quantisation reduces the number of bytes used for weights and sometimes for the KV cache, but it can add dequantisation work or reduce kernel efficiency. Threading can improve throughput until the memory channels are saturated, after which extra threads mostly add contention. Context length affects prefill and KV-cache memory, while decode length tests whether TPOT remains stable over time. Explain this performance story carefully. Identify which measurements would support or refute the claim that decoding is memory-bound, and describe how you would use throughput, TPOT, memory, CPU utilisation, and a predicted-versus-observed TPOT plot to justify the conclusion."
+    },
+    {
+      "id": "long_quantisation_evaluation",
+      "category": "long",
+      "mandatory": false,
+      "length_target": "1024+ tokens",
+      "text": "A benchmark compares Q8_0, Q5_K_M, Q4_K_M, and Q2_K versions of the same instruction-tuned language model. The Q8_0 model has the largest file size and usually preserves quality best. Q5_K_M and Q4_K_M reduce memory substantially while often keeping acceptable qualitative behavior. Q2_K is much smaller, but it may produce less reliable answers, especially for reasoning-heavy prompts. On a CPU-only inference server, smaller models can improve cache residency and reduce memory traffic, but actual throughput depends on kernel implementation, vectorization, dequantisation overhead, and batch shape. A careful report should not claim that lower precision is always faster or always better. It should show memory usage, TTFT, TPOT, throughput, and representative generated outputs for fixed prompts. It should also describe whether output quality was judged qualitatively or with an automated metric. Given this scenario, write an evaluation plan and explain how to decide which quantisation level is the best deployment choice under memory-limited and latency-limited conditions."
+    },
+    {
+      "id": "long_concurrency_server",
+      "category": "long",
+      "mandatory": false,
+      "length_target": "1024+ tokens",
+      "text": "An HTTP inference server receives user prompts and serves streaming responses. With one request at a time, latency is easiest to reason about: TTFT mainly reflects prompt processing and scheduling overhead, while TPOT reflects per-token decode cost. With multiple concurrent requests, the server may batch work across requests, interleave decode steps, and keep hardware busier. This can increase total generated tokens per second, but it can also increase per-request latency because each request waits behind others. On CPU-only nodes, concurrency can add cache pressure, memory bandwidth contention, lock contention, and more variable scheduling. A useful benchmark therefore reports both total throughput and per-request metrics such as TTFT, TPOT, and goodput. The goodput definition should use a clear SLA, such as TTFT below two seconds and TPOT below two hundred milliseconds, and should report the fraction of requests meeting that target. Explain how to design and interpret a concurrency benchmark for an LLM server. Include what raw data should be logged and how the results should be plotted."
+    },
+    {
+      "id": "long_arm_x86_comparison",
+      "category": "long",
+      "mandatory": false,
+      "length_target": "1024+ tokens",
+      "text": "A CPU-only inference study compares the same llama.cpp configuration on an ARM partition and an x86 partition. The ARM node has a different core organization, memory subsystem, and vector instruction set than the x86 node. The x86 node may have wider vector units and more memory capacity, while the ARM node may have different NUMA or core-group behavior. To make the comparison fair, the experiment should use the same model files, prompt dataset, generation parameters, number of trials, and benchmark client. It should compile the engine natively on each architecture, using separate build directories, so that architecture-specific compiler flags and auto-detected optimizations are not mixed. The report should avoid claiming that one architecture is universally better from a single metric. Instead, it should compare TTFT, TPOT, throughput, memory, goodput, and scaling behavior across thread counts. Discuss how to structure this comparison, what confounding factors remain, and how to explain differences using hardware-aware reasoning rather than only presenting a table of numbers."
+    },
+    {
+      "id": "long_context_prefill",
+      "category": "long",
+      "mandatory": false,
+      "length_target": "1024+ tokens",
+      "text": "Prompt length changes the balance between prefill and decode. During prefill, the engine processes the input prompt and fills the KV cache. This phase can exploit more parallelism across prompt tokens than autoregressive decoding, but it also grows with the number of input tokens. During decode, tokens are generated one at a time, and the engine repeatedly executes the model for each new token while attending to prior context. Long contexts increase KV-cache memory and can increase attention work, depending on the implementation and attention pattern. In a benchmark, a short prompt may show low TTFT and relatively stable TPOT, while a long prompt may show much higher TTFT and higher peak memory. Context size settings can also affect allocation even if the actual prompt is shorter. Explain how context length, prompt length, and configured context window interact. Then describe what you would expect to see in TTFT, TPOT, throughput, and memory when moving from 128-token prompts to 512-token, 1024-token, and 2048-token prompts."
+    },
+    {
+      "id": "long_decode_length",
+      "category": "long",
+      "mandatory": false,
+      "length_target": "1024+ tokens",
+      "text": "Decode length controls how many new tokens the model is allowed to generate. If the system is stable and the context does not grow into a new bottleneck, average TPOT should remain relatively similar when max generated tokens changes from 64 to 128, 256, or 512. However, real systems may show variation because longer generations extend the KV cache, expose thermal or scheduling effects, increase the chance of stop tokens, and make sampling behavior more variable. Throughput measured as output tokens per second can also be distorted if many requests stop early. A rigorous benchmark should log the actual number of output token events, total response time, first-token time, and inter-token intervals for every request. It should report mean and standard deviation across trials and explain whether requests produced the requested number of tokens. Discuss why decode-length experiments are useful, what they reveal about steady-state generation, and how to interpret cases where TPOT changes as generation length increases."
+    },
+    {
+      "id": "long_methodology_report",
+      "category": "long",
+      "mandatory": false,
+      "length_target": "1024+ tokens",
+      "text": "A research-style performance report must connect methodology, measurements, and conclusions. The methodology should describe the selected track, inference engine, model files, quantisation formats, hardware partitions, software modules, build flags, prompt dataset, generation parameters, warm-up policy, number of trials, resource monitoring, and post-processing scripts. The results section should avoid cherry-picking by showing the planned tables and plots: metrics per configuration, throughput versus thread count, TTFT versus prompt or context length, memory versus quantisation level, concurrency throughput and latency, architecture comparison, and predicted versus observed TPOT. The discussion should explain bottlenecks using evidence, not just intuition. If TurboQuant reduces memory but does not improve throughput, the report should say that clearly and explain possible causes. If x86 scales differently from ARM, the report should connect that to hardware characteristics and compiler-generated kernels. Write a detailed outline for such a report, including what each section should prove."
+    },
+    {
+      "id": "long_limitations_future_work",
+      "category": "long",
+      "mandatory": false,
+      "length_target": "1024+ tokens",
+      "text": "Every benchmark has limitations. A CPU-only LLM inference study on an HPC cluster may be affected by scheduler placement, noisy neighbors if nodes are not exclusive, filesystem caching, model loading time, compiler version, exact commit of the inference engine, prompt selection, tokenization differences between models, and the fact that qualitative output quality is hard to reduce to a single number. A simple memory-bandwidth model is useful as a lower bound, but it ignores cache reuse, dequantisation, matrix kernel efficiency, attention over KV cache, sampling overhead, server scheduling, and operating-system effects. The study may use only a modest number of prompts and trials because cluster time is limited. These limitations do not invalidate the work if they are acknowledged honestly and the conclusions are scoped to the measured conditions. Discuss the limitations of such a study and propose future work, such as collecting hardware counters, measuring prefill throughput separately, testing more quantisation formats, using perplexity for quality, or evaluating speculative decoding on compatible models."
+    },
+    {
+      "id": "long_engine_operations",
+      "category": "long",
+      "mandatory": false,
+      "length_target": "1024+ tokens",
+      "text": "Operating an inference engine on a batch-scheduled HPC system is different from running a local demo. The job script must load modules, select the correct partition, use the requested number of CPUs, start the server in the background, wait for a health endpoint, run a client benchmark, monitor resources, and clean up the server process even on failure. The scripts should write system information, raw request logs, summary CSVs, server logs, and resource samples into a measurement directory named by job id or experiment. They should avoid doing heavy work on login nodes; cloning, building, downloading models, and benchmarks should run as SLURM jobs. They should also keep ARM and x86 builds separate because binaries compiled for one architecture may not be valid or optimal for the other. Explain why these operational details matter for reproducibility and how they affect the credibility of the final performance analysis."
+    }
+  ]
+}
